@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 
 import 'package:site_portfolio/widgets/icons_menu_bar.dart';
 
-class Horario extends StatefulWidget {
-  const Horario({Key? key}) : super(key: key);
+class Time extends StatefulWidget {
+  const Time({Key? key}) : super(key: key);
 
   @override
-  State<Horario> createState() => _BottomStartState();
+  State<Time> createState() => _BottomStartState();
 }
 
-class _BottomStartState extends State<Horario> {
+class _BottomStartState extends State<Time> {
   final now = DateTime.now();
 
   @override

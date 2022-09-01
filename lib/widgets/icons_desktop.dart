@@ -1,0 +1,61 @@
+// ignore_for_file: prefer_const_constructors_in_immutables
+
+import 'package:flutter/material.dart';
+
+class IconsDesktop extends StatefulWidget {
+  final String name;
+  final String icon;
+  final bool isAtivo;
+
+  IconsDesktop({
+    Key? key,
+    required this.name,
+    required this.icon,
+    required this.isAtivo,
+  }) : super(key: key);
+
+  @override
+  State<IconsDesktop> createState() => _IconsDesktopState();
+}
+
+class _IconsDesktopState extends State<IconsDesktop> {
+  Color colorSelected = Colors.transparent;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: MouseRegion(
+        onEnter: (_) => setState(() {
+          colorSelected = Colors.blueAccent;
+        }),
+        onExit: (_) => setState(() {
+          colorSelected = Colors.transparent;
+        }),
+        child: Container(
+          color: colorSelected,
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: Column(
+              children: [
+                Image.asset(
+                  'assets/images/${widget.icon}.png',
+                  width: 70,
+                  height: 70,
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  widget.name,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

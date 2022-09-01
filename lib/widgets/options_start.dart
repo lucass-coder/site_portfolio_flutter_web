@@ -25,17 +25,16 @@ class _OptionsStartState extends State<OptionsStart> {
     return MouseRegion(
       onEnter: (_) => setState(() {
         colorSelected = Colors.blueAccent;
-        //isHovered = newIsHovered;
       }),
       onExit: (_) => setState(() {
         colorSelected = const Color(0xffC0C7C8);
-        //isHovered = newIsHovered;
       }),
       child: Container(
         color: colorSelected,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            const SizedBox(width: 4),
             Image.asset(
               'assets/images/${widget.icon}.png',
               width: 30,
