@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:site_portfolio/widgets/bottom_start.dart';
-import 'package:site_portfolio/widgets/horario.dart';
+import 'package:site_portfolio/widgets/time.dart';
 import 'package:site_portfolio/widgets/icons_desktop.dart';
 import 'package:site_portfolio/widgets/options_start.dart';
 import 'package:site_portfolio/widgets/window.dart';
