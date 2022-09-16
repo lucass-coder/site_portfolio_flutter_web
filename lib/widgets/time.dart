@@ -1,6 +1,9 @@
 // ignore_for_file: unused_local_variable, prefer_const_constructors, prefer_typing_uninitialized_variables, avoid_web_libraries_in_flutter
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:site_portfolio/cubit/time/time_controller.dart';
 
 import 'package:site_portfolio/widgets/icons_menu_bar.dart';
 
@@ -12,7 +15,17 @@ class Time extends StatefulWidget {
 }
 
 class _BottomStartState extends State<Time> {
-  final now = DateTime.now();
+  var now = DateTime.now();
+
+  @override
+  void initState() {
+    super.initState();
+    StreamSubscription periodicSub =
+        Stream.periodic(Duration(milliseconds: 500), (v) => v)
+            .listen((count) => setState(() {
+                  now = DateTime.now();
+                }));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +80,7 @@ class _BottomStartState extends State<Time> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(right: 8.0),
-                    child: Text('${now.hour}:${now.minute}'),
+                    child: Text('${now.hour}:${now.minute}:${now.second}'),
                   ),
                 ],
               )),

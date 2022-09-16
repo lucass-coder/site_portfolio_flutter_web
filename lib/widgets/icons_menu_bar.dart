@@ -16,10 +16,13 @@ class IconsMenuBar extends StatelessWidget {
       onTap: () {
         html.window.open(url, 'new tab');
       },
-      child: Image.asset(
-        'assets/images/$socialNetwork.png',
-        height: 20,
-        width: 25,
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: Image.asset(
+          'assets/images/$socialNetwork.png',
+          height: 20,
+          width: 25,
+        ),
       ),
     );
   }
