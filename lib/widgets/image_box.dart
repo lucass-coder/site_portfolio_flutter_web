@@ -1,0 +1,44 @@
+
+import 'package:flutter/material.dart';
+
+class ImageBox extends StatefulWidget {
+
+final String imageUrl;
+ final VoidCallback? onChangeImage;
+
+   const ImageBox({ Key? key, required this.imageUrl, required this.onChangeImage }) : super(key: key);
+
+  @override
+  State<ImageBox> createState() => _ImageBoxState();
+}
+
+class _ImageBoxState extends State<ImageBox> {
+double selecionado = 1;
+   @override
+   Widget build(BuildContext context) {
+       return MouseRegion(  
+                              onEnter: (_) => setState(() => selecionado = 0.5),
+                              onExit: (_) => setState(() => selecionado = 1.0),
+                              child: GestureDetector(
+                                onTap: widget.onChangeImage,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Container(
+                                    height: 150,
+                                    width: 180,
+                                    //color: Colors.green,
+                                    decoration:  BoxDecoration(
+                                      
+                                      image:  DecorationImage(
+                                        opacity: selecionado,
+                                        image:  NetworkImage(
+                                            widget.imageUrl),
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            );
+  }
+}

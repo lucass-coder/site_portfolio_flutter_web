@@ -26,10 +26,17 @@ class _MyHomePageState extends State<HomePage> {
   Color? background = Color(0xff008081);
   String nomeImage = 'image-4';
 
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onSecondaryTap: () => setState(() {
+        
+        Container(
+          height: 200,
+          width: 200,
+          color: Colors.red,
+        );
+      }),
       onTap: () => setState(() {
         isAtivo = false;
       }),
@@ -47,26 +54,26 @@ class _MyHomePageState extends State<HomePage> {
               Visibility(
                 visible: isAtivo2,
                 child: WindowImage(
-                      onPressed: () => setState(() {
-                        isAtivo2 = !isAtivo2;
-                      }),
-                      onChangeImage1: () => setState(() {
-                        //background = Colors.green;
-                        nomeImage = 'image-1';
-                      }),
-                      onChangeImage2: () => setState(() {
-                        //background = Colors.blue;
-                        nomeImage = 'image-2';
-                      }),
-                      onChangeImage3: () => setState(() {
-                        //background = Colors.blue;
-                        nomeImage = 'image-3';
-                      }),
-                      onChangeImage4: () => setState(() {
-                        //background = Colors.blue;
-                        nomeImage = 'image-4';
-                      }),
-                    ),
+                  onPressed: () => setState(() {
+                    isAtivo2 = !isAtivo2;
+                  }),
+                  onChangeImage1: () => setState(() {
+                    //background = Colors.green;
+                    nomeImage = 'image-1';
+                  }),
+                  onChangeImage2: () => setState(() {
+                    //background = Colors.blue;
+                    nomeImage = 'image-2';
+                  }),
+                  onChangeImage3: () => setState(() {
+                    //background = Colors.blue;
+                    nomeImage = 'image-3';
+                  }),
+                  onChangeImage4: () => setState(() {
+                    //background = Colors.blue;
+                    nomeImage = 'image-4';
+                  }),
+                ),
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,7 +111,7 @@ class _MyHomePageState extends State<HomePage> {
                   Visibility(
                     visible: isAtivo,
                     child: StartBar(),
-                    ),
+                  ),
                   Align(
                     alignment: Alignment.bottomCenter,
                     child: Container(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:site_portfolio/widgets/image_box.dart';
 
 class WindowImage extends StatefulWidget {
   final VoidCallback? onPressed;
@@ -7,7 +8,7 @@ class WindowImage extends StatefulWidget {
   final VoidCallback? onChangeImage3;
   final VoidCallback? onChangeImage4;
 
-  const WindowImage(
+   const WindowImage(
       {Key? key,
       this.onPressed,
       this.onChangeImage1,
@@ -21,6 +22,7 @@ class WindowImage extends StatefulWidget {
 }
 
 class _WindowImageState extends State<WindowImage> {
+  double selecionado = 1;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -38,7 +40,7 @@ class _WindowImageState extends State<WindowImage> {
                     color: const Color(0xff181883),
                     width: 384,
                     height: 40,
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         'Wallpaper',
                         style: TextStyle(
@@ -68,90 +70,22 @@ class _WindowImageState extends State<WindowImage> {
             //Text('JFDF432R2RLJSAFLJDSFL'),
             LayoutBuilder(builder: (context, constraints) {
               return ConstrainedBox(
-                constraints: BoxConstraints(minHeight: 100, maxHeight: 340),
+                constraints:
+                    const BoxConstraints(minHeight: 100, maxHeight: 340),
                 child: IntrinsicHeight(
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
                         Row(
                           children: [
-                            GestureDetector(
-                              onTap: widget.onChangeImage1,
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Container(
-                                  height: 150,
-                                  width: 180,
-                                  //color: Colors.green,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                          'assets/images/image-1.png'),
-                                      // 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            GestureDetector(
-                              onTap: widget.onChangeImage2,
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Container(
-                                  height: 150,
-                                  width: 180,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                          'assets/images/image-2.png'),
-                                      // 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
+                            ImageBox(onChangeImage: widget.onChangeImage1, imageUrl: 'assets/images/image-1.png',),
+                            ImageBox(onChangeImage: widget.onChangeImage2, imageUrl: 'assets/images/image-2.png',),
                           ],
                         ),
                         Row(
                           children: [
-                            GestureDetector(
-                              onTap: widget.onChangeImage3,
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Container(
-                                  height: 150,
-                                  width: 180,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                          'assets/images/image-3.png'),
-                                      // 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            GestureDetector(
-                              onTap: widget.onChangeImage4,
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Container(
-                                  height: 150,
-                                  width: 180,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: NetworkImage(
-                                          'assets/images/image-4.png'),
-                                      // 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
+                           ImageBox(onChangeImage: widget.onChangeImage3, imageUrl: 'assets/images/image-3.png',),
+                            ImageBox(onChangeImage: widget.onChangeImage4, imageUrl: 'assets/images/image-4.png',),
                           ],
                         ),
                       ],
