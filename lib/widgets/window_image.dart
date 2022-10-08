@@ -78,7 +78,7 @@ class _WindowImageState extends State<WindowImage> {
                       children: [
                         Row(
                           children: [
-                            ImageBox(onChangeImage: widget.onChangeImage1, imageUrl: 'assets/images/image-1.png',),
+                            ImageBox(onChangeImage: widget.onChangeImage1, imageUrl: 'https://github.com/lucass-coder/lucass-coder.github.io/blob/main/assets/assets/images/image-1.png?raw=true',),
                             ImageBox(onChangeImage: widget.onChangeImage2, imageUrl: 'assets/images/image-2.png',),
                           ],
                         ),
