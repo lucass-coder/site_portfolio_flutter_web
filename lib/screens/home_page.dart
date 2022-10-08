@@ -44,7 +44,8 @@ class _MyHomePageState extends State<HomePage> {
         body: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: NetworkImage('assets/images/$nomeImage.png'),
+               image: AssetImage('assets/images/$nomeImage.png'),
+              //  image: AssetImage('hhttps://coodesh.com/blog/wp-content/uploads/2021/10/mobile-flutter-1-scaled.jpg'),
               // 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
               fit: BoxFit.cover,
             ),

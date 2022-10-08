@@ -31,7 +31,7 @@ double selecionado = 1;
                                       
                                       image:  DecorationImage(
                                         opacity: selecionado,
-                                        image:  NetworkImage(
+                                        image:  AssetImage(
                                             widget.imageUrl),
                                         fit: BoxFit.fill,
                                       ),
