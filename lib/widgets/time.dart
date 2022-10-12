@@ -3,7 +3,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:site_portfolio/cubit/time/time_controller.dart';
 
 import 'package:site_portfolio/widgets/icons_menu_bar.dart';
 
@@ -36,7 +35,7 @@ class _BottomStartState extends State<Time> {
         children: [
           Stack(children: [
             Container(
-              height: 36,
+              height: 32,
               width: 180,
               // ignore: prefer_const_literals_to_create_immutables
               decoration: BoxDecoration(color: Colors.grey, boxShadow: [
@@ -49,7 +48,7 @@ class _BottomStartState extends State<Time> {
               ]),
             ),
             Container(
-              height: 36,
+              height: 32,
               width: 180,
               decoration: BoxDecoration(color: Color(0xffC0C7C8),
                   //color: cor1,

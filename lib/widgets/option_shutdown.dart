@@ -1,5 +1,3 @@
-
-
 // ignore_for_file: prefer_const_constructors_in_immutables, avoid_web_libraries_in_flutter
 
 import 'package:flutter/material.dart';
@@ -22,20 +20,23 @@ class OptionShutdown extends StatefulWidget {
 class _OptionShutdowntState extends State<OptionShutdown> {
   bool isHovered = false;
   Color colorSelected = const Color(0xffC0C7C8);
+  Color textColor = Colors.black;
 
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
       onEnter: (_) => setState(() {
         colorSelected = Colors.blueAccent;
+        textColor = Colors.white;
       }),
       onExit: (_) => setState(() {
         colorSelected = const Color(0xffC0C7C8);
+        textColor = Colors.black;
       }),
       child: GestureDetector(
         onTap: () {
           // !todo Colocar Animação agradecendo antes de sair da tela
-          html.window.location.href = "https://www.google.com" ;
+          html.window.location.href = "https://www.google.com";
         },
         child: Column(
           children: [
@@ -51,8 +52,10 @@ class _OptionShutdowntState extends State<OptionShutdown> {
                     height: 30,
                   ),
                   const SizedBox(width: 4),
-                  Text(widget.name),
-        
+                  Text(
+                    widget.name,
+                    style: TextStyle(color: textColor),
+                  ),
                 ],
               ),
             ),

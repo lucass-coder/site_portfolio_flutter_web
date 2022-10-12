@@ -19,15 +19,18 @@ class OptionsStart extends StatefulWidget {
 class _OptionsStartState extends State<OptionsStart> {
   bool isHovered = false;
   Color colorSelected = const Color(0xffC0C7C8);
+  Color textColor = Colors.black;
 
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
       onEnter: (_) => setState(() {
         colorSelected = Colors.blueAccent;
+        textColor = Colors.white;
       }),
       onExit: (_) => setState(() {
         colorSelected = const Color(0xffC0C7C8);
+        textColor = Colors.black;
       }),
       child: Container(
         color: colorSelected,
@@ -41,7 +44,10 @@ class _OptionsStartState extends State<OptionsStart> {
               height: 30,
             ),
             const SizedBox(width: 4),
-            Text(widget.name),
+            Text(
+              widget.name,
+              style: TextStyle(color: textColor),
+            ),
             const Spacer(),
             const Icon(Icons.arrow_right),
             const SizedBox(width: 4),

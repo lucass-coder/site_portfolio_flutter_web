@@ -43,15 +43,14 @@ class StartBar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 SizedBox(height: 8),
-                OptionsStart(icon: 'icon_programs', name: 'Programs'),
+                OptionsStart(icon: 'icon_programs', name: 'Programas'),
                 SizedBox(height: 8),
-                OptionsStart(icon: 'folder', name: 'Documents'),
+                OptionsStart(icon: 'folder', name: 'Projetos'),
                 SizedBox(height: 8),
-                OptionsStart(icon: 'icon_programs', name: 'Settings'),
+                OptionsStart(icon: 'icon_programs', name: 'Idioma'),
                 Spacer(),
                 Divider(),
-                OptionShutdown(icon: 'icon_shutdown', name: 'Shutdown'),
-
+                OptionShutdown(icon: 'icon_shutdown', name: 'Desligar'),
               ],
             ),
           )

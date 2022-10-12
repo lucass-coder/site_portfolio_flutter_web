@@ -21,7 +21,7 @@ class _BottomStartState extends State<BottomStart> {
         children: [
           Stack(children: [
             Container(
-              height: 36,
+              height: 32,
               width: 90,
               // ignore: prefer_const_literals_to_create_immutables
               decoration: BoxDecoration(color: Colors.grey, boxShadow: [
@@ -34,7 +34,7 @@ class _BottomStartState extends State<BottomStart> {
               ]),
             ),
             Container(
-              height: 36,
+              height: 32,
               width: 90,
               decoration: BoxDecoration(color: Color(0xffC0C7C8),
                   //color: cor1,
