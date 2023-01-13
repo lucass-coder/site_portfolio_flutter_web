@@ -9,6 +9,7 @@ import 'package:site_portfolio/widgets/icons_desktop.dart';
 import 'package:site_portfolio/widgets/option_click_right.dart';
 import 'package:site_portfolio/widgets/start_bar.dart';
 import 'package:site_portfolio/widgets/time.dart';
+import 'package:site_portfolio/widgets/window_games.dart';
 import 'package:site_portfolio/widgets/window_image.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,6 +23,7 @@ class _MyHomePageState extends State<HomePage> {
   String mensagem = 'Olá! Gostaria de falar com você Lucas';
   bool isAtivo = false;
   bool isAtivo2 = false;
+  bool isGame = false;
   bool visible = false;
   String url =
       'https://api.whatsapp.com/send/?phone=5516992438472&text=Olá! Gostaria de falar com você Lucas';
@@ -82,22 +84,6 @@ class _MyHomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                Positioned(
-                  left: x,
-                  top: y,
-                  child: Visibility(
-                    visible: visible,
-                    child: OptionCLickRight(
-                      name: ' Trocar Wallpalper',
-                      onPressed: () => setState(() {
-                        isAtivo2 = !isAtivo2;
-                        visible = false;
-                      }),
-                    ),
-                  ),
-                ),
-                // child: Container(
-                //     width: 100, height: 100, color: Colors.green))),
                 Visibility(
                   visible: isAtivo2,
                   child: WindowImage(
@@ -122,6 +108,14 @@ class _MyHomePageState extends State<HomePage> {
                     }),
                   ),
                 ),
+                Visibility(
+                  visible: isGame && isAtivo2 == false,
+                  child: WindowGames(
+                    onPressed: () => setState(() {
+                      isGame = !isGame;
+                    }),
+                  ),
+                ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -131,6 +125,9 @@ class _MyHomePageState extends State<HomePage> {
                           name: 'Computador',
                           icon: 'computer',
                           isAtivo: false,
+                          onPressed: () => setState(() {
+                            isAtivo2 ? null : isGame = !isGame;
+                          }),
                         ),
                         IconsDesktop(
                           name: 'imagens',

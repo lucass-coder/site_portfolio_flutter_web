@@ -6,7 +6,7 @@ class TimeController {
   Sink<DateTime> get timeIn => _timeController.sink;
 
   void timeNow() {
-    Timer.periodic(Duration(seconds: 1), (timer) {
+    Timer.periodic(const Duration(seconds: 1), (timer) {
       timeIn.add(DateTime.now());
     });
   }

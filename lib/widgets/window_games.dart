@@ -1,27 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:site_portfolio/widgets/image_box.dart';
 
-class WindowImage extends StatefulWidget {
+class WindowGames extends StatefulWidget {
   final VoidCallback? onPressed;
-  final VoidCallback? onChangeImage1;
-  final VoidCallback? onChangeImage2;
-  final VoidCallback? onChangeImage3;
-  final VoidCallback? onChangeImage4;
-
-  const WindowImage(
-      {Key? key,
-      this.onPressed,
-      this.onChangeImage1,
-      this.onChangeImage2,
-      this.onChangeImage3,
-      this.onChangeImage4})
-      : super(key: key);
+  const WindowGames({
+    Key? key,
+    this.onPressed,
+  }) : super(key: key);
 
   @override
-  State<WindowImage> createState() => _WindowImageState();
+  State<WindowGames> createState() => _WindowGamesState();
 }
 
-class _WindowImageState extends State<WindowImage> {
+class _WindowGamesState extends State<WindowGames> {
   double selecionado = 1;
   @override
   Widget build(BuildContext context) {
@@ -42,7 +33,7 @@ class _WindowImageState extends State<WindowImage> {
                     height: 40,
                     child: const Center(
                       child: Text(
-                        'Wallpaper',
+                        'Jogos',
                         style: TextStyle(
                             color: Colors.white, fontWeight: FontWeight.bold),
                       ),
@@ -79,23 +70,23 @@ class _WindowImageState extends State<WindowImage> {
                           Row(
                             children: [
                               ImageBox(
-                                onChangeImage: widget.onChangeImage1,
-                                imageUrl: 'assets/images/image-1.png',
+                                onChangeImage: () {},
+                                imageUrl: 'assets/images/domvs-bros.png',
                               ),
                               ImageBox(
-                                onChangeImage: widget.onChangeImage2,
-                                imageUrl: 'assets/images/image-2.png',
+                                onChangeImage: () {},
+                                imageUrl: 'assets/images/jump-game.png',
                               ),
                             ],
                           ),
                           Row(
                             children: [
                               ImageBox(
-                                onChangeImage: widget.onChangeImage3,
+                                onChangeImage: () {},
                                 imageUrl: 'assets/images/image-3.png',
                               ),
                               ImageBox(
-                                onChangeImage: widget.onChangeImage4,
+                                onChangeImage: () {},
                                 imageUrl: 'assets/images/image-4.png',
                               ),
                             ],
