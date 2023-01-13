@@ -54,7 +54,7 @@ class _BottomStartState extends State<BottomStart> {
                   Padding(
                     padding: const EdgeInsets.only(left: 3.0),
                     child: Image.asset(
-                      'assets/images/logo.png',
+                      'assets/images-desktop/logo.png',
                       height: 20,
                       width: 25,
                     ),

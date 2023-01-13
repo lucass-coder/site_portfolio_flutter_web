@@ -47,7 +47,7 @@ class _OptionShutdowntState extends State<OptionShutdown> {
                 children: [
                   const SizedBox(width: 4),
                   Image.asset(
-                    'assets/images/${widget.icon}.png',
+                    'assets/images-desktop/${widget.icon}.png',
                     width: 30,
                     height: 30,
                   ),

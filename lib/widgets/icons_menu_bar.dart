@@ -19,7 +19,7 @@ class IconsMenuBar extends StatelessWidget {
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         child: Image.asset(
-          'assets/images/$socialNetwork.png',
+          'assets/images-desktop/$socialNetwork.png',
           height: 20,
           width: 25,
         ),

@@ -65,7 +65,7 @@ class _MyHomePageState extends State<HomePage> {
           body: Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/$nomeImage.png'),
+                image: AssetImage('assets/images-desktop/$nomeImage.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -92,19 +92,15 @@ class _MyHomePageState extends State<HomePage> {
                       isAtivo2 = !isAtivo2;
                     }),
                     onChangeImage1: () => setState(() {
-                      //background = Colors.green;
                       nomeImage = 'image-1';
                     }),
                     onChangeImage2: () => setState(() {
-                      //background = Colors.blue;
                       nomeImage = 'image-2';
                     }),
                     onChangeImage3: () => setState(() {
-                      //background = Colors.blue;
                       nomeImage = 'image-3';
                     }),
                     onChangeImage4: () => setState(() {
-                      //background = Colors.blue;
                       nomeImage = 'image-4';
                     }),
                   ),

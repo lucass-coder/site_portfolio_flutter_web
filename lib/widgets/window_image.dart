@@ -80,11 +80,11 @@ class _WindowImageState extends State<WindowImage> {
                             children: [
                               ImageBox(
                                 onChangeImage: widget.onChangeImage1,
-                                imageUrl: 'assets/images/image-1.png',
+                                imageUrl: 'assets/images-desktop/image-1.png',
                               ),
                               ImageBox(
                                 onChangeImage: widget.onChangeImage2,
-                                imageUrl: 'assets/images/image-2.png',
+                                imageUrl: 'assets/images-desktop/image-2.png',
                               ),
                             ],
                           ),
@@ -92,11 +92,11 @@ class _WindowImageState extends State<WindowImage> {
                             children: [
                               ImageBox(
                                 onChangeImage: widget.onChangeImage3,
-                                imageUrl: 'assets/images/image-3.png',
+                                imageUrl: 'assets/images-desktop/image-3.png',
                               ),
                               ImageBox(
                                 onChangeImage: widget.onChangeImage4,
-                                imageUrl: 'assets/images/image-4.png',
+                                imageUrl: 'assets/images-desktop/image-4.png',
                               ),
                             ],
                           ),

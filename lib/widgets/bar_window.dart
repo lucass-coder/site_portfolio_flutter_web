@@ -52,7 +52,7 @@ class _BarWindowState extends State<BarWindow> {
                   Padding(
                     padding: const EdgeInsets.only(left: 3.0),
                     child: Image.asset(
-                      'assets/images/${widget.icon}.png',
+                      'assets/images-desktop/${widget.icon}.png',
                       height: 50,
                       width: 25,
                     ),

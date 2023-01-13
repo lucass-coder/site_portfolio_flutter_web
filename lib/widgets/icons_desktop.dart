@@ -43,7 +43,7 @@ class _IconsDesktopState extends State<IconsDesktop> {
               child: Column(
                 children: [
                   Image.asset(
-                    'assets/images/${widget.icon}.png',
+                    'assets/images-desktop/${widget.icon}.png',
                     width: 70,
                     height: 70,
                   ),

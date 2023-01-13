@@ -39,7 +39,7 @@ class _OptionsStartState extends State<OptionsStart> {
           children: [
             const SizedBox(width: 4),
             Image.asset(
-              'assets/images/${widget.icon}.png',
+              'assets/images-desktop/${widget.icon}.png',
               width: 30,
               height: 30,
             ),
