@@ -3,6 +3,7 @@
 import 'dart:html' as html;
 
 import 'package:flutter/material.dart';
+import 'package:site_portfolio/widgets/bar_window.dart';
 
 import 'package:site_portfolio/widgets/bottom_start.dart';
 import 'package:site_portfolio/widgets/icons_desktop.dart';
@@ -76,7 +77,7 @@ class _MyHomePageState extends State<HomePage> {
                   child: Visibility(
                     visible: visible,
                     child: OptionCLickRight(
-                      name: ' Trocar Wallpalper',
+                      name: ' Trocar plano de fundo',
                       onPressed: () => setState(() {
                         isAtivo2 = !isAtivo2;
                         visible = false;
@@ -159,7 +160,6 @@ class _MyHomePageState extends State<HomePage> {
                     Align(
                       alignment: Alignment.bottomCenter,
                       child: Container(
-                        //color: Colors.grey[400],
                         color: const Color(0xffC0C7C8),
                         width: MediaQuery.of(context).size.width,
                         height: 40,
@@ -178,6 +178,27 @@ class _MyHomePageState extends State<HomePage> {
                                 })
                               },
                               child: BottomStart(isAtivo: isAtivo),
+                            ),
+                            Visibility(
+                              visible: isGame,
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: BarWindow(
+                                  isAtivo: isGame,
+                                  icon: 'game',
+                                  name: 'Jogos',
+                                ),
+                              ),
+                            ),
+                            Visibility(
+                              visible: isAtivo2,
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: BarWindow(
+                                    isAtivo: isAtivo2,
+                                    icon: 'folder',
+                                    name: 'Imagens'),
+                              ),
                             ),
                             Spacer(),
                             Time(),

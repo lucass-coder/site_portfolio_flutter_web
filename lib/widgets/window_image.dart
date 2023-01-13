@@ -42,7 +42,7 @@ class _WindowImageState extends State<WindowImage> {
                     height: 40,
                     child: const Center(
                       child: Text(
-                        'Wallpaper',
+                        'Imagens',
                         style: TextStyle(
                             color: Colors.white, fontWeight: FontWeight.bold),
                       ),

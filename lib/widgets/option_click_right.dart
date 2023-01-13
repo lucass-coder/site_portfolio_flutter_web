@@ -38,7 +38,7 @@ class _OptionCLickRightState extends State<OptionCLickRight> {
             Stack(children: [
               Container(
                 height: 24,
-                width: 120,
+                width: 140,
                 decoration:
                     const BoxDecoration(color: Colors.white, boxShadow: [
                   BoxShadow(
@@ -51,7 +51,7 @@ class _OptionCLickRightState extends State<OptionCLickRight> {
               ),
               Container(
                 height: 24,
-                width: 120,
+                width: 140,
                 decoration:
                     const BoxDecoration(color: Color(0xffC0C7C8), boxShadow: [
                   BoxShadow(

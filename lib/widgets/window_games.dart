@@ -79,18 +79,18 @@ class _WindowGamesState extends State<WindowGames> {
                               ),
                             ],
                           ),
-                          Row(
-                            children: [
-                              ImageBox(
-                                onChangeImage: () {},
-                                imageUrl: 'assets/images/image-3.png',
-                              ),
-                              ImageBox(
-                                onChangeImage: () {},
-                                imageUrl: 'assets/images/image-4.png',
-                              ),
-                            ],
-                          ),
+                          // Row(
+                          //   children: [
+                          //     ImageBox(
+                          //       onChangeImage: () {},
+                          //       imageUrl: 'assets/images/image-3.png',
+                          //     ),
+                          //     ImageBox(
+                          //       onChangeImage: () {},
+                          //       imageUrl: 'assets/images/image-4.png',
+                          //     ),
+                          //   ],
+                          // ),
                         ],
                       ),
                     ),
