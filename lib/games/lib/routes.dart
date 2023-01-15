@@ -8,6 +8,7 @@ import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/overlays/lucas
 import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/overlays/pause.dart';
 import 'package:site_portfolio/games/lib/pages/persons_maps/ninja/game_ninja.dart';
 import 'package:site_portfolio/games/lib/pages/persons_maps/ninja/overlays/game_over.dart';
+import 'package:site_portfolio/games/lib/pages/persons_maps/ninja/overlays/pause_ninja.dart';
 import 'package:site_portfolio/games/lib/selection_person_page.dart';
 
 class Routes {
@@ -30,7 +31,8 @@ class Routes {
             gameFactory: GameNinja.new,
             overlayBuilderMap: {
               'MainMenu': (_, game) => MainMenu(game: game),
-              'GameOver': (_, game) => GameOver(game: game)
+              'GameOver': (_, game) => GameOver(game: game),
+              'pauseNinja': (context, game) => PauseNinja(game: game),
             },
             initialActiveOverlays: const ['MainMenu'],
           ),

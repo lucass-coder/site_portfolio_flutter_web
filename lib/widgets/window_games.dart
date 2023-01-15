@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:site_portfolio/games/lib/overlays/main_menu.dart';
-import 'package:site_portfolio/games/lib/pages/persons_maps/ninja/game_ninja.dart';
-import 'package:site_portfolio/games/lib/pages/persons_maps/ninja/overlays/game_over.dart';
 import 'package:site_portfolio/games/lib/selection_person_page.dart';
-import 'package:site_portfolio/games/lib/widgets/selection_person_area.dart';
 import 'package:site_portfolio/widgets/image_box.dart';
-import 'package:flame/game.dart' as game;
 
 class WindowGames extends StatefulWidget {
   final VoidCallback? onPressed;

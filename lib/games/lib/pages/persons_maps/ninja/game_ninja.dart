@@ -80,6 +80,14 @@ class GameNinja extends FlameGame
     }
   }
 
+  void togglePauseState() {
+    if (paused) {
+      resumeEngine();
+    } else {
+      pauseEngine();
+    }
+  }
+
   void initializeGame(bool loadHud) {
     // Assume that size.x < 3200
 
@@ -103,9 +111,23 @@ class GameNinja extends FlameGame
 
   @override
   void update(double dt) {
-    if (health <= 0) {
-      overlays.add('GameOver');
+    //  if (starsCollected == 20) {
+    // overlays.add('LucasFinish');
+    // overlays.remove('gameOverlay');
+    // overlays.remove('gameOverlay');
+    // }
+
+    if (overlays.isActive('MainMenu')) {
+      overlays.remove('pauseNinja');
     }
+    if (health <= 0 && starsCollected != 20) {
+      overlays.add('GameOver');
+      overlays.remove('pauseNinja');
+    }
+
+    // if (health <= 0) {
+    //   overlays.add('GameOver');
+    // }
     super.update(dt);
   }
 

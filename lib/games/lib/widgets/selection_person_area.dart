@@ -1,12 +1,18 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
 import 'package:site_portfolio/games/lib/routes.dart';
 import 'package:site_portfolio/games/lib/utils/constants.dart';
 
 enum Person { lucas, ninja }
 
+// ignore: must_be_immutable
 class SelectionPersonArea extends StatelessWidget {
   final Person person;
-  SelectionPersonArea({Key? key, required this.person}) : super(key: key);
+  SelectionPersonArea({
+    Key? key,
+    required this.person,
+  }) : super(key: key);
 
   late String urlPerson;
   late String description;

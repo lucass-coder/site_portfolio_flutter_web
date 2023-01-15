@@ -43,6 +43,7 @@ class GameOver extends StatelessWidget {
                     game.reset();
                     game.overlays.remove('GameOver');
                     FlameAudio.bgm.play('ninja_theme.mp3');
+                    game.overlays.add('pauseNinja');
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: whiteTextColor,

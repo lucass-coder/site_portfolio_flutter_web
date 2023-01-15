@@ -52,6 +52,7 @@ class MainMenu extends StatelessWidget {
                   onPressed: () {
                     game.overlays.remove('MainMenu');
                     FlameAudio.bgm.play('ninja_theme.mp3');
+                    game.overlays.add('pauseNinja');
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: whiteTextColor,

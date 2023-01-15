@@ -1,18 +1,18 @@
 import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
-import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/game_lucas.dart';
+import 'package:site_portfolio/games/lib/pages/persons_maps/ninja/game_ninja.dart';
 import 'package:site_portfolio/games/lib/routes.dart';
 
-class PauseOverlay extends StatefulWidget {
-  final GameLucas game;
+class PauseNinja extends StatefulWidget {
+  final GameNinja game;
 
-  const PauseOverlay({super.key, required this.game});
+  const PauseNinja({super.key, required this.game});
 
   @override
-  State<PauseOverlay> createState() => _PauseOverlayState();
+  State<PauseNinja> createState() => _PauseNinjaState();
 }
 
-class _PauseOverlayState extends State<PauseOverlay> {
+class _PauseNinjaState extends State<PauseNinja> {
   bool isPaused = false;
 
   @override

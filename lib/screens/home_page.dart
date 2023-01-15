@@ -119,7 +119,7 @@ class _MyHomePageState extends State<HomePage> {
                     Column(
                       children: [
                         IconsDesktop(
-                          name: 'Computador',
+                          name: 'Jogos',
                           icon: 'computer',
                           isAtivo: false,
                           onPressed: () => setState(() {
