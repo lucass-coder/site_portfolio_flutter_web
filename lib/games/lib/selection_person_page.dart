@@ -3,7 +3,7 @@ import 'package:flutter_carousel_slider/carousel_slider.dart';
 import 'package:site_portfolio/games/lib/widgets/selection_person_area.dart';
 
 class SelectionPersonPage extends StatefulWidget {
-  const SelectionPersonPage({Key? key}) : super(key: key);
+  const SelectionPersonPage({super.key});
 
   @override
   State<SelectionPersonPage> createState() => _SelectionPersonPageState();

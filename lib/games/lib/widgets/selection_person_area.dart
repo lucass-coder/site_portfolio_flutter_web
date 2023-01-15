@@ -26,7 +26,7 @@ class SelectionPersonArea extends StatelessWidget {
         urlPerson = 'assets/images/persons/ninja/Idle__000.png';
         description = ninjaDescription;
         name = 'CHARUTO';
-      // Routes.ninja;
+        route = Routes.ninja;
     }
 
     return Container(
@@ -40,7 +40,7 @@ class SelectionPersonArea extends StatelessWidget {
           color: Colors.black),
       child: GestureDetector(
         onTap: () {
-          Navigator.of(context).pushNamed(Routes.lucas
+          Navigator.of(context).pushNamed(route
               // '/lucas'
               );
         },

@@ -1,26 +1,23 @@
 import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
-import 'package:site_portfolio/games/lib/pages/persons_maps/ninja/game_ninja.dart';
+import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/game_lucas.dart';
 
-class MainMenu extends StatelessWidget {
-  final GameNinja game;
+class LucasFinish extends StatelessWidget {
+  final GameLucas game;
 
-  const MainMenu({super.key, required this.game});
+  const LucasFinish({super.key, required this.game});
 
   @override
   Widget build(BuildContext context) {
-    const blackTextColor = Color.fromRGBO(0, 0, 0, 1.0);
-    const whiteTextColor = Color.fromRGBO(255, 255, 255, 1.0);
-
     return Material(
       color: Colors.transparent,
       child: Center(
         child: Container(
           padding: const EdgeInsets.all(10.0),
-          height: 300,
+          height: 400,
           width: 300,
           decoration: const BoxDecoration(
-            color: blackTextColor,
+            color: Colors.black,
             borderRadius: BorderRadius.all(
               Radius.circular(20),
             ),
@@ -29,38 +26,38 @@ class MainMenu extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'Segue a dica!',
+                'Parabéns!! '
+                '\n O MONSTRO SAIU DA JAULA!!',
+                textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: whiteTextColor,
+                  color: Colors.white,
                   fontSize: 24,
                 ),
               ),
-              const SizedBox(height: 40),
-              const Text(
-                'Use  <- ->  para se mover. \n Barra de Espaço para Pular. \n E NÃO SEJA ATINGIDO! \n\nBom divertimento!',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: whiteTextColor,
-                  fontSize: 16,
-                ),
+              const SizedBox(height: 20),
+              Image.asset(
+                'assets/images/jaula.gif',
+                height: 150,
               ),
               const SizedBox(height: 20),
               SizedBox(
                 width: 200,
-                height: 75,
+                height: 50,
                 child: ElevatedButton(
                   onPressed: () {
-                    game.overlays.remove('MainMenu');
-                    FlameAudio.bgm.play('ninja_theme.mp3');
+                    game.reset2();
+                    game.overlays.remove('LucasFinish');
+                    FlameAudio.bgm.play('musica_maromba.mp3');
+                    game.overlays.add('gameOverlay');
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: whiteTextColor,
+                    backgroundColor: Colors.white,
                   ),
                   child: const Text(
-                    'Jogar',
+                    'Jogar Novamente',
                     style: TextStyle(
-                      fontSize: 40.0,
-                      color: blackTextColor,
+                      fontSize: 20.0,
+                      color: Colors.black,
                     ),
                   ),
                 ),

@@ -3,37 +3,40 @@
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/effects.dart';
-import 'package:site_portfolio/games/lib/pages/persons_maps/ninja/objects/chao_bloco.dart';
-import 'package:site_portfolio/games/lib/pages/persons_maps/ninja/objects/plataforma_bloco.dart';
-import 'package:site_portfolio/games/lib/pages/persons_maps/ninja/game_ninja.dart';
+import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/game_lucas.dart';
+import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/objects/chao_bloco.dart';
+import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/objects/plataforma_bloco.dart';
 
-class DinoInimigo extends SpriteAnimationComponent with HasGameRef<GameNinja> {
+class MarombaInimigo extends SpriteAnimationComponent
+    with HasGameRef<GameLucas> {
   final Vector2 gridPosition;
   double xOffset;
 
   final Vector2 velocity = Vector2.zero();
-  final _size = Vector2(58, 109);
+  final double gravity = 15;
 
-  DinoInimigo({
+  MarombaInimigo({
     required this.gridPosition,
     required this.xOffset,
-  }) : super(size: Vector2(68, 47), anchor: Anchor.bottomLeft);
+  }) : super(
+          size: Vector2(68, 111),
+        ) {
+    // debugMode = true;
+  }
 
   final Vector2 fromAbove = Vector2(0, -1);
   bool isOnGround = false;
 
   @override
   Future<void> onLoad() async {
-    final parado0 = await gameRef.loadSprite('persons/dino/dino0.png');
-    final parado1 = await gameRef.loadSprite('persons/dino/dino1.png');
-    final parado2 = await gameRef.loadSprite('persons/dino/dino2.png');
-    final parado3 = await gameRef.loadSprite('persons/dino/dino3.png');
-    final parado4 = await gameRef.loadSprite('persons/dino/dino4.png');
-    final parado5 = await gameRef.loadSprite('persons/dino/dino5.png');
-    final parado6 = await gameRef.loadSprite('persons/dino/dino6.png');
-    final parado7 = await gameRef.loadSprite('persons/dino/dino7.png');
-    final parado8 = await gameRef.loadSprite('persons/dino/dino8.png');
-    final parado9 = await gameRef.loadSprite('persons/dino/dino9.png');
+    final parado0 = await gameRef.loadSprite('persons/maromba/maromba_1.png');
+    final parado1 = await gameRef.loadSprite('persons/maromba/maromba_2.png');
+    final parado2 = await gameRef.loadSprite('persons/maromba/maromba_3.png');
+    final parado3 = await gameRef.loadSprite('persons/maromba/maromba_4.png');
+    final parado4 = await gameRef.loadSprite('persons/maromba/maromba_5.png');
+    final parado5 = await gameRef.loadSprite('persons/maromba/maromba_6.png');
+    final parado6 = await gameRef.loadSprite('persons/maromba/maromba_7.png');
+    final parado7 = await gameRef.loadSprite('persons/maromba/maromba_8.png');
 
     final paradoAnimacao = SpriteAnimation.spriteList([
       parado0,
@@ -44,23 +47,21 @@ class DinoInimigo extends SpriteAnimationComponent with HasGameRef<GameNinja> {
       parado5,
       parado6,
       parado7,
-      parado8,
-      parado9,
     ], stepTime: 0.05, loop: true);
 
-    final paradoComponent = SpriteAnimationComponent(
+    final marombaComponent = SpriteAnimationComponent(
         animation: paradoAnimacao,
-        anchor: Anchor.center,
-        size: _size,
+        anchor: Anchor.topCenter,
+        size: size,
         removeOnFinish: false);
 
-    paradoComponent.flipHorizontally();
+    // marombaComponent.flipHorizontally();
 
-    add(paradoComponent);
+    add(marombaComponent);
 
     position = Vector2(
-      (gridPosition.x * size.x) + xOffset + (size.x / 3),
-      game.size.y - (gridPosition.y * size.y) - (size.y / 0.48),
+      (gridPosition.x * size.x) + xOffset + (size.x / 2),
+      game.size.y - (gridPosition.y * size.y) - (size.y / 0.42),
     );
     add(RectangleHitbox()..collisionType = CollisionType.passive);
     add(
@@ -70,8 +71,11 @@ class DinoInimigo extends SpriteAnimationComponent with HasGameRef<GameNinja> {
           duration: 3,
           alternate: true,
           infinite: true,
-          onMax: () => paradoComponent.flipHorizontally(),
-          onMin: () => paradoComponent.flipHorizontally(),
+          onMax: () {
+            // remove(marombaComponent);
+            marombaComponent.flipHorizontally();
+          },
+          onMin: () => marombaComponent.flipHorizontally(),
         ),
       ),
     );
@@ -84,7 +88,7 @@ class DinoInimigo extends SpriteAnimationComponent with HasGameRef<GameNinja> {
 
     if (position.x < -size.x) removeFromParent();
 
-    if (position.x < -size.x || game.health <= 0) {
+    if (position.x < -size.x || game.health <= 0 || game.starsCollected == 20) {
       removeFromParent();
     }
 

@@ -1,11 +1,10 @@
 import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
-import 'package:site_portfolio/games/lib/pages/persons_maps/ninja/game_ninja.dart';
+import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/game_lucas.dart';
 
-class MainMenu extends StatelessWidget {
-  final GameNinja game;
-
-  const MainMenu({super.key, required this.game});
+class LucasGameOver extends StatelessWidget {
+  final GameLucas game;
+  const LucasGameOver({super.key, required this.game});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class MainMenu extends StatelessWidget {
       child: Center(
         child: Container(
           padding: const EdgeInsets.all(10.0),
-          height: 300,
+          height: 200,
           width: 300,
           decoration: const BoxDecoration(
             color: blackTextColor,
@@ -29,37 +28,30 @@ class MainMenu extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'Segue a dica!',
+                'Game Over',
                 style: TextStyle(
                   color: whiteTextColor,
                   fontSize: 24,
                 ),
               ),
               const SizedBox(height: 40),
-              const Text(
-                'Use  <- ->  para se mover. \n Barra de Espaço para Pular. \n E NÃO SEJA ATINGIDO! \n\nBom divertimento!',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: whiteTextColor,
-                  fontSize: 16,
-                ),
-              ),
-              const SizedBox(height: 20),
               SizedBox(
                 width: 200,
                 height: 75,
                 child: ElevatedButton(
                   onPressed: () {
-                    game.overlays.remove('MainMenu');
-                    FlameAudio.bgm.play('ninja_theme.mp3');
+                    game.reset2();
+                    game.overlays.remove('LucasGameOver');
+                    FlameAudio.bgm.play('musica_maromba.mp3');
+                    game.overlays.add('gameOverlay');
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: whiteTextColor,
                   ),
                   child: const Text(
-                    'Jogar',
+                    'Jogar Outra',
                     style: TextStyle(
-                      fontSize: 40.0,
+                      fontSize: 28.0,
                       color: blackTextColor,
                     ),
                   ),

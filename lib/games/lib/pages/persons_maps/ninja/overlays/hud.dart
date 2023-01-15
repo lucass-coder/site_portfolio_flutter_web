@@ -1,5 +1,5 @@
 import 'package:flame/components.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:site_portfolio/games/lib/pages/persons_maps/ninja/game_ninja.dart';
 import 'package:site_portfolio/games/lib/pages/persons_maps/ninja/overlays/coracao.dart';
 

@@ -1,12 +1,18 @@
 import 'package:flame/game.dart' as game;
 import 'package:flutter/material.dart';
 import 'package:site_portfolio/games/lib/overlays/main_menu.dart';
+import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/game_lucas.dart';
+import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/overlays/lucas_finish.dart';
+import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/overlays/lucas_game_over.dart';
+import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/overlays/lucas_main_menu.dart';
+import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/overlays/pause.dart';
 import 'package:site_portfolio/games/lib/pages/persons_maps/ninja/game_ninja.dart';
 import 'package:site_portfolio/games/lib/pages/persons_maps/ninja/overlays/game_over.dart';
 import 'package:site_portfolio/games/lib/selection_person_page.dart';
 
 class Routes {
   static const menu = '/';
+  static const ninja = '/ninja';
   static const lucas = '/lucas';
 
   static Route routes(RouteSettings settings) {
@@ -18,15 +24,28 @@ class Routes {
       case menu:
         return _buildRoute(const SelectionPersonPage());
 
-      case lucas:
+      case ninja:
         return _buildRoute(
           game.GameWidget<GameNinja>.controlled(
             gameFactory: GameNinja.new,
             overlayBuilderMap: {
               'MainMenu': (_, game) => MainMenu(game: game),
-              'GameOver': (_, game) => GameOver(game: game),
+              'GameOver': (_, game) => GameOver(game: game)
             },
             initialActiveOverlays: const ['MainMenu'],
+          ),
+        );
+      case lucas:
+        return _buildRoute(
+          game.GameWidget<GameLucas>.controlled(
+            gameFactory: GameLucas.new,
+            overlayBuilderMap: {
+              'LucasMainMenu': (_, game) => LucasMainMenu(game: game),
+              'LucasGameOver': (_, game) => LucasGameOver(game: game),
+              'gameOverlay': (context, game) => PauseOverlay(game: game),
+              'LucasFinish': (context, game) => LucasFinish(game: game),
+            },
+            initialActiveOverlays: const ['LucasMainMenu'],
           ),
         );
       default:

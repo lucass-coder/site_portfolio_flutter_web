@@ -1,5 +1,5 @@
 import 'package:flame/components.dart';
-import 'package:site_portfolio/games/lib/pages/persons_maps/ninja/game_ninja.dart';
+import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/game_lucas.dart';
 
 enum HeartState {
   available,
@@ -7,7 +7,7 @@ enum HeartState {
 }
 
 class VidaComponent extends SpriteGroupComponent<HeartState>
-    with HasGameRef<GameNinja> {
+    with HasGameRef<GameLucas> {
   final int heartNumber;
 
   VidaComponent({

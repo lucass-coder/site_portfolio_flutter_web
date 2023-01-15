@@ -1,11 +1,11 @@
 import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
-import 'package:site_portfolio/games/lib/pages/persons_maps/ninja/game_ninja.dart';
+import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/game_lucas.dart';
 
-class MainMenu extends StatelessWidget {
-  final GameNinja game;
+class LucasMainMenu extends StatelessWidget {
+  final GameLucas game;
 
-  const MainMenu({super.key, required this.game});
+  const LucasMainMenu({super.key, required this.game});
 
   @override
   Widget build(BuildContext context) {
@@ -29,15 +29,17 @@ class MainMenu extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'Segue a dica!',
+                'Bem Vindo Frango',
                 style: TextStyle(
                   color: whiteTextColor,
                   fontSize: 24,
                 ),
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 20),
               const Text(
-                'Use  <- ->  para se mover. \n Barra de Espaço para Pular. \n E NÃO SEJA ATINGIDO! \n\nBom divertimento!',
+                'Use  <- ->  para se mover. \n Barra de Espaço para Pular.  '
+                '\n \n Atinga o apice do corpo e deixe o monstro sair da jaula!'
+                '\n Bom divertimento!',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: whiteTextColor,
@@ -50,17 +52,19 @@ class MainMenu extends StatelessWidget {
                 height: 75,
                 child: ElevatedButton(
                   onPressed: () {
-                    game.overlays.remove('MainMenu');
-                    FlameAudio.bgm.play('ninja_theme.mp3');
+                    game.overlays.remove('LucasMainMenu');
+                    FlameAudio.bgm.play('musica_maromba.mp3');
+                    game.overlays.add('gameOverlay');
+                    // game.overlays.add('reset');
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: whiteTextColor,
+                    backgroundColor: Colors.green,
                   ),
                   child: const Text(
                     'Jogar',
                     style: TextStyle(
                       fontSize: 40.0,
-                      color: blackTextColor,
+                      color: Colors.white,
                     ),
                   ),
                 ),
