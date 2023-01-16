@@ -3,6 +3,7 @@ import 'package:flame/input.dart';
 import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:site_portfolio/games/lib/managers/lucas_segment_manager.dart';
 import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/actors/lucas.dart';
 import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/actors/maromba_inimigo.dart';
 import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/objects/chao_bloco.dart';
@@ -10,8 +11,6 @@ import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/objects/creati
 import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/objects/plataforma_bloco.dart';
 import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/objects/whey.dart';
 import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/overlays/lucas_hud.dart';
-
-import '../../../managers/lucas_segment_manager.dart';
 
 class GameLucas extends FlameGame
     with HasCollisionDetection, HasKeyboardHandlerComponents {

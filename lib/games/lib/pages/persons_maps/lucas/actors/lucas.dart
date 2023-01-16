@@ -51,7 +51,7 @@ class Lucas extends SpriteAnimationComponent
 
     final paradoImgem = await gameRef.loadSprite('persons/lucas/parado.png');
     List<Sprite> caminharAnimacaoList = [];
-    final jump = await gameRef.loadSprite('persons/lucas/parado.png');
+    final jump = await gameRef.loadSprite('persons/lucas/jump.png');
 
     for (int i = 1; i <= 8; i++) {
       caminharAnimacaoList
