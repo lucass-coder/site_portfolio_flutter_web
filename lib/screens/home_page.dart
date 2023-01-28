@@ -10,6 +10,7 @@ import 'package:site_portfolio/widgets/icons_desktop.dart';
 import 'package:site_portfolio/widgets/option_click_right.dart';
 import 'package:site_portfolio/widgets/start_bar.dart';
 import 'package:site_portfolio/widgets/time.dart';
+import 'package:site_portfolio/widgets/window_about.dart';
 import 'package:site_portfolio/widgets/window_games.dart';
 import 'package:site_portfolio/widgets/window_image.dart';
 
@@ -25,6 +26,7 @@ class _MyHomePageState extends State<HomePage> {
   bool isAtivo = false;
   bool isAtivo2 = false;
   bool isGame = false;
+  bool isAbout = false;
   bool visible = false;
   String url =
       'https://api.whatsapp.com/send/?phone=5516992438472&text=Olá! Gostaria de falar com você Lucas';
@@ -113,6 +115,14 @@ class _MyHomePageState extends State<HomePage> {
                     }),
                   ),
                 ),
+                Visibility(
+                  visible: isAbout && isAtivo2 == false,
+                  child: WindowAbout(
+                    onPressed: () => setState(() {
+                      isAbout = !isAbout;
+                    }),
+                  ),
+                ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -139,6 +149,14 @@ class _MyHomePageState extends State<HomePage> {
                           icon: 'phone',
                           isAtivo: false,
                           onPressed: () => html.window.open(url, 'new tab'),
+                        ),
+                        IconsDesktop(
+                          name: 'Sobre',
+                          icon: 'cmd',
+                          isAtivo: false,
+                          onPressed: () => setState(() {
+                            isAbout = !isAbout;
+                          }),
                         ),
                       ],
                     )
