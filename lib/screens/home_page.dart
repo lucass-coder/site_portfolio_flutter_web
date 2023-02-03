@@ -57,7 +57,6 @@ class _MyHomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Listener(
       onPointerDown: _updateLocation,
-      // onPointerMove: _updateLocation,
       child: GestureDetector(
         onTap: () => setState(() {
           isAtivo = false;

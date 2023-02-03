@@ -64,7 +64,7 @@ class _StartBarState extends State<StartBar> {
                     const SizedBox(height: 8),
                     OptionStart(
                       icon: 'icon_programs',
-                      name: 'Programas',
+                      name: 'Stacks',
                       onHover: (_) => setState(() {
                         optionState = IsOptionStart.programas;
                         isHoveredPrograms = true;
@@ -136,11 +136,13 @@ class _StartBarState extends State<StartBar> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                OptionShutdown(
-                  icon: 'icon_shutdown',
-                  name: 'Português ',
-                ),
-                OptionShutdown(icon: 'icon_shutdown', name: 'Português '),
+                OptionShutdown(icon: 'flutter', name: 'Flutter            '),
+                OptionShutdown(icon: 'dart', name: 'Dart               '),
+                OptionShutdown(icon: 'angular', name: 'Angular          '),
+                OptionShutdown(icon: 'react1', name: 'React             '),
+                OptionShutdown(icon: 'html', name: 'HTML             '),
+                OptionShutdown(icon: 'css', name: 'CSS                '),
+                OptionShutdown(icon: 'javascript', name: 'JavaScript    '),
               ],
             ),
           ),
