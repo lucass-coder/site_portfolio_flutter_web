@@ -38,29 +38,33 @@ class _OptionShutdowntState extends State<OptionShutdown> {
           // !todo Colocar Animação agradecendo antes de sair da tela
           html.window.location.href = "https://www.google.com";
         },
-        child: Column(
-          children: [
-            Container(
-              color: colorSelected,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const SizedBox(width: 4),
-                  Image.asset(
-                    'assets/images-desktop/${widget.icon}.png',
-                    width: 30,
-                    height: 30,
-                  ),
-                  const SizedBox(width: 4),
-                  Text(
-                    widget.name,
-                    style: TextStyle(color: textColor),
-                  ),
-                ],
+        child: Container(
+          color: colorSelected,
+          child: Column(
+            children: [
+              const SizedBox(height: 8),
+              Container(
+                color: colorSelected,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    const SizedBox(width: 4),
+                    Image.asset(
+                      'assets/images-desktop/${widget.icon}.png',
+                      width: 30,
+                      height: 30,
+                    ),
+                    const SizedBox(width: 4),
+                    Text(
+                      widget.name,
+                      style: TextStyle(color: textColor),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(height: 12),
-          ],
+              const SizedBox(height: 8),
+            ],
+          ),
         ),
       ),
     );

@@ -162,64 +162,67 @@ class _MyHomePageState extends State<HomePage> {
                     )
                   ],
                 ),
-                //Spacer(),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                Row(
                   children: [
-                    Visibility(
-                      visible: isAtivo,
-                      child: StartBar(),
-                    ),
-                    Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Container(
-                        color: const Color(0xffC0C7C8),
-                        width: MediaQuery.of(context).size.width,
-                        height: 40,
-                        child: Row(
-                          children: [
-                            SizedBox(width: 20),
-                            GestureDetector(
-                              onTap: () => {
-                                setState(() {
-                                  visible = false;
-                                  if (isAtivo == true) {
-                                    isAtivo = false;
-                                  } else {
-                                    isAtivo = true;
-                                  }
-                                })
-                              },
-                              child: BottomStart(isAtivo: isAtivo),
-                            ),
-                            Visibility(
-                              visible: isGame,
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 8.0),
-                                child: BarWindow(
-                                  isAtivo: isGame,
-                                  icon: 'game',
-                                  name: 'Jogos',
-                                ),
-                              ),
-                            ),
-                            Visibility(
-                              visible: isAtivo2,
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 8.0),
-                                child: BarWindow(
-                                    isAtivo: isAtivo2,
-                                    icon: 'folder',
-                                    name: 'Imagens'),
-                              ),
-                            ),
-                            Spacer(),
-                            Time(),
-                            SizedBox(width: 16),
-                          ],
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Visibility(
+                          visible: isAtivo,
+                          child: StartBar(),
                         ),
-                      ),
+                        Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Container(
+                            color: const Color(0xffC0C7C8),
+                            width: MediaQuery.of(context).size.width,
+                            height: 40,
+                            child: Row(
+                              children: [
+                                SizedBox(width: 20),
+                                GestureDetector(
+                                  onTap: () => {
+                                    setState(() {
+                                      visible = false;
+                                      if (isAtivo == true) {
+                                        isAtivo = false;
+                                      } else {
+                                        isAtivo = true;
+                                      }
+                                    })
+                                  },
+                                  child: BottomStart(isAtivo: isAtivo),
+                                ),
+                                Visibility(
+                                  visible: isGame,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 8.0),
+                                    child: BarWindow(
+                                      isAtivo: isGame,
+                                      icon: 'game',
+                                      name: 'Jogos',
+                                    ),
+                                  ),
+                                ),
+                                Visibility(
+                                  visible: isAtivo2,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 8.0),
+                                    child: BarWindow(
+                                        isAtivo: isAtivo2,
+                                        icon: 'folder',
+                                        name: 'Imagens'),
+                                  ),
+                                ),
+                                Spacer(),
+                                Time(),
+                                SizedBox(width: 16),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),

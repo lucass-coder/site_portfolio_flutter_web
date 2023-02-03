@@ -22,6 +22,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      supportedLocales: const [
+        Locale('en', "US"),
+        Locale('pt', "BR"),
+      ],
       home: const HomePage(),
     );
   }
