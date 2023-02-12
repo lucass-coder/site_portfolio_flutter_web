@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:site_portfolio/widgets/option_language.dart';
+import 'package:site_portfolio/widgets/option_project.dart';
 import 'package:site_portfolio/widgets/option_shutdown.dart';
 import 'package:site_portfolio/widgets/options_start.dart';
 import 'package:get/get.dart';
@@ -93,8 +94,6 @@ class _StartBarState extends State<StartBar> {
                         isHoveredLeguage = false;
                       }),
                       onExit: (_) => setState(() {
-                        // optionState = IsOptionStart.nenhum;
-
                         if (optionState == IsOptionStart.projetos) {
                         } else {
                           isHoveredProjects = false;
@@ -113,8 +112,6 @@ class _StartBarState extends State<StartBar> {
                         isHoveredPrograms = false;
                       }),
                       onExit: (_) => setState(() {
-                        // optionState = IsOptionStart.nenhum;
-
                         if (optionState == IsOptionStart.idiomas) {
                         } else {
                           isHoveredLeguage = false;
@@ -156,12 +153,19 @@ class _StartBarState extends State<StartBar> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
-                OptionShutdown(
-                  icon: 'icon_shutdown',
+                OptionProject(
+                  icon: 'vakinha',
                   name: 'Vakinha Burger ',
-                  // https://github.com/lucass-coder/vakinha-burguer
+                  url: "https://github.com/lucass-coder/vakinha-burguer",
                 ),
-                OptionShutdown(icon: 'icon_shutdown', name: 'Video Game UI '),
+                OptionProject(
+                    icon: 'play_game',
+                    name: 'Video Game UI ',
+                    url: "https://github.com/lucass-coder/domvs_games"),
+                OptionProject(
+                    icon: 'copa_logo',
+                    name: 'Album da Copa ',
+                    url: "https://github.com/lucass-coder/album_copa"),
               ],
             ),
           ),
