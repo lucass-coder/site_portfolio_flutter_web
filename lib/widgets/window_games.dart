@@ -85,7 +85,8 @@ class _WindowGamesState extends State<WindowGames> {
                               ),
                               ImageBox(
                                 onChangeImage: () {},
-                                imageUrl: 'assets/images-desktop/jump-game.png',
+                                imageUrl:
+                                    'assets/images-desktop/jump-game-comming.webp',
                               ),
                             ],
                           ),
