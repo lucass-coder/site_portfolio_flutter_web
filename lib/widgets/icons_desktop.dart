@@ -39,13 +39,14 @@ class _IconsDesktopState extends State<IconsDesktop> {
           child: Container(
             color: colorSelected,
             child: Padding(
-              padding: const EdgeInsets.all(24.0),
+              padding: const EdgeInsets.only(
+                  top: 16, bottom: 16, left: 24, right: 24),
               child: Column(
                 children: [
                   Image.asset(
                     'assets/images-desktop/${widget.icon}.png',
-                    width: 70,
-                    height: 70,
+                    width: 60,
+                    height: 60,
                   ),
                   const SizedBox(height: 8),
                   Text(
