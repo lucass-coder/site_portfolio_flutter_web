@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, avoid_web_libraries_in_flutter
-
 import 'dart:html' as html;
 
 import 'package:flutter/material.dart';
@@ -23,15 +21,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<HomePage> {
-  String mensagem = 'Olá! Gostaria de falar com você Lucas';
   bool isAtivo = false;
   bool isAtivo2 = false;
   bool isGame = false;
   bool isAbout = false;
   bool visible = false;
-  String url =
-      'https://api.whatsapp.com/send/?phone=5516992438472&text=Olá! Gostaria de falar com você Lucas';
-  Color? background = Color(0xff008081);
+
+  Color? background = const Color(0xff008081);
   String nomeImage = 'image-4';
   double x = 0.0;
   double y = 0.0;
@@ -56,6 +52,8 @@ class _MyHomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    String url =
+        'https://api.whatsapp.com/send/?phone=5516992438472&text=${'whatsapp_message'.tr}';
     return Listener(
       onPointerDown: _updateLocation,
       child: GestureDetector(
@@ -170,7 +168,7 @@ class _MyHomePageState extends State<HomePage> {
                       children: [
                         Visibility(
                           visible: isAtivo,
-                          child: StartBar(),
+                          child: const StartBar(),
                         ),
                         Align(
                           alignment: Alignment.bottomCenter,
@@ -180,7 +178,7 @@ class _MyHomePageState extends State<HomePage> {
                             height: 40,
                             child: Row(
                               children: [
-                                SizedBox(width: 20),
+                                const SizedBox(width: 20),
                                 GestureDetector(
                                   onTap: () => {
                                     setState(() {
@@ -215,9 +213,9 @@ class _MyHomePageState extends State<HomePage> {
                                         name: 'images'.tr),
                                   ),
                                 ),
-                                Spacer(),
-                                Time(),
-                                SizedBox(width: 16),
+                                const Spacer(),
+                                const Time(),
+                                const SizedBox(width: 16),
                               ],
                             ),
                           ),

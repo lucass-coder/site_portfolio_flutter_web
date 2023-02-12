@@ -1,5 +1,6 @@
 import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/game_lucas.dart';
 import 'package:site_portfolio/games/lib/routes.dart';
 
@@ -78,8 +79,8 @@ class _PauseOverlayState extends State<PauseOverlay> {
                         FlameAudio.bgm.stop();
                         Navigator.pushReplacementNamed(context, Routes.menu);
                       },
-                      child: const Text(
-                        'Voltar para a página inicial',
+                      child: Text(
+                        'to_go_back'.tr,
                       ),
                     ),
                   ),

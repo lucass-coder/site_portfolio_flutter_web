@@ -1,5 +1,6 @@
 import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/game_lucas.dart';
 
 class LucasMainMenu extends StatelessWidget {
@@ -28,20 +29,18 @@ class LucasMainMenu extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                'Bem Vindo Frango',
-                style: TextStyle(
+              Text(
+                'welcome_lucas'.tr,
+                style: const TextStyle(
                   color: whiteTextColor,
                   fontSize: 24,
                 ),
               ),
               const SizedBox(height: 20),
-              const Text(
-                'Use  <- ->  para se mover. \n Barra de Espaço para Pular.  '
-                '\n \n Atinga o apice do corpo e deixe o monstro sair da jaula!'
-                '\n Bom divertimento!',
+              Text(
+                'guidance_lucas'.tr,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   color: whiteTextColor,
                   fontSize: 16,
                 ),
@@ -60,9 +59,9 @@ class LucasMainMenu extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,
                   ),
-                  child: const Text(
-                    'Jogar',
-                    style: TextStyle(
+                  child: Text(
+                    'play'.tr,
+                    style: const TextStyle(
                       fontSize: 40.0,
                       color: Colors.white,
                     ),

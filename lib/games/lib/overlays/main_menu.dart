@@ -1,5 +1,6 @@
 import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:site_portfolio/games/lib/pages/persons_maps/ninja/game_ninja.dart';
 
 class MainMenu extends StatelessWidget {
@@ -28,18 +29,18 @@ class MainMenu extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                'Segue a dica!',
-                style: TextStyle(
+              Text(
+                'tip'.tr,
+                style: const TextStyle(
                   color: whiteTextColor,
                   fontSize: 24,
                 ),
               ),
               const SizedBox(height: 40),
-              const Text(
-                'Use  <- ->  para se mover. \n Barra de Espaço para Pular. \n E NÃO SEJA ATINGIDO! \n\nBom divertimento!',
+              Text(
+                'guidance'.tr,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   color: whiteTextColor,
                   fontSize: 16,
                 ),
@@ -57,9 +58,9 @@ class MainMenu extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: whiteTextColor,
                   ),
-                  child: const Text(
-                    'Jogar',
-                    style: TextStyle(
+                  child: Text(
+                    'play'.tr,
+                    style: const TextStyle(
                       fontSize: 40.0,
                       color: blackTextColor,
                     ),

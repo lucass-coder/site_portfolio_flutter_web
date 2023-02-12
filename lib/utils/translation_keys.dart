@@ -11,6 +11,7 @@ class TranslationKeys extends Translations {
           'game': 'Games',
           'images': 'Images',
           'whatsapp': 'WhatsApp',
+          'whatsapp_message': 'Hello! I would like to speak with you Lucas',
           'about': 'About',
           'language': 'Language',
           'projects': 'Projects',
@@ -35,8 +36,27 @@ A beginner ninja who aims for what every ninja wants,
 TO TAKE DOWN THE DINOSAURS!
 The ninja is extremely fast, versatile and skillful,
 His greatest weakness is his durability, only able to withstand one hit.
-          '''
+          ''',
+          'tip': 'Follow the tip!',
+          'guidance':
+              'Use A / D to move. \n Spacebar to jump. \n And don\u{0027}t get hit! \n\nHave fun!',
+          'guidance_lucas': 'Use A / D to move. \n Spacebar to jump.'
+              '\n \n Reach the apex of the body and let the monster out of the cage!'
+              '\nHave fun!',
+          'play': 'Play',
+          'play_again': 'Play Again',
+          'welcome_lucas': 'Welcome, chicken',
+          'instructions_lucas':
+              '\n \n Reach the apex of the body and let the monster out of the cage!',
+          'chicken': 'Chicken',
+          'strong': 'Stong',
+          'gym_buff': 'Gym Buff',
+          'finish_game_lucas': 'Congratulations!! '
+              '\n THE MONSTER IS OUT OF THE CAGE!!',
+          'to_go_back': 'To go back',
         },
+
+        // =====================  PT-BR ==========================================
         'pt_BR': {
           'title_app': 'GetX Tradução',
           'start_bar': 'Iniciar',
@@ -45,6 +65,7 @@ His greatest weakness is his durability, only able to withstand one hit.
           'game': 'Jogos',
           'images': 'Imagens',
           'whatsapp': 'WhatsApp',
+          'whatsapp_message': 'Olá! Gostaria de falar com você Lucas',
           'about': 'Sobre',
           'language': 'Idioma',
           'projects': 'Projetos',
@@ -69,7 +90,25 @@ Um ninja iniciante que almeija o que todo ninja quer,
 ACABAR COM OS DINOSSAUROS!
 O ninja é extremamente rápido, versátil e hábil,
 Sua maior fraqueza é sua durabilidade, aguentando apenas um Hit.
-          '''
+          ''',
+          'tip': 'Segue a Dica Follow the tip!',
+          'guidance':
+              'Use  A / D  para se mover. \n Barra de Espaço para Pular. \n E NÃO SEJA ATINGIDO! \n\nBom divertimento!',
+          'guidance_lucas':
+              'Use  <- ->  para se mover. \n Barra de Espaço para Pular.  '
+                  '\n \n Atinga o apice do corpo e deixe o monstro sair da jaula!'
+                  '\n Bom divertimento!',
+          'play': 'Jogar',
+          'play_again': 'Jogar Novamente',
+          'welcome_lucas': 'Seja Bem Vindo Frango!',
+          'instructions_lucas':
+              '\n \n Atinga o apice do corpo e deixe o monstro sair da jaula!',
+          'chicken': 'Frango',
+          'strong': 'Fortinho',
+          'gym_buff': 'Maromba',
+          'finish_game_lucas': 'Parabéns!! '
+              '\n O MONSTRO SAIU DA JAULA!!',
+          'to_go_back': 'Voltar para a tela Inicial',
         }
       };
 }

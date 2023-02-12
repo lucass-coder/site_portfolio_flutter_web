@@ -1,5 +1,6 @@
 import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/game_lucas.dart';
 
 class LucasFinish extends StatelessWidget {
@@ -25,11 +26,10 @@ class LucasFinish extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                'Parabéns!! '
-                '\n O MONSTRO SAIU DA JAULA!!',
+              Text(
+                'finish_game_lucas'.tr,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 24,
                 ),
@@ -53,9 +53,9 @@ class LucasFinish extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                   ),
-                  child: const Text(
-                    'Jogar Novamente',
-                    style: TextStyle(
+                  child: Text(
+                    'play_again'.tr,
+                    style: const TextStyle(
                       fontSize: 20.0,
                       color: Colors.black,
                     ),

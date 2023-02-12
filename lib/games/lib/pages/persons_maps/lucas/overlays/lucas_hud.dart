@@ -1,5 +1,6 @@
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/game_lucas.dart';
 import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/overlays/lucas_coracao.dart';
 
@@ -79,7 +80,7 @@ class LucasHud extends PositionComponent with HasGameRef<GameLucas> {
   @override
   void update(double dt) {
     if (game.starsCollected <= 5) {
-      _scoreTextComponent.text = 'Frango';
+      _scoreTextComponent.text = 'chicken'.tr;
       remove(atual);
 
       atual = SpriteComponent(
@@ -90,7 +91,7 @@ class LucasHud extends PositionComponent with HasGameRef<GameLucas> {
       );
       add(atual);
     } else if (game.starsCollected > 5 && game.starsCollected <= 10) {
-      _scoreTextComponent.text = 'Fortinho';
+      _scoreTextComponent.text = 'strong'.tr;
       remove(atual);
       atual = SpriteComponent(
         sprite: fortinho,
@@ -100,7 +101,7 @@ class LucasHud extends PositionComponent with HasGameRef<GameLucas> {
       );
       add(atual);
     } else if (game.starsCollected > 10) {
-      _scoreTextComponent.text = 'Maromba';
+      _scoreTextComponent.text = 'gym_buff'.tr;
       remove(atual);
       atual = SpriteComponent(
         sprite: maromba,

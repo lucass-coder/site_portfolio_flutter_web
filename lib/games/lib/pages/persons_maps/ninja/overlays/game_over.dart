@@ -1,5 +1,6 @@
 import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:site_portfolio/games/lib/pages/persons_maps/ninja/game_ninja.dart';
 
 class GameOver extends StatelessWidget {
@@ -48,9 +49,9 @@ class GameOver extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: whiteTextColor,
                   ),
-                  child: const Text(
-                    'Jogar Outra',
-                    style: TextStyle(
+                  child: Text(
+                    'play_again'.tr,
+                    style: const TextStyle(
                       fontSize: 28.0,
                       color: blackTextColor,
                     ),
