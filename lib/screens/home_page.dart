@@ -7,6 +7,7 @@ import 'package:site_portfolio/widgets/bar_window.dart';
 
 import 'package:site_portfolio/widgets/bottom_start.dart';
 import 'package:site_portfolio/widgets/icons_desktop.dart';
+import 'package:site_portfolio/widgets/language_icon_bar.dart';
 import 'package:site_portfolio/widgets/option_click_right.dart';
 import 'package:site_portfolio/widgets/start_bar.dart';
 import 'package:site_portfolio/widgets/time.dart';
@@ -216,6 +217,10 @@ class _MyHomePageState extends State<HomePage> {
                                   ),
                                 ),
                                 const Spacer(),
+                                const LanguageIconBar(
+                                  icon: 'game',
+                                ),
+                                const SizedBox(width: 20),
                                 const Time(),
                                 const SizedBox(width: 16),
                               ],
