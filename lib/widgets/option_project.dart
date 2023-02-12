@@ -53,7 +53,8 @@ class _OptionShutdowntState extends State<OptionProject> {
                   children: [
                     const SizedBox(width: 4),
                     CachedNetworkImage(
-                      imageUrl: 'assets/images-desktop/${widget.icon}.png',
+                      imageUrl:
+                          'assets/assets/images-desktop/${widget.icon}.png',
                       // placeholder: (context, url) =>
                       //     const CircularProgressIndicator(),
                       errorWidget: (context, url, error) =>
