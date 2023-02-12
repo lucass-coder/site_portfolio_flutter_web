@@ -1,23 +1,27 @@
-// ignore_for_file: prefer_const_constructors_in_immutables, avoid_web_libraries_in_flutter
+// ignore_for_file: prefer_const_constructors_in_immutables, avoid_web_libraries_in_flutter, unused_import
 
 import 'package:flutter/material.dart';
-import 'dart:html' as html;
+import 'package:get/get.dart';
 
-class OptionShutdown extends StatefulWidget {
+class OptionLanguage extends StatefulWidget {
   final String icon;
   final String name;
+  final Function? onPressed;
+  final bool translate;
 
-  OptionShutdown({
+  OptionLanguage({
     Key? key,
     required this.icon,
     required this.name,
+    this.onPressed,
+    this.translate = false,
   }) : super(key: key);
 
   @override
-  State<OptionShutdown> createState() => _OptionShutdowntState();
+  State<OptionLanguage> createState() => _OptionShutdowntState();
 }
 
-class _OptionShutdowntState extends State<OptionShutdown> {
+class _OptionShutdowntState extends State<OptionLanguage> {
   bool isHovered = false;
   Color colorSelected = const Color(0xffC0C7C8);
   Color textColor = Colors.black;
@@ -35,11 +39,12 @@ class _OptionShutdowntState extends State<OptionShutdown> {
       }),
       child: GestureDetector(
         onTap: () {
-          // !todo Colocar Animação agradecendo antes de sair da tela
-          // html.window.location.href = "https://www.google.com";
-          html.window.open("https://www.google.com", 'new tab');
+          widget.translate
+              ? Get.updateLocale(const Locale('en', 'US'))
+              : Get.updateLocale(const Locale('pt', 'BR'));
         },
         child: Container(
+          width: 130,
           color: colorSelected,
           child: Column(
             children: [

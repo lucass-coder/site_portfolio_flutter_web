@@ -1,6 +1,7 @@
 import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_carousel_slider/carousel_slider.dart';
+import 'package:get/get.dart';
 import 'package:site_portfolio/games/lib/widgets/selection_person_area.dart';
 
 class SelectionPersonPage extends StatefulWidget {
@@ -34,7 +35,7 @@ class _SelectionPersonPageState extends State<SelectionPersonPage> {
             children: [
               const SizedBox(height: 50),
               Text(
-                'Escolha seu personagem',
+                'change_person'.tr,
                 style: TextStyle(
                   fontSize: 32,
                   height: 1.2,

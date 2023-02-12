@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'package:site_portfolio/games/lib/routes.dart';
-import 'package:site_portfolio/games/lib/utils/constants.dart';
 
 enum Person { lucas, ninja }
 
@@ -24,13 +24,13 @@ class SelectionPersonArea extends StatelessWidget {
     switch (person) {
       case Person.lucas:
         urlPerson = 'assets/images/lucas.png';
-        description = lucasDescription;
+        description = 'lucas_description'.tr;
         name = 'Lucão - FlutterMan';
         route = Routes.lucas;
         break;
       case Person.ninja:
         urlPerson = 'assets/images/persons/ninja/Idle__000.png';
-        description = ninjaDescription;
+        description = 'charuto_description'.tr;
         name = 'CHARUTO';
         route = Routes.ninja;
     }

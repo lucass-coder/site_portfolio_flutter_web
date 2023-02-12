@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:site_portfolio/games/lib/selection_person_page.dart';
 import 'package:site_portfolio/widgets/image_box.dart';
+import 'package:get/get.dart';
 
 class WindowGames extends StatefulWidget {
   final VoidCallback? onPressed;
@@ -32,10 +33,10 @@ class _WindowGamesState extends State<WindowGames> {
                     color: const Color(0xff181883),
                     width: 384,
                     height: 40,
-                    child: const Center(
+                    child: Center(
                       child: Text(
-                        'Jogos',
-                        style: TextStyle(
+                        'game'.tr,
+                        style: const TextStyle(
                             color: Colors.white, fontWeight: FontWeight.bold),
                       ),
                     ),

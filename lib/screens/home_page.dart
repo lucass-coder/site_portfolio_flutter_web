@@ -13,6 +13,7 @@ import 'package:site_portfolio/widgets/time.dart';
 import 'package:site_portfolio/widgets/window_about.dart';
 import 'package:site_portfolio/widgets/window_games.dart';
 import 'package:site_portfolio/widgets/window_image.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -78,7 +79,7 @@ class _MyHomePageState extends State<HomePage> {
                   child: Visibility(
                     visible: visible,
                     child: OptionCLickRight(
-                      name: ' Trocar plano de fundo',
+                      name: 'change_wallpalper'.tr,
                       onPressed: () => setState(() {
                         isAtivo2 = !isAtivo2;
                         visible = false;
@@ -128,7 +129,7 @@ class _MyHomePageState extends State<HomePage> {
                     Column(
                       children: [
                         IconsDesktop(
-                          name: 'Jogos',
+                          name: 'game'.tr,
                           icon: 'computer',
                           isAtivo: false,
                           onPressed: () => setState(() {
@@ -136,7 +137,7 @@ class _MyHomePageState extends State<HomePage> {
                           }),
                         ),
                         IconsDesktop(
-                          name: 'imagens',
+                          name: 'images'.tr,
                           icon: 'folder',
                           isAtivo: false,
                           onPressed: () => setState(() {
@@ -150,7 +151,7 @@ class _MyHomePageState extends State<HomePage> {
                           onPressed: () => html.window.open(url, 'new tab'),
                         ),
                         IconsDesktop(
-                          name: 'Sobre',
+                          name: 'about'.tr,
                           icon: 'cmd',
                           isAtivo: false,
                           onPressed: () => setState(() {
@@ -200,7 +201,7 @@ class _MyHomePageState extends State<HomePage> {
                                     child: BarWindow(
                                       isAtivo: isGame,
                                       icon: 'game',
-                                      name: 'Jogos',
+                                      name: 'game'.tr,
                                     ),
                                   ),
                                 ),
@@ -211,7 +212,7 @@ class _MyHomePageState extends State<HomePage> {
                                     child: BarWindow(
                                         isAtivo: isAtivo2,
                                         icon: 'folder',
-                                        name: 'Imagens'),
+                                        name: 'images'.tr),
                                   ),
                                 ),
                                 Spacer(),

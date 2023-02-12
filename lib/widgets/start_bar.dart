@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:site_portfolio/widgets/option_language.dart';
 import 'package:site_portfolio/widgets/option_shutdown.dart';
 import 'package:site_portfolio/widgets/options_start.dart';
+import 'package:get/get.dart';
 
 enum IsOptionStart {
   programas,
@@ -64,7 +66,7 @@ class _StartBarState extends State<StartBar> {
                     const SizedBox(height: 8),
                     OptionStart(
                       icon: 'icon_programs',
-                      name: 'Stacks',
+                      name: 'skils'.tr,
                       onHover: (_) => setState(() {
                         optionState = IsOptionStart.programas;
                         isHoveredPrograms = true;
@@ -83,7 +85,7 @@ class _StartBarState extends State<StartBar> {
                     const SizedBox(height: 8),
                     OptionStart(
                       icon: 'folder',
-                      name: 'Projetos',
+                      name: 'projects'.tr,
                       onHover: (_) => setState(() {
                         optionState = IsOptionStart.projetos;
                         isHoveredProjects = true;
@@ -103,7 +105,7 @@ class _StartBarState extends State<StartBar> {
                     const SizedBox(height: 8),
                     OptionStart(
                       icon: 'icon_programs',
-                      name: 'Idiomas',
+                      name: 'language'.tr,
                       onHover: (_) => setState(() {
                         optionState = IsOptionStart.idiomas;
                         isHoveredLeguage = true;
@@ -122,7 +124,7 @@ class _StartBarState extends State<StartBar> {
                     ),
                     const Spacer(),
                     const Divider(),
-                    OptionShutdown(icon: 'icon_shutdown', name: 'Desligar'),
+                    OptionShutdown(icon: 'icon_shutdown', name: 'turnOf'.tr),
                   ],
                 ),
               ),
@@ -170,13 +172,14 @@ class _StartBarState extends State<StartBar> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                OptionShutdown(
+                OptionLanguage(
                   icon: 'bandeira-brasil',
-                  name: 'Português ',
+                  name: 'portuguese'.tr,
                 ),
-                OptionShutdown(
+                OptionLanguage(
                   icon: 'bandeira-eua',
-                  name: 'Inglês         ',
+                  name: 'english'.tr,
+                  translate: true,
                 ),
               ],
             ),

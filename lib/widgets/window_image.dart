@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:site_portfolio/widgets/image_box.dart';
+import 'package:get/get.dart';
 
 class WindowImage extends StatefulWidget {
   final VoidCallback? onPressed;
@@ -40,10 +41,10 @@ class _WindowImageState extends State<WindowImage> {
                     color: const Color(0xff181883),
                     width: 384,
                     height: 40,
-                    child: const Center(
+                    child: Center(
                       child: Text(
-                        'Imagens',
-                        style: TextStyle(
+                        'images'.tr,
+                        style: const TextStyle(
                             color: Colors.white, fontWeight: FontWeight.bold),
                       ),
                     ),

@@ -1,6 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:site_portfolio/utils/constants_strings.dart';
+import 'package:get/get.dart';
 
 class WindowAbout extends StatefulWidget {
   final VoidCallback? onPressed;
@@ -32,10 +32,10 @@ class _WindowAboutState extends State<WindowAbout> {
                     color: const Color(0xff181883),
                     width: 424,
                     height: 40,
-                    child: const Center(
+                    child: Center(
                       child: Text(
-                        'Sobre mim',
-                        style: TextStyle(
+                        'about'.tr,
+                        style: const TextStyle(
                             color: Colors.white, fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -68,7 +68,7 @@ class _WindowAboutState extends State<WindowAbout> {
                 child: AnimatedTextKit(
                   animatedTexts: [
                     TypewriterAnimatedText(
-                      ConstantsStrings.about,
+                      'about_description'.tr,
                       textStyle: const TextStyle(
                           height: 2,
                           fontSize: 16.4,
