@@ -1,13 +1,15 @@
-// ignore_for_file: prefer_const_constructors_in_immutables, avoid_web_libraries_in_flutter
+// ignore_for_file: avoid_web_libraries_in_flutter
 
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
+
+import 'package:get/route_manager.dart';
 
 class OptionShutdown extends StatefulWidget {
   final String icon;
   final String name;
 
-  OptionShutdown({
+  const OptionShutdown({
     Key? key,
     required this.icon,
     required this.name,
@@ -35,9 +37,12 @@ class _OptionShutdowntState extends State<OptionShutdown> {
       }),
       child: GestureDetector(
         onTap: () {
-          // !todo Colocar Animação agradecendo antes de sair da tela
-          // html.window.location.href = "https://www.google.com";
-          html.window.open("https://www.google.com", 'new tab');
+          Get.toNamed('/log-off', arguments: widget.name);
+          // Navigator.of(context).pushNamed('/log-off');
+          Future.delayed(
+            const Duration(seconds: 3),
+            () => html.window.location.href = "https://www.google.com",
+          );
         },
         child: Container(
           color: colorSelected,

@@ -137,7 +137,7 @@ class _StartBarState extends State<StartBar> {
             color: const Color(0xffC0C7C8),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: const [
                 OptionShutdown(icon: 'flutter', name: 'Flutter            '),
                 OptionShutdown(icon: 'dart', name: 'Dart               '),
                 OptionShutdown(icon: 'angular', name: 'Angular          '),
@@ -155,12 +155,13 @@ class _StartBarState extends State<StartBar> {
             color: const Color(0xffC0C7C8),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: const [
                 OptionShutdown(
                   icon: 'icon_shutdown',
-                  name: 'Projeto 1 ',
+                  name: 'Vakinha Burger ',
+                  // https://github.com/lucass-coder/vakinha-burguer
                 ),
-                OptionShutdown(icon: 'icon_shutdown', name: 'Projeto 2 '),
+                OptionShutdown(icon: 'icon_shutdown', name: 'Video Game UI '),
               ],
             ),
           ),
