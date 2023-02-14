@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
 
-import 'package:get/route_manager.dart';
+import 'package:site_portfolio/screens/log_off.dart';
 
 class OptionShutdown extends StatefulWidget {
   final String icon;
@@ -37,8 +37,10 @@ class _OptionShutdowntState extends State<OptionShutdown> {
       }),
       child: GestureDetector(
         onTap: () {
-          Get.toNamed('/log-off', arguments: widget.name);
+          // Get.toNamed('/log-off', arguments: widget.name);
           // Navigator.of(context).pushNamed('/log-off');
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => const LogOff()));
           Future.delayed(
             const Duration(seconds: 3),
             () => html.window.location.href = "https://www.google.com",

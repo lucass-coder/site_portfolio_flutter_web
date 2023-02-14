@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LogOff extends StatelessWidget {
   const LogOff({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final params = ModalRoute.of(context)?.settings.arguments ?? 'Desligar';
+    final params = 'turnOf'.tr;
     return SizedBox(
       width: MediaQuery.of(context).size.width * .5,
       height: MediaQuery.of(context).size.height * .5,

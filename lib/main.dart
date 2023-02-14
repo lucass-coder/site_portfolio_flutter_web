@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:site_portfolio/games/lib/routes.dart';
 import 'package:site_portfolio/screens/home_page.dart';
 import 'package:get/get.dart';
-import 'package:site_portfolio/screens/log_off.dart';
 import 'package:site_portfolio/utils/translation_keys.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
@@ -27,16 +26,16 @@ class MyApp extends StatelessWidget {
       locale: const Locale('pt', 'BR'),
       // locale: const Locale('en', 'US'),
       fallbackLocale: const Locale('pt', 'BR'),
-      getPages: [
-        GetPage(
-          name: '/',
-          page: () => const HomePage(),
-        ),
-        GetPage(
-          name: '/log-off',
-          page: () => const LogOff(),
-        ),
-      ],
+      // getPages: [
+      //   GetPage(
+      //     name: '/',
+      //     page: () => const HomePage(),
+      //   ),
+      //   GetPage(
+      //     name: '/log-off',
+      //     page: () => const LogOff(),
+      //   ),
+      // ],
       home: const HomePage(),
     );
   }

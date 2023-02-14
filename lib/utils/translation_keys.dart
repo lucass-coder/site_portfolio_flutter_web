@@ -91,7 +91,7 @@ ACABAR COM OS DINOSSAUROS!
 O ninja é extremamente rápido, versátil e hábil,
 Sua maior fraqueza é sua durabilidade, aguentando apenas um Hit.
           ''',
-          'tip': 'Segue a Dica Follow the tip!',
+          'tip': 'Segue a Dica!',
           'guidance':
               'Use  A / D  para se mover. \n Barra de Espaço para Pular. \n E NÃO SEJA ATINGIDO! \n\nBom divertimento!',
           'guidance_lucas':
