@@ -23,7 +23,8 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<HomePage> {
+class _MyHomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
   bool isAtivo = false;
   bool isAtivo2 = false;
   bool isGame = false;
@@ -65,173 +66,181 @@ class _MyHomePageState extends State<HomePage> {
           visible = false;
         }),
         child: Scaffold(
-          body: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images-desktop/$nomeImage.png'),
-                fit: BoxFit.cover,
+          body: AnimatedSwitcher(
+            duration: const Duration(milliseconds: 500),
+            child: Container(
+              key: ValueKey(nomeImage),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images-desktop/$nomeImage.png'),
+                  fit: BoxFit.cover,
+                ),
               ),
-            ),
-            child: Stack(
-              children: [
-                Positioned(
-                  left: x,
-                  top: y,
-                  child: Visibility(
-                    visible: visible,
-                    child: OptionCLickRight(
-                      name: 'change_wallpalper'.tr,
+              child: Stack(
+                children: [
+                  Positioned(
+                    left: x,
+                    top: y,
+                    child: Visibility(
+                      visible: visible,
+                      child: OptionCLickRight(
+                        name: 'change_wallpalper'.tr,
+                        onPressed: () => setState(() {
+                          isAtivo2 = !isAtivo2;
+                          visible = false;
+                        }),
+                      ),
+                    ),
+                  ),
+                  Visibility(
+                    visible: isAtivo2,
+                    child: WindowImage(
                       onPressed: () => setState(() {
                         isAtivo2 = !isAtivo2;
-                        visible = false;
+                      }),
+                      onChangeImage1: () => setState(() {
+                        nomeImage = 'image-1';
+                      }),
+                      onChangeImage2: () => setState(() {
+                        nomeImage = 'image-2';
+                      }),
+                      onChangeImage3: () => setState(() {
+                        nomeImage = 'image-3';
+                      }),
+                      onChangeImage4: () => setState(() {
+                        nomeImage = 'image-4';
                       }),
                     ),
                   ),
-                ),
-                Visibility(
-                  visible: isAtivo2,
-                  child: WindowImage(
-                    onPressed: () => setState(() {
-                      isAtivo2 = !isAtivo2;
-                    }),
-                    onChangeImage1: () => setState(() {
-                      nomeImage = 'image-1';
-                    }),
-                    onChangeImage2: () => setState(() {
-                      nomeImage = 'image-2';
-                    }),
-                    onChangeImage3: () => setState(() {
-                      nomeImage = 'image-3';
-                    }),
-                    onChangeImage4: () => setState(() {
-                      nomeImage = 'image-4';
-                    }),
+                  Visibility(
+                    visible: isGame && isAtivo2 == false,
+                    child: WindowGames(
+                      onPressed: () => setState(() {
+                        isGame = !isGame;
+                      }),
+                    ),
                   ),
-                ),
-                Visibility(
-                  visible: isGame && isAtivo2 == false,
-                  child: WindowGames(
-                    onPressed: () => setState(() {
-                      isGame = !isGame;
-                    }),
+                  Visibility(
+                    visible: isAbout && isAtivo2 == false,
+                    child: WindowAbout(
+                      onPressed: () => setState(() {
+                        isAbout = !isAbout;
+                      }),
+                    ),
                   ),
-                ),
-                Visibility(
-                  visible: isAbout && isAtivo2 == false,
-                  child: WindowAbout(
-                    onPressed: () => setState(() {
-                      isAbout = !isAbout;
-                    }),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Column(
+                        children: [
+                          IconsDesktop(
+                            name: 'game'.tr,
+                            icon: 'computer',
+                            isAtivo: false,
+                            onPressed: () => setState(() {
+                              isAtivo2 ? null : isGame = !isGame;
+                            }),
+                          ),
+                          IconsDesktop(
+                            name: 'images'.tr,
+                            icon: 'folder',
+                            isAtivo: false,
+                            onPressed: () => setState(() {
+                              isAtivo2 = !isAtivo2;
+                            }),
+                          ),
+                          IconsDesktop(
+                            name: 'WhattsApp',
+                            icon: 'phone',
+                            isAtivo: false,
+                            onPressed: () => html.window.open(url, 'new tab'),
+                          ),
+                          IconsDesktop(
+                            name: 'about'.tr,
+                            icon: 'cmd',
+                            isAtivo: false,
+                            onPressed: () => setState(() {
+                              isAbout = !isAbout;
+                            }),
+                          ),
+                        ],
+                      )
+                    ],
                   ),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                      children: [
-                        IconsDesktop(
-                          name: 'game'.tr,
-                          icon: 'computer',
-                          isAtivo: false,
-                          onPressed: () => setState(() {
-                            isAtivo2 ? null : isGame = !isGame;
-                          }),
-                        ),
-                        IconsDesktop(
-                          name: 'images'.tr,
-                          icon: 'folder',
-                          isAtivo: false,
-                          onPressed: () => setState(() {
-                            isAtivo2 = !isAtivo2;
-                          }),
-                        ),
-                        IconsDesktop(
-                          name: 'WhattsApp',
-                          icon: 'phone',
-                          isAtivo: false,
-                          onPressed: () => html.window.open(url, 'new tab'),
-                        ),
-                        IconsDesktop(
-                          name: 'about'.tr,
-                          icon: 'cmd',
-                          isAtivo: false,
-                          onPressed: () => setState(() {
-                            isAbout = !isAbout;
-                          }),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-                Row(
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Visibility(
-                          visible: isAtivo,
-                          child: const StartBar(),
-                        ),
-                        Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Container(
-                            color: const Color(0xffC0C7C8),
-                            width: MediaQuery.of(context).size.width,
-                            height: 40,
-                            child: Row(
-                              children: [
-                                const SizedBox(width: 20),
-                                GestureDetector(
-                                  onTap: () => {
-                                    setState(() {
-                                      visible = false;
-                                      if (isAtivo == true) {
-                                        isAtivo = false;
-                                      } else {
-                                        isAtivo = true;
-                                      }
-                                    })
-                                  },
-                                  child: BottomStart(isAtivo: isAtivo),
-                                ),
-                                Visibility(
-                                  visible: isGame,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(left: 8.0),
-                                    child: BarWindow(
-                                      isAtivo: isGame,
-                                      icon: 'game',
-                                      name: 'game'.tr,
-                                    ),
-                                  ),
-                                ),
-                                Visibility(
-                                  visible: isAtivo2,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(left: 8.0),
-                                    child: BarWindow(
-                                        isAtivo: isAtivo2,
-                                        icon: 'folder',
-                                        name: 'images'.tr),
-                                  ),
-                                ),
-                                const Spacer(),
-                                const LanguageIconBar(
-                                  icon: 'game',
-                                ),
-                                const SizedBox(width: 20),
-                                const Time(),
-                                const SizedBox(width: 16),
-                              ],
+                  Row(
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          AnimatedOpacity(
+                            opacity: isAtivo ? 1.0 : 0.0,
+                            duration: const Duration(milliseconds: 300),
+                            child: Visibility(
+                              visible: isAtivo,
+                              child: const StartBar(),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Container(
+                              color: const Color(0xffC0C7C8),
+                              width: MediaQuery.of(context).size.width,
+                              height: 40,
+                              child: Row(
+                                children: [
+                                  const SizedBox(width: 20),
+                                  GestureDetector(
+                                    onTap: () => {
+                                      setState(() {
+                                        visible = false;
+                                        if (isAtivo == true) {
+                                          isAtivo = false;
+                                        } else {
+                                          isAtivo = true;
+                                        }
+                                      })
+                                    },
+                                    child: BottomStart(isAtivo: isAtivo),
+                                  ),
+                                  Visibility(
+                                    visible: isGame,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(left: 8.0),
+                                      child: BarWindow(
+                                        isAtivo: isGame,
+                                        icon: 'game',
+                                        name: 'game'.tr,
+                                      ),
+                                    ),
+                                  ),
+                                  Visibility(
+                                    visible: isAtivo2,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(left: 8.0),
+                                      child: BarWindow(
+                                          isAtivo: isAtivo2,
+                                          icon: 'folder',
+                                          name: 'images'.tr),
+                                    ),
+                                  ),
+                                  const Spacer(),
+                                  const LanguageIconBar(
+                                    icon: 'game',
+                                  ),
+                                  const SizedBox(width: 20),
+                                  const Time(),
+                                  const SizedBox(width: 16),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
