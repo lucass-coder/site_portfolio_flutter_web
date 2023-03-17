@@ -11,6 +11,7 @@ class LanguageIconBar extends StatefulWidget {
 }
 
 class _LanguageIconBarState extends State<LanguageIconBar> {
+  bool isAtivo = false;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -19,6 +20,16 @@ class _LanguageIconBarState extends State<LanguageIconBar> {
             ? Get.updateLocale(const Locale('en', 'US'))
             : Get.updateLocale(const Locale('pt', 'BR'));
       },
+      onTapDown: (TapDownDetails details) {
+        setState(() {
+          isAtivo = true;
+        });
+      },
+      onTapUp: (TapUpDetails details) {
+        setState(() {
+          isAtivo = false;
+        });
+      },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -26,13 +37,12 @@ class _LanguageIconBarState extends State<LanguageIconBar> {
             Container(
               height: 30,
               width: 35,
-              decoration: const BoxDecoration(color: Colors.grey, boxShadow: [
+              decoration: BoxDecoration(color: Colors.grey, boxShadow: [
                 BoxShadow(
-                  color: Colors.black,
-                  // color: widget.isAtivo ? Colors.white : Colors.black,
+                  color: isAtivo ? Colors.white : Colors.black,
                   spreadRadius: 1,
                   blurRadius: 0,
-                  offset: Offset(1, 1), // changes position of shadow
+                  offset: const Offset(1, 1), // changes position of shadow
                 ),
               ]),
             ),
@@ -40,13 +50,12 @@ class _LanguageIconBarState extends State<LanguageIconBar> {
               height: 30,
               width: 35,
               decoration:
-                  const BoxDecoration(color: Color(0xffC0C7C8), boxShadow: [
+                  BoxDecoration(color: const Color(0xffC0C7C8), boxShadow: [
                 BoxShadow(
-                  color: Colors.white,
-                  // color: widget.isAtivo ? Colors.black : Colors.white,
+                  color: isAtivo ? Colors.black : Colors.white,
                   spreadRadius: 1,
                   blurRadius: 0,
-                  offset: Offset(-1, -1), // changes position of shadow
+                  offset: const Offset(-1, -1), // changes position of shadow
                 ),
               ]),
               child: Center(
