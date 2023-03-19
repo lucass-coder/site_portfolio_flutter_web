@@ -1,10 +1,32 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 // ignore_for_file: prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
 
+enum DesktopIcon {
+  icon95,
+  iconxp,
+}
+
+extension DesktopIconExtension on DesktopIcon {
+  String get assetUrl {
+    switch (this) {
+      case DesktopIcon.icon95:
+        const double sizeIcon = 60;
+        return 'assets/images-desktop/';
+      case DesktopIcon.iconxp:
+        double sizeIcon = 30;
+        return 'assets/win-xp/icons/';
+      default:
+        throw Exception('Icone Enum inválido!');
+    }
+  }
+}
+
 class IconsDesktop extends StatefulWidget {
   final String name;
   final String icon;
+  final DesktopIcon iconSystem;
   final bool isAtivo;
   final VoidCallback? onPressed;
 
@@ -12,6 +34,7 @@ class IconsDesktop extends StatefulWidget {
     Key? key,
     required this.name,
     required this.icon,
+    required this.iconSystem,
     required this.isAtivo,
     this.onPressed,
   }) : super(key: key);
@@ -25,6 +48,18 @@ class _IconsDesktopState extends State<IconsDesktop> {
 
   @override
   Widget build(BuildContext context) {
+    double sizeIcon = 0;
+
+    switch (widget.iconSystem) {
+      case DesktopIcon.icon95:
+        sizeIcon = 60;
+        break;
+      case DesktopIcon.iconxp:
+        sizeIcon = 45;
+        break;
+      default:
+        throw Exception('Icone Enum inválido!');
+    }
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
@@ -44,9 +79,9 @@ class _IconsDesktopState extends State<IconsDesktop> {
               child: Column(
                 children: [
                   Image.asset(
-                    'assets/images-desktop/${widget.icon}.png',
-                    width: 60,
-                    height: 60,
+                    '${widget.iconSystem.assetUrl}${widget.icon}.png',
+                    width: sizeIcon,
+                    height: sizeIcon,
                   ),
                   const SizedBox(height: 8),
                   Text(

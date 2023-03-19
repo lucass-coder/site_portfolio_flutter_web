@@ -1,29 +1,24 @@
 // ignore_for_file: avoid_web_libraries_in_flutter
-
 import 'dart:html' as html;
 
 import 'package:flutter/material.dart';
-import 'package:site_portfolio/widgets/bar_window.dart';
 
-import 'package:site_portfolio/widgets/bottom_start.dart';
 import 'package:site_portfolio/widgets/icons_desktop.dart';
-import 'package:site_portfolio/widgets/language_icon_bar.dart';
 import 'package:site_portfolio/widgets/option_click_right.dart';
-import 'package:site_portfolio/widgets/start_bar.dart';
-import 'package:site_portfolio/widgets/time.dart';
 import 'package:site_portfolio/widgets/window_about.dart';
 import 'package:site_portfolio/widgets/window_games.dart';
 import 'package:site_portfolio/widgets/window_image.dart';
 import 'package:get/get.dart';
+import 'package:site_portfolio/winXp/widgets/startup_bar.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomePageXp extends StatefulWidget {
+  const HomePageXp({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _MyHomePageState();
+  State<HomePageXp> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<HomePage>
+class _MyHomePageState extends State<HomePageXp>
     with SingleTickerProviderStateMixin {
   bool isAtivo = false;
   bool isAtivo2 = false;
@@ -32,7 +27,7 @@ class _MyHomePageState extends State<HomePage>
   bool visible = false;
 
   Color? background = const Color(0xff008081);
-  String nomeImage = 'image-4';
+  String nomeImage = 'windows-xp';
   double x = 0.0;
   double y = 0.0;
 
@@ -72,7 +67,8 @@ class _MyHomePageState extends State<HomePage>
               key: ValueKey(nomeImage),
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images-desktop/$nomeImage.png'),
+                  image: AssetImage(
+                      'assets/win-xp/images/wallpapers/$nomeImage.webp'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -135,8 +131,8 @@ class _MyHomePageState extends State<HomePage>
                         children: [
                           IconsDesktop(
                             name: 'game'.tr,
-                            icon: 'computer',
-                            iconSystem: DesktopIcon.icon95,
+                            icon: 'controller',
+                            iconSystem: DesktopIcon.iconxp,
                             isAtivo: false,
                             onPressed: () => setState(() {
                               isAtivo2 ? null : isGame = !isGame;
@@ -144,8 +140,8 @@ class _MyHomePageState extends State<HomePage>
                           ),
                           IconsDesktop(
                             name: 'images'.tr,
-                            icon: 'folder',
-                            iconSystem: DesktopIcon.icon95,
+                            icon: 'folder_images',
+                            iconSystem: DesktopIcon.iconxp,
                             isAtivo: false,
                             onPressed: () => setState(() {
                               isAtivo2 = !isAtivo2;
@@ -153,95 +149,27 @@ class _MyHomePageState extends State<HomePage>
                           ),
                           IconsDesktop(
                             name: 'WhattsApp',
-                            icon: 'phone',
-                            iconSystem: DesktopIcon.icon95,
+                            icon: 'whatsapp',
+                            iconSystem: DesktopIcon.iconxp,
                             isAtivo: false,
                             onPressed: () => html.window.open(url, 'new tab'),
                           ),
                           IconsDesktop(
                             name: 'about'.tr,
-                            icon: 'cmd',
+                            icon: 'my_profile_folder',
+                            iconSystem: DesktopIcon.iconxp,
                             isAtivo: false,
-                            iconSystem: DesktopIcon.icon95,
                             onPressed: () => setState(() {
                               isAbout = !isAbout;
                             }),
                           ),
                         ],
-                      )
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          AnimatedOpacity(
-                            opacity: isAtivo ? 1.0 : 0.0,
-                            duration: const Duration(milliseconds: 300),
-                            child: Visibility(
-                              visible: isAtivo,
-                              child: const StartBar(),
-                            ),
-                          ),
-                          Align(
-                            alignment: Alignment.bottomCenter,
-                            child: Container(
-                              color: const Color(0xffC0C7C8),
-                              width: MediaQuery.of(context).size.width,
-                              height: 40,
-                              child: Row(
-                                children: [
-                                  const SizedBox(width: 20),
-                                  GestureDetector(
-                                    onTap: () => {
-                                      setState(() {
-                                        visible = false;
-                                        if (isAtivo == true) {
-                                          isAtivo = false;
-                                        } else {
-                                          isAtivo = true;
-                                        }
-                                      })
-                                    },
-                                    child: BottomStart(isAtivo: isAtivo),
-                                  ),
-                                  Visibility(
-                                    visible: isGame,
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(left: 8.0),
-                                      child: BarWindow(
-                                        isAtivo: isGame,
-                                        icon: 'game',
-                                        name: 'game'.tr,
-                                      ),
-                                    ),
-                                  ),
-                                  Visibility(
-                                    visible: isAtivo2,
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(left: 8.0),
-                                      child: BarWindow(
-                                          isAtivo: isAtivo2,
-                                          icon: 'folder',
-                                          name: 'images'.tr),
-                                    ),
-                                  ),
-                                  const Spacer(),
-                                  const LanguageIconBar(
-                                    icon: 'game',
-                                  ),
-                                  const SizedBox(width: 20),
-                                  const Time(),
-                                  const SizedBox(width: 16),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
                       ),
                     ],
+                  ),
+                  const Align(
+                    alignment: Alignment.bottomCenter,
+                    child: StartupBar(),
                   ),
                 ],
               ),

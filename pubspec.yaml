@@ -78,6 +78,12 @@ flutter:
     - assets/images-desktop/
     - assets/audio/
 
+  # Windows xp
+    - assets/win-xp/icons/
+    - assets/win-xp/icons_startbar/
+    - assets/win-xp/images/
+    - assets/win-xp/images/wallpapers/
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
