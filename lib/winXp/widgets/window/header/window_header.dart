@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:site_portfolio/winXp/controllers/controller_home_page.dart';
 import 'package:site_portfolio/winXp/widgets/window/header/header_background.dart';
 
 class WindowHeader extends StatelessWidget {
@@ -43,6 +45,9 @@ class WindowHeader extends StatelessWidget {
                 ),
                 const Spacer(),
                 GestureDetector(
+                  onTap: () {
+                    Get.find<ControllerHomePage>().closeAboutWindow();
+                  },
                   child: MouseRegion(
                     cursor: SystemMouseCursors.click,
                     child: Container(

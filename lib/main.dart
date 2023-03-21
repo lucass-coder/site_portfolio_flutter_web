@@ -28,13 +28,14 @@ class MyApp extends StatelessWidget {
       fallbackLocale: const Locale('pt', 'BR'),
       // getPages: [
       //   GetPage(
-      //     name: '/',
-      //     page: () => const HomePage(),
+      //     name: '/home-xp',
+      //     page: () => const HomePageXp(),
+      //     binding: BindingsBuilder.put(() => ControllerHomePage())
       //   ),
-      //   GetPage(
-      //     name: '/log-off',
-      //     page: () => const LogOff(),
-      //   ),
+      //   // GetPage(
+      //   //   name: '/log-off',
+      //   //   page: () => const LogOff(),
+      //   // ),
       // ],
       // home: const HomePage(),
       home: const HomePageXp(),

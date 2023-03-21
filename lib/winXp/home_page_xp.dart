@@ -8,6 +8,7 @@ import 'package:site_portfolio/widgets/option_click_right.dart';
 import 'package:site_portfolio/widgets/window_games.dart';
 import 'package:site_portfolio/widgets/window_image.dart';
 import 'package:get/get.dart';
+import 'package:site_portfolio/winXp/controllers/controller_home_page.dart';
 import 'package:site_portfolio/winXp/widgets/startup_bar.dart';
 import 'package:site_portfolio/winXp/widgets/window/window_about_xp.dart';
 
@@ -23,7 +24,6 @@ class _MyHomePageState extends State<HomePageXp>
   bool isAtivo = false;
   bool isAtivo2 = false;
   bool isGame = false;
-  bool isAbout = false;
   bool visible = false;
 
   Color? background = const Color(0xff008081);
@@ -48,6 +48,8 @@ class _MyHomePageState extends State<HomePageXp>
         .addEventListener('contextmenu', (event) => event.preventDefault());
     super.initState();
   }
+
+  final controller = Get.put(ControllerHomePage());
 
   @override
   Widget build(BuildContext context) {
@@ -116,14 +118,12 @@ class _MyHomePageState extends State<HomePageXp>
                       }),
                     ),
                   ),
-                  Visibility(
-                    visible: isAbout && isAtivo2 == false,
-                    child: WindowAboutXp(
-                      onPressed: () => setState(() {
-                        isAbout = !isAbout;
-                      }),
-                    ),
-                  ),
+                  Obx(() => Visibility(
+                        visible: Get.find<ControllerHomePage>().isAbout.value ==
+                                true &&
+                            isAtivo2 == false,
+                        child: const WindowAboutXp(),
+                      )),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -154,14 +154,17 @@ class _MyHomePageState extends State<HomePageXp>
                             isAtivo: false,
                             onPressed: () => html.window.open(url, 'new tab'),
                           ),
-                          IconsDesktop(
-                            name: 'about'.tr,
-                            icon: 'my_profile_folder',
-                            iconSystem: DesktopIcon.iconxp,
-                            isAtivo: false,
-                            onPressed: () => setState(() {
-                              isAbout = !isAbout;
-                            }),
+                          GestureDetector(
+                            onTap: () {
+                              controller.openAboutWindow();
+                              // Get.find<ControllerHomePage>().openAboutWindow();
+                            },
+                            child: IconsDesktop(
+                              name: 'about'.tr,
+                              icon: 'my_profile_folder',
+                              iconSystem: DesktopIcon.iconxp,
+                              isAtivo: false,
+                            ),
                           ),
                         ],
                       ),
