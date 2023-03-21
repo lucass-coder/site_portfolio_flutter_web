@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:site_portfolio/winXp/widgets/icon_menu_bar_xp.dart';
 
 class ToolbarIcons extends StatelessWidget {
   const ToolbarIcons({Key? key}) : super(key: key);
@@ -11,26 +12,19 @@ class ToolbarIcons extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Image.asset(
-          'assets/win-xp/icons_startbar/github_icon.png',
-          width: iconSize,
-          height: iconSize,
+        const IconMenuBarXp(
+          url: 'https://github.com/lucass-coder',
+          socialNetwork: 'github',
         ),
-        SizedBox(
-          width: spaceIcons,
+        SizedBox(width: spaceIcons),
+        const IconMenuBarXp(
+          url: 'https://www.linkedin.com/in/lucas-santana-bb3a801b4/',
+          socialNetwork: 'linkedin',
         ),
-        Image.asset(
-          'assets/win-xp/icons_startbar/linkedin_icon.png',
-          width: iconSize,
-          height: iconSize,
-        ),
-        SizedBox(
-          width: spaceIcons,
-        ),
-        Image.asset(
-          'assets/win-xp/icons_startbar/instagram_icon.png',
-          width: iconSize,
-          height: iconSize,
+        SizedBox(width: spaceIcons),
+        const IconMenuBarXp(
+          url: 'https://www.instagram.com/lucaso.santana/',
+          socialNetwork: 'instagram',
         ),
         const SizedBox(
           width: 6,

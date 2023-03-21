@@ -131,7 +131,7 @@ class _MyHomePageState extends State<HomePageXp>
                         children: [
                           IconsDesktop(
                             name: 'game'.tr,
-                            icon: 'controller',
+                            icon: 'controller_3',
                             iconSystem: DesktopIcon.iconxp,
                             isAtivo: false,
                             onPressed: () => setState(() {
