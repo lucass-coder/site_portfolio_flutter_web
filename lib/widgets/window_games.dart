@@ -71,20 +71,19 @@ class _WindowGamesState extends State<WindowGames> {
                         children: [
                           Row(
                             children: [
-                              ImageBox(
-                                onChangeImage: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const SelectionPersonPage()),
-                                  );
-                                },
-                                imageUrl:
-                                    'assets/images-desktop/domvs-bros.png',
+                              GestureDetector(
+                                onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const SelectionPersonPage()),
+                                ),
+                                child: const ImageBox(
+                                  imageUrl:
+                                      'assets/images-desktop/domvs-bros.png',
+                                ),
                               ),
-                              ImageBox(
-                                onChangeImage: () {},
+                              const ImageBox(
                                 imageUrl:
                                     'assets/images-desktop/jump-game-comming.webp',
                               ),

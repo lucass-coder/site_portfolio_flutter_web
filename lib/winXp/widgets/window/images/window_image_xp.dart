@@ -3,14 +3,14 @@ import 'package:site_portfolio/widgets/image_box.dart';
 import 'package:get/get.dart';
 import 'package:site_portfolio/winXp/controllers/controller_home_page.dart';
 
-class WindowImage extends StatefulWidget {
+class WindowImageXp extends StatefulWidget {
   final VoidCallback? onPressed;
   final VoidCallback? onChangeImage1;
   final VoidCallback? onChangeImage2;
   final VoidCallback? onChangeImage3;
   final VoidCallback? onChangeImage4;
 
-  const WindowImage(
+  const WindowImageXp(
       {Key? key,
       this.onPressed,
       this.onChangeImage1,
@@ -20,10 +20,10 @@ class WindowImage extends StatefulWidget {
       : super(key: key);
 
   @override
-  State<WindowImage> createState() => _WindowImageState();
+  State<WindowImageXp> createState() => _WindowImageXpState();
 }
 
-class _WindowImageState extends State<WindowImage> {
+class _WindowImageXpState extends State<WindowImageXp> {
   double selecionado = 1;
   @override
   Widget build(BuildContext context) {
@@ -85,19 +85,21 @@ class _WindowImageState extends State<WindowImage> {
                               GestureDetector(
                                 onTap: () {
                                   Get.find<ControllerHomePage>()
-                                      .setImageBackground('image-1');
+                                      .setImageBackground('windows');
                                 },
                                 child: const ImageBox(
-                                  imageUrl: 'assets/images-desktop/image-1.png',
+                                  imageUrl:
+                                      'assets/win-xp/images/wallpapers/windows.webp',
                                 ),
                               ),
                               GestureDetector(
                                 onTap: () {
                                   Get.find<ControllerHomePage>()
-                                      .setImageBackground('image-2');
+                                      .setImageBackground('image-1');
                                 },
                                 child: const ImageBox(
-                                  imageUrl: 'assets/images-desktop/image-2.png',
+                                  imageUrl:
+                                      'assets/win-xp/images/wallpapers/image-1.webp',
                                 ),
                               ),
                             ],
@@ -107,19 +109,21 @@ class _WindowImageState extends State<WindowImage> {
                               GestureDetector(
                                 onTap: () {
                                   Get.find<ControllerHomePage>()
-                                      .setImageBackground('image-3');
+                                      .setImageBackground('image-2');
                                 },
                                 child: const ImageBox(
-                                  imageUrl: 'assets/images-desktop/image-3.png',
+                                  imageUrl:
+                                      'assets/win-xp/images/wallpapers/image-2.webp',
                                 ),
                               ),
                               GestureDetector(
                                 onTap: () {
                                   Get.find<ControllerHomePage>()
-                                      .setImageBackground('windows');
+                                      .setImageBackground('image-3');
                                 },
                                 child: const ImageBox(
-                                  imageUrl: 'assets/images-desktop/windows.png',
+                                  imageUrl:
+                                      'assets/win-xp/images/wallpapers/image-3.webp',
                                 ),
                               ),
                             ],

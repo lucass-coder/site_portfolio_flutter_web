@@ -1,6 +1,27 @@
 class ConstantsStrings {
   static String about = '''Meu nome é Lucas e sou desenvolvedor na DOMVS IT. 
-  
+          .  .
+          |_|
+          | a_a
+          | | "]
+      ____| '-___
+     /.----.___.-'
+    //        _    
+   //   .-. (~v~) /|
+  |'|  /:  .--  / 
+ // |-/  _/____//~|
+|/   |  []_|_|_]  |
+|   |  |___   _ ]_}
+| |  '-' /   '.'  |
+| |     /    /|:  | 
+| |     |   / |:  /
+| |     /  /  |  /  
+| |    |  /  /  |    
+ |    |//  |/|/    
+ | ||  |  | / //__
+   | | /   | |__
+snd    / |   |____)
+       |_/
     Atualmente, prestro serviços para o grupo Dia, atuando como desenvolvedor Flutter. 
     Este portfólio foi inteiramente criado com Flutter, incluindo os jogos. Sinta-se à vontade para entrar em contato com sugestões e conheça meus projetos.''';
 

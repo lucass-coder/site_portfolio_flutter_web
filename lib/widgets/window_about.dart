@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:site_portfolio/winXp/controllers/controller_home_page.dart';
 
 class WindowAbout extends StatefulWidget {
   final VoidCallback? onPressed;
@@ -45,7 +46,9 @@ class _WindowAboutState extends State<WindowAbout> {
                   padding: const EdgeInsets.only(
                       top: 14.0, bottom: 14.0, left: 394.0, right: 14.0),
                   child: GestureDetector(
-                    onTap: widget.onPressed,
+                    onTap: () {
+                      Get.find<ControllerHomePage>().closeAboutWindow();
+                    },
                     child: MouseRegion(
                       cursor: SystemMouseCursors.click,
                       child: Container(

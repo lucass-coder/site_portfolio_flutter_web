@@ -15,6 +15,7 @@ import 'package:site_portfolio/widgets/window_about.dart';
 import 'package:site_portfolio/widgets/window_games.dart';
 import 'package:site_portfolio/widgets/window_image.dart';
 import 'package:get/get.dart';
+import 'package:site_portfolio/winXp/controllers/controller_home_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -28,11 +29,10 @@ class _MyHomePageState extends State<HomePage>
   bool isAtivo = false;
   bool isAtivo2 = false;
   bool isGame = false;
-  bool isAbout = false;
   bool visible = false;
 
   Color? background = const Color(0xff008081);
-  String nomeImage = 'image-4';
+  // String nomeImage = 'image-4';
   double x = 0.0;
   double y = 0.0;
 
@@ -54,6 +54,8 @@ class _MyHomePageState extends State<HomePage>
     super.initState();
   }
 
+  final controller = Get.put(ControllerHomePage());
+
   @override
   Widget build(BuildContext context) {
     String url =
@@ -66,184 +68,191 @@ class _MyHomePageState extends State<HomePage>
           visible = false;
         }),
         child: Scaffold(
-          body: AnimatedSwitcher(
-            duration: const Duration(milliseconds: 500),
-            child: Container(
-              key: ValueKey(nomeImage),
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images-desktop/$nomeImage.png'),
-                  fit: BoxFit.cover,
+          body: Obx(
+            () => AnimatedSwitcher(
+              duration: const Duration(milliseconds: 500),
+              child: Container(
+                key: ValueKey(controller.nomeImage.value),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                        'assets/images-desktop/${controller.nomeImage}.png'),
+                    fit: BoxFit.cover,
+                  ),
                 ),
-              ),
-              child: Stack(
-                children: [
-                  Positioned(
-                    left: x,
-                    top: y,
-                    child: Visibility(
-                      visible: visible,
-                      child: OptionCLickRight(
-                        name: 'change_wallpalper'.tr,
-                        onPressed: () => setState(() {
-                          isAtivo2 = !isAtivo2;
-                          visible = false;
-                        }),
+                child: Stack(
+                  children: [
+                    Positioned(
+                      left: x,
+                      top: y,
+                      child: Visibility(
+                        visible: visible,
+                        child: OptionCLickRight(
+                          name: 'change_wallpalper'.tr,
+                          onPressed: () => setState(() {
+                            isAtivo2 = !isAtivo2;
+                            visible = false;
+                          }),
+                        ),
                       ),
                     ),
-                  ),
-                  Visibility(
-                    visible: isAtivo2,
-                    child: WindowImage(
-                      onPressed: () => setState(() {
-                        isAtivo2 = !isAtivo2;
-                      }),
-                      onChangeImage1: () => setState(() {
-                        nomeImage = 'image-1';
-                      }),
-                      onChangeImage2: () => setState(() {
-                        nomeImage = 'image-2';
-                      }),
-                      onChangeImage3: () => setState(() {
-                        nomeImage = 'image-3';
-                      }),
-                      onChangeImage4: () => setState(() {
-                        nomeImage = 'image-4';
-                      }),
-                    ),
-                  ),
-                  Visibility(
-                    visible: isGame && isAtivo2 == false,
-                    child: WindowGames(
-                      onPressed: () => setState(() {
-                        isGame = !isGame;
-                      }),
-                    ),
-                  ),
-                  Visibility(
-                    visible: isAbout && isAtivo2 == false,
-                    child: WindowAbout(
-                      onPressed: () => setState(() {
-                        isAbout = !isAbout;
-                      }),
-                    ),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Column(
-                        children: [
-                          IconsDesktop(
-                            name: 'game'.tr,
-                            icon: 'computer',
-                            iconSystem: DesktopIcon.icon95,
-                            isAtivo: false,
-                            onPressed: () => setState(() {
-                              isAtivo2 ? null : isGame = !isGame;
-                            }),
-                          ),
-                          IconsDesktop(
-                            name: 'images'.tr,
-                            icon: 'folder',
-                            iconSystem: DesktopIcon.icon95,
-                            isAtivo: false,
+                    Obx(() => Visibility(
+                          visible: controller.isImage.value,
+                          child: WindowImage(
                             onPressed: () => setState(() {
                               isAtivo2 = !isAtivo2;
                             }),
+                            // onChangeImage1: () => setState(() {
+                            //   nomeImage = 'image-1';
+                            // }),
+                            // onChangeImage2: () => setState(() {
+                            //   nomeImage = 'image-2';
+                            // }),
+                            // onChangeImage3: () => setState(() {
+                            //   nomeImage = 'image-3';
+                            // }),
+                            // onChangeImage4: () => setState(() {
+                            //   nomeImage = 'image-4';
+                            // }),
                           ),
-                          IconsDesktop(
-                            name: 'WhattsApp',
-                            icon: 'phone',
-                            iconSystem: DesktopIcon.icon95,
-                            isAtivo: false,
-                            onPressed: () => html.window.open(url, 'new tab'),
-                          ),
-                          IconsDesktop(
-                            name: 'about'.tr,
-                            icon: 'cmd',
-                            isAtivo: false,
-                            iconSystem: DesktopIcon.icon95,
-                            onPressed: () => setState(() {
-                              isAbout = !isAbout;
-                            }),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          AnimatedOpacity(
-                            opacity: isAtivo ? 1.0 : 0.0,
-                            duration: const Duration(milliseconds: 300),
-                            child: Visibility(
-                              visible: isAtivo,
-                              child: const StartBar(),
+                        )),
+                    Visibility(
+                      visible: isGame && isAtivo2 == false,
+                      child: WindowGames(
+                        onPressed: () => setState(() {
+                          isGame = !isGame;
+                        }),
+                      ),
+                    ),
+                    Obx(() => Visibility(
+                          visible: controller.isAbout.value == true &&
+                              isAtivo2 == false,
+                          child: const WindowAbout(),
+                        )),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Column(
+                          children: [
+                            IconsDesktop(
+                              name: 'game'.tr,
+                              icon: 'computer',
+                              iconSystem: DesktopIcon.icon95,
+                              isAtivo: false,
+                              onPressed: () => setState(() {
+                                isAtivo2 ? null : isGame = !isGame;
+                              }),
                             ),
-                          ),
-                          Align(
-                            alignment: Alignment.bottomCenter,
-                            child: Container(
-                              color: const Color(0xffC0C7C8),
-                              width: MediaQuery.of(context).size.width,
-                              height: 40,
-                              child: Row(
-                                children: [
-                                  const SizedBox(width: 20),
-                                  GestureDetector(
-                                    onTap: () => {
-                                      setState(() {
-                                        visible = false;
-                                        if (isAtivo == true) {
-                                          isAtivo = false;
-                                        } else {
-                                          isAtivo = true;
-                                        }
-                                      })
-                                    },
-                                    child: BottomStart(isAtivo: isAtivo),
-                                  ),
-                                  Visibility(
-                                    visible: isGame,
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(left: 8.0),
-                                      child: BarWindow(
-                                        isAtivo: isGame,
-                                        icon: 'game',
-                                        name: 'game'.tr,
-                                      ),
-                                    ),
-                                  ),
-                                  Visibility(
-                                    visible: isAtivo2,
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(left: 8.0),
-                                      child: BarWindow(
-                                          isAtivo: isAtivo2,
-                                          icon: 'folder',
-                                          name: 'images'.tr),
-                                    ),
-                                  ),
-                                  const Spacer(),
-                                  const LanguageIconBar(
-                                    icon: 'game',
-                                  ),
-                                  const SizedBox(width: 20),
-                                  const Time(),
-                                  const SizedBox(width: 16),
-                                ],
+                            GestureDetector(
+                              onTap: () {
+                                controller.openImagesWindow();
+                              },
+                              child: IconsDesktop(
+                                name: 'images'.tr,
+                                icon: 'folder',
+                                iconSystem: DesktopIcon.icon95,
+                                isAtivo: false,
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
+                            IconsDesktop(
+                              name: 'WhattsApp',
+                              icon: 'phone',
+                              iconSystem: DesktopIcon.icon95,
+                              isAtivo: false,
+                              onPressed: () => html.window.open(url, 'new tab'),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                controller.openAboutWindow();
+                                // Get.find<ControllerHomePage>().openAboutWindow();
+                              },
+                              child: IconsDesktop(
+                                name: 'about'.tr,
+                                icon: 'cmd',
+                                isAtivo: false,
+                                iconSystem: DesktopIcon.icon95,
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            AnimatedOpacity(
+                              opacity: isAtivo ? 1.0 : 0.0,
+                              duration: const Duration(milliseconds: 300),
+                              child: Visibility(
+                                visible: isAtivo,
+                                child: const StartBar(),
+                              ),
+                            ),
+                            Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Container(
+                                color: const Color(0xffC0C7C8),
+                                width: MediaQuery.of(context).size.width,
+                                height: 40,
+                                child: Row(
+                                  children: [
+                                    const SizedBox(width: 20),
+                                    GestureDetector(
+                                      onTap: () => {
+                                        setState(() {
+                                          visible = false;
+                                          if (isAtivo == true) {
+                                            isAtivo = false;
+                                          } else {
+                                            isAtivo = true;
+                                          }
+                                        })
+                                      },
+                                      child: BottomStart(isAtivo: isAtivo),
+                                    ),
+                                    Visibility(
+                                      visible: isGame,
+                                      child: Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 8.0),
+                                        child: BarWindow(
+                                          isAtivo: isGame,
+                                          icon: 'game',
+                                          name: 'game'.tr,
+                                        ),
+                                      ),
+                                    ),
+                                    Visibility(
+                                      visible: isAtivo2,
+                                      child: Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 8.0),
+                                        child: BarWindow(
+                                            isAtivo: isAtivo2,
+                                            icon: 'folder',
+                                            name: 'images'.tr),
+                                      ),
+                                    ),
+                                    const Spacer(),
+                                    const LanguageIconBar(
+                                      icon: 'game',
+                                    ),
+                                    const SizedBox(width: 20),
+                                    const Time(),
+                                    const SizedBox(width: 16),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
