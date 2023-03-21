@@ -3,28 +3,11 @@ import 'package:site_portfolio/widgets/image_box.dart';
 import 'package:get/get.dart';
 import 'package:site_portfolio/winXp/controllers/controller_home_page.dart';
 
-class WindowImageXp extends StatefulWidget {
-  final VoidCallback? onPressed;
-  final VoidCallback? onChangeImage1;
-  final VoidCallback? onChangeImage2;
-  final VoidCallback? onChangeImage3;
-  final VoidCallback? onChangeImage4;
+class WindowImageXp extends StatelessWidget {
+  const WindowImageXp({
+    Key? key,
+  }) : super(key: key);
 
-  const WindowImageXp(
-      {Key? key,
-      this.onPressed,
-      this.onChangeImage1,
-      this.onChangeImage2,
-      this.onChangeImage3,
-      this.onChangeImage4})
-      : super(key: key);
-
-  @override
-  State<WindowImageXp> createState() => _WindowImageXpState();
-}
-
-class _WindowImageXpState extends State<WindowImageXp> {
-  double selecionado = 1;
   @override
   Widget build(BuildContext context) {
     return Center(

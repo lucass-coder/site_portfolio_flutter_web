@@ -23,11 +23,9 @@ class _MyHomePageState extends State<HomePageXp>
     with SingleTickerProviderStateMixin {
   bool isAtivo = false;
   bool isAtivo2 = false;
-  bool isGame = false;
   bool visible = false;
 
   Color? background = const Color(0xff008081);
-  // String nomeImage = 'windows-xp';
   double x = 0.0;
   double y = 0.0;
 
@@ -94,31 +92,16 @@ class _MyHomePageState extends State<HomePageXp>
                     Obx(
                       () => Visibility(
                         visible: controller.isImage.value,
-                        child: WindowImageXp(
-                          onPressed: () => setState(() {
-                            isAtivo2 = !isAtivo2;
-                          }),
-                          onChangeImage1: () => setState(() {
-                            // nomeImage = 'image-1';
-                          }),
-                          onChangeImage2: () => setState(() {
-                            // nomeImage = 'image-2';
-                          }),
-                          onChangeImage3: () => setState(() {
-                            // nomeImage = 'image-3';
-                          }),
-                          onChangeImage4: () => setState(() {
-                            // nomeImage = 'image-4';
-                          }),
-                        ),
+                        child: const WindowImageXp(),
                       ),
                     ),
-                    Visibility(
-                      visible: isGame && isAtivo2 == false,
-                      child: WindowGames(
-                        onPressed: () => setState(() {
-                          isGame = !isGame;
-                        }),
+                    GestureDetector(
+                      onTap: () {
+                        controller.openGamesWindow();
+                      },
+                      child: Visibility(
+                        visible: controller.isGame.value && isAtivo2 == false,
+                        child: const WindowGames(),
                       ),
                     ),
                     Obx(() => Visibility(
@@ -131,14 +114,14 @@ class _MyHomePageState extends State<HomePageXp>
                       children: [
                         Column(
                           children: [
-                            IconsDesktop(
-                              name: 'game'.tr,
-                              icon: 'controller_3',
-                              iconSystem: DesktopIcon.iconxp,
-                              isAtivo: false,
-                              onPressed: () => setState(() {
-                                isAtivo2 ? null : isGame = !isGame;
-                              }),
+                            GestureDetector(
+                              onTap: () => controller.openGamesWindow(),
+                              child: IconsDesktop(
+                                name: 'game'.tr,
+                                icon: 'controller_3',
+                                iconSystem: DesktopIcon.iconxp,
+                                isAtivo: false,
+                              ),
                             ),
                             GestureDetector(
                               onTap: () {
@@ -161,7 +144,6 @@ class _MyHomePageState extends State<HomePageXp>
                             GestureDetector(
                               onTap: () {
                                 controller.openAboutWindow();
-                                // Get.find<ControllerHomePage>().openAboutWindow();
                               },
                               child: IconsDesktop(
                                 name: 'about'.tr,

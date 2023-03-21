@@ -116,12 +116,11 @@ class _MyHomePageState extends State<HomePage>
                             // }),
                           ),
                         )),
-                    Visibility(
-                      visible: isGame && isAtivo2 == false,
-                      child: WindowGames(
-                        onPressed: () => setState(() {
-                          isGame = !isGame;
-                        }),
+                    GestureDetector(
+                      onTap: () => controller.openGamesWindow(),
+                      child: Visibility(
+                        visible: controller.isGame.value && isAtivo2 == false,
+                        child: const WindowGames(),
                       ),
                     ),
                     Obx(() => Visibility(

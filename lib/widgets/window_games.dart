@@ -2,20 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:site_portfolio/games/lib/selection_person_page.dart';
 import 'package:site_portfolio/widgets/image_box.dart';
 import 'package:get/get.dart';
+import 'package:site_portfolio/winXp/controllers/controller_home_page.dart';
 
-class WindowGames extends StatefulWidget {
-  final VoidCallback? onPressed;
+class WindowGames extends StatelessWidget {
   const WindowGames({
     Key? key,
-    this.onPressed,
   }) : super(key: key);
 
-  @override
-  State<WindowGames> createState() => _WindowGamesState();
-}
-
-class _WindowGamesState extends State<WindowGames> {
-  double selecionado = 1;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -46,7 +39,9 @@ class _WindowGamesState extends State<WindowGames> {
                   padding: const EdgeInsets.only(
                       top: 14.0, bottom: 14.0, left: 354.0, right: 14.0),
                   child: GestureDetector(
-                    onTap: widget.onPressed,
+                    onTap: () {
+                      Get.find<ControllerHomePage>().closeGamesWindow();
+                    },
                     child: MouseRegion(
                       cursor: SystemMouseCursors.click,
                       child: Container(

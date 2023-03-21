@@ -3,7 +3,8 @@ import 'package:get/get.dart';
 class ControllerHomePage extends GetxController {
   final isAbout = false.obs;
   final isImage = false.obs;
-  RxString nomeImage = 'windows'.obs;
+  final isGame = false.obs;
+  final nomeImage = 'windows'.obs;
 
   void closeAboutWindow() {
     isAbout(false);
@@ -21,8 +22,15 @@ class ControllerHomePage extends GetxController {
     isImage(true);
   }
 
+  void closeGamesWindow() {
+    isGame(false);
+  }
+
+  void openGamesWindow() {
+    isGame(true);
+  }
+
   void setImageBackground(String name) {
-    print(name);
     nomeImage(name);
   }
 }
