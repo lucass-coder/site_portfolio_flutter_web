@@ -6,7 +6,6 @@ class ToolbarIcons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double iconSize = 20;
     double spaceIcons = 10;
 
     return Row(

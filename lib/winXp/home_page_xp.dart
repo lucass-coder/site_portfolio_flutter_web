@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 
 import 'package:site_portfolio/widgets/icons_desktop.dart';
 import 'package:site_portfolio/widgets/option_click_right.dart';
-import 'package:site_portfolio/widgets/window_about.dart';
 import 'package:site_portfolio/widgets/window_games.dart';
 import 'package:site_portfolio/widgets/window_image.dart';
 import 'package:get/get.dart';
 import 'package:site_portfolio/winXp/widgets/startup_bar.dart';
+import 'package:site_portfolio/winXp/widgets/window/window_about_xp.dart';
 
 class HomePageXp extends StatefulWidget {
   const HomePageXp({Key? key}) : super(key: key);
@@ -118,7 +118,7 @@ class _MyHomePageState extends State<HomePageXp>
                   ),
                   Visibility(
                     visible: isAbout && isAtivo2 == false,
-                    child: WindowAbout(
+                    child: WindowAboutXp(
                       onPressed: () => setState(() {
                         isAbout = !isAbout;
                       }),

@@ -12,10 +12,8 @@ extension DesktopIconExtension on DesktopIcon {
   String get assetUrl {
     switch (this) {
       case DesktopIcon.icon95:
-        const double sizeIcon = 60;
         return 'assets/images-desktop/';
       case DesktopIcon.iconxp:
-        double sizeIcon = 30;
         return 'assets/win-xp/icons/';
       default:
         throw Exception('Icone Enum inválido!');
