@@ -5,20 +5,28 @@ class ControllerHomePage extends GetxController {
   final isImage = false.obs;
   final isGame = false.obs;
   final nomeImage = 'windows'.obs;
+  final clickRight = false.obs;
+
+  void setClickRight(status) {
+    clickRight(status);
+  }
 
   void closeAboutWindow() {
     isAbout(false);
   }
 
   void openAboutWindow() {
+    clickRight(false);
     isAbout(true);
   }
 
   void closeImagesWindow() {
+    clickRight(false);
     isImage(false);
   }
 
   void openImagesWindow() {
+    clickRight(false);
     isImage(true);
   }
 
@@ -27,6 +35,7 @@ class ControllerHomePage extends GetxController {
   }
 
   void openGamesWindow() {
+    clickRight(false);
     isGame(true);
   }
 

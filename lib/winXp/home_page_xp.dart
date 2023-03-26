@@ -4,9 +4,9 @@ import 'dart:html' as html;
 import 'package:flutter/material.dart';
 
 import 'package:site_portfolio/widgets/icons_desktop.dart';
-import 'package:site_portfolio/widgets/option_click_right.dart';
 import 'package:get/get.dart';
 import 'package:site_portfolio/winXp/controllers/controller_home_page.dart';
+import 'package:site_portfolio/winXp/widgets/desktop/option_click_right_xp.dart';
 import 'package:site_portfolio/winXp/widgets/startup_bar.dart';
 import 'package:site_portfolio/winXp/widgets/windows/games/window_games_xp.dart';
 import 'package:site_portfolio/winXp/widgets/windows/images/window_image_xp.dart';
@@ -23,7 +23,6 @@ class _MyHomePageState extends State<HomePageXp>
     with SingleTickerProviderStateMixin {
   bool isAtivo = false;
   bool isAtivo2 = false;
-  bool visible = false;
 
   Color? background = const Color(0xff008081);
   double x = 0.0;
@@ -34,7 +33,7 @@ class _MyHomePageState extends State<HomePageXp>
       setState(() {
         x = details.position.dx;
         y = details.position.dy;
-        visible = !visible;
+        controller.setClickRight(true);
         isAtivo = false;
       });
     }
@@ -58,7 +57,7 @@ class _MyHomePageState extends State<HomePageXp>
       child: GestureDetector(
         onTap: () => setState(() {
           isAtivo = false;
-          visible = false;
+          controller.setClickRight(false);
         }),
         child: Scaffold(
           body: Obx(
@@ -79,13 +78,9 @@ class _MyHomePageState extends State<HomePageXp>
                       left: x,
                       top: y,
                       child: Visibility(
-                        visible: visible,
-                        child: OptionCLickRight(
+                        visible: controller.clickRight == true,
+                        child: OptionCLickRightXp(
                           name: 'change_wallpalper'.tr,
-                          onPressed: () => setState(() {
-                            isAtivo2 = !isAtivo2;
-                            visible = false;
-                          }),
                         ),
                       ),
                     ),

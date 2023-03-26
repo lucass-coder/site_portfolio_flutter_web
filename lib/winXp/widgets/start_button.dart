@@ -1,6 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:site_portfolio/winXp/widgets/startup_menu_dialog/startup_menu_dialog.dart';
+
+import '../controllers/controller_home_page.dart';
 
 class StartButton extends StatefulWidget {
   const StartButton({Key? key}) : super(key: key);
@@ -50,6 +53,7 @@ class _StartButtonState extends State<StartButton> {
   }
 
   void _onTap() async {
+    Get.find<ControllerHomePage>().setClickRight(false);
     await showDialog<void>(
       context: context,
       builder: (_) => const StartupMenuDialog(),
