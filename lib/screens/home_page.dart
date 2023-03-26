@@ -16,6 +16,8 @@ import 'package:site_portfolio/widgets/window_games.dart';
 import 'package:site_portfolio/widgets/window_image.dart';
 import 'package:get/get.dart';
 import 'package:site_portfolio/winXp/controllers/controller_home_page.dart';
+import 'package:site_portfolio/winXp/home_page_xp.dart';
+import 'package:site_portfolio/winXp/screens/start_screen_xp.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -102,18 +104,6 @@ class _MyHomePageState extends State<HomePage>
                             onPressed: () => setState(() {
                               isAtivo2 = !isAtivo2;
                             }),
-                            // onChangeImage1: () => setState(() {
-                            //   nomeImage = 'image-1';
-                            // }),
-                            // onChangeImage2: () => setState(() {
-                            //   nomeImage = 'image-2';
-                            // }),
-                            // onChangeImage3: () => setState(() {
-                            //   nomeImage = 'image-3';
-                            // }),
-                            // onChangeImage4: () => setState(() {
-                            //   nomeImage = 'image-4';
-                            // }),
                           ),
                         )),
                     GestureDetector(
@@ -131,49 +121,78 @@ class _MyHomePageState extends State<HomePage>
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Column(
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            IconsDesktop(
-                              name: 'game'.tr,
-                              icon: 'computer',
-                              iconSystem: DesktopIcon.icon95,
-                              isAtivo: false,
-                              onPressed: () => setState(() {
-                                isAtivo2 ? null : isGame = !isGame;
-                              }),
+                            Column(
+                              children: [
+                                IconsDesktop(
+                                  name: 'game'.tr,
+                                  icon: 'computer',
+                                  iconSystem: DesktopIcon.icon95,
+                                  isAtivo: false,
+                                  onPressed: () => setState(() {
+                                    isAtivo2 ? null : isGame = !isGame;
+                                  }),
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    controller.openImagesWindow();
+                                  },
+                                  child: IconsDesktop(
+                                    name: 'images'.tr,
+                                    icon: 'folder',
+                                    iconSystem: DesktopIcon.icon95,
+                                    isAtivo: false,
+                                  ),
+                                ),
+                                IconsDesktop(
+                                  name: 'WhattsApp',
+                                  icon: 'phone',
+                                  iconSystem: DesktopIcon.icon95,
+                                  isAtivo: false,
+                                  onPressed: () =>
+                                      html.window.open(url, 'new tab'),
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    controller.openAboutWindow();
+                                    // Get.find<ControllerHomePage>().openAboutWindow();
+                                  },
+                                  child: IconsDesktop(
+                                    name: 'about'.tr,
+                                    icon: 'cmd',
+                                    isAtivo: false,
+                                    iconSystem: DesktopIcon.icon95,
+                                  ),
+                                ),
+                              ],
                             ),
-                            GestureDetector(
-                              onTap: () {
-                                controller.openImagesWindow();
-                              },
-                              child: IconsDesktop(
-                                name: 'images'.tr,
-                                icon: 'folder',
-                                iconSystem: DesktopIcon.icon95,
-                                isAtivo: false,
-                              ),
-                            ),
-                            IconsDesktop(
-                              name: 'WhattsApp',
-                              icon: 'phone',
-                              iconSystem: DesktopIcon.icon95,
-                              isAtivo: false,
-                              onPressed: () => html.window.open(url, 'new tab'),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                controller.openAboutWindow();
-                                // Get.find<ControllerHomePage>().openAboutWindow();
-                              },
-                              child: IconsDesktop(
-                                name: 'about'.tr,
-                                icon: 'cmd',
-                                isAtivo: false,
-                                iconSystem: DesktopIcon.icon95,
-                              ),
+                            Column(
+                              children: [
+                                IconsDesktop(
+                                  name: 'win-xp',
+                                  icon: 'windows_update',
+                                  iconSystem: DesktopIcon.icon95,
+                                  isAtivo: false,
+                                  onPressed: () {
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const StartScreenXp()));
+                                    Future.delayed(
+                                      const Duration(seconds: 6),
+                                      () => Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const HomePageXp())),
+                                    );
+                                  },
+                                ),
+                              ],
                             ),
                           ],
-                        )
+                        ),
                       ],
                     ),
                     Row(

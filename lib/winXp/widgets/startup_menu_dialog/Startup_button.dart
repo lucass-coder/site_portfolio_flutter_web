@@ -1,7 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/get_utils.dart';
-import 'package:site_portfolio/winXp/widgets/startup_menu_dialog/startup_menu_dialog.dart';
+import 'dart:html' as html;
+
+import 'package:site_portfolio/winXp/screens/shutdown_xp.dart';
 
 class StartUpButton extends StatefulWidget {
   const StartUpButton({Key? key}) : super(key: key);
@@ -51,11 +53,11 @@ class _StartUpButtonState extends State<StartUpButton> {
   }
 
   void _onTap() async {
-    await showDialog<void>(
-      context: context,
-      builder: (_) => const StartupMenuDialog(),
-      barrierColor: const Color(0x00ffffff),
-      barrierDismissible: true,
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => const ShutdownXp()));
+    Future.delayed(
+      const Duration(seconds: 3),
+      () => html.window.location.href = "https://www.google.com",
     );
   }
 

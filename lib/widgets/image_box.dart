@@ -21,7 +21,6 @@ class _ImageBoxState extends State<ImageBox> {
         child: Container(
           height: 150,
           width: 180,
-          //color: Colors.green,
           decoration: BoxDecoration(
             image: DecorationImage(
               opacity: selecionado,

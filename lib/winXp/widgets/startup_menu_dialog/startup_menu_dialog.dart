@@ -22,7 +22,6 @@ class StartupMenuDialog extends StatelessWidget {
             Container(
               height: 400,
               width: 192,
-              // color: Colors.white,
               decoration: const BoxDecoration(
                 color: Colors.white,
                 border: Border(
@@ -40,7 +39,6 @@ class StartupMenuDialog extends StatelessWidget {
             Container(
               height: 400,
               width: 192,
-              // color: Colors.white,
               decoration: const BoxDecoration(
                 color: Color(0xFFD3E5FD),
                 border: Border(

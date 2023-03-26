@@ -37,8 +37,6 @@ class _OptionShutdowntState extends State<OptionShutdown> {
       }),
       child: GestureDetector(
         onTap: () {
-          // Get.toNamed('/log-off', arguments: widget.name);
-          // Navigator.of(context).pushNamed('/log-off');
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (context) => const LogOff()));
           Future.delayed(

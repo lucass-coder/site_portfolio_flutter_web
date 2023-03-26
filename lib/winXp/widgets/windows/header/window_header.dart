@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:site_portfolio/winXp/controllers/controller_home_page.dart';
-import 'package:site_portfolio/winXp/widgets/window/header/header_background.dart';
+import 'package:site_portfolio/winXp/widgets/windows/header/header_background.dart';
 
 class WindowHeader extends StatelessWidget {
   final bool focused;
+  final String title;
 
   const WindowHeader({
     Key? key,
     required this.focused,
+    required this.title,
   }) : super(key: key);
 
   @override
@@ -22,7 +24,7 @@ class WindowHeader extends StatelessWidget {
           ),
           SizedBox(
             height: double.infinity,
-            width: 450,
+            width: double.infinity,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -37,16 +39,24 @@ class WindowHeader extends StatelessWidget {
                 const SizedBox(
                   width: 3,
                 ),
-                const Text(
-                  ' Sobre',
+                Text(
+                  title,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
                 const Spacer(),
                 GestureDetector(
                   onTap: () {
-                    Get.find<ControllerHomePage>().closeAboutWindow();
+                    if (title == 'Sobre') {
+                      Get.find<ControllerHomePage>().closeAboutWindow();
+                    }
+                    if (title == 'Imagens') {
+                      Get.find<ControllerHomePage>().closeImagesWindow();
+                    }
+                    if (title == 'Jogos') {
+                      Get.find<ControllerHomePage>().closeGamesWindow();
+                    }
                   },
                   child: MouseRegion(
                     cursor: SystemMouseCursors.click,

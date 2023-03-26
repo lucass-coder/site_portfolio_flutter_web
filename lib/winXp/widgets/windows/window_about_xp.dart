@@ -1,7 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_utils/src/extensions/internacionalization.dart';
-import 'package:site_portfolio/winXp/widgets/window/header/window_header.dart';
+import 'package:get/get.dart';
+import 'package:site_portfolio/winXp/widgets/windows/header/window_header.dart';
 
 class WindowAboutXp extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -31,8 +31,8 @@ class WindowAboutXp extends StatelessWidget {
                 children: [
                   const WindowHeader(
                     focused: true,
+                    title: 'Sobre',
                   ),
-
                   Container(
                     decoration: BoxDecoration(
                       border: Border(
@@ -80,10 +80,6 @@ class WindowAboutXp extends StatelessWidget {
                       ],
                     ),
                   ),
-                  // Container(
-                  //   color: Colors.white,
-                  //   height: 390,
-                  // )
                 ],
               ),
             ),

@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 
 import 'package:site_portfolio/widgets/icons_desktop.dart';
 import 'package:site_portfolio/widgets/option_click_right.dart';
-import 'package:site_portfolio/widgets/window_games.dart';
 import 'package:get/get.dart';
 import 'package:site_portfolio/winXp/controllers/controller_home_page.dart';
 import 'package:site_portfolio/winXp/widgets/startup_bar.dart';
-import 'package:site_portfolio/winXp/widgets/window/images/window_image_xp.dart';
-import 'package:site_portfolio/winXp/widgets/window/window_about_xp.dart';
+import 'package:site_portfolio/winXp/widgets/windows/games/window_games_xp.dart';
+import 'package:site_portfolio/winXp/widgets/windows/images/window_image_xp.dart';
+import 'package:site_portfolio/winXp/widgets/windows/window_about_xp.dart';
 
 class HomePageXp extends StatefulWidget {
   const HomePageXp({Key? key}) : super(key: key);
@@ -101,7 +101,7 @@ class _MyHomePageState extends State<HomePageXp>
                       },
                       child: Visibility(
                         visible: controller.isGame.value && isAtivo2 == false,
-                        child: const WindowGames(),
+                        child: const WindowGamesXp(),
                       ),
                     ),
                     Obx(() => Visibility(

@@ -81,6 +81,7 @@ flutter:
   # Windows xp
     - assets/win-xp/icons/
     - assets/win-xp/icons_startbar/
+    - assets/win-xp/gifs/
     - assets/win-xp/images/
     - assets/win-xp/images/wallpapers/
 
