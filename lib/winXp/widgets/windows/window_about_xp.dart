@@ -29,9 +29,9 @@ class WindowAboutXp extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const WindowHeader(
+                  WindowHeader(
                     focused: true,
-                    title: 'Sobre',
+                    title: 'about'.tr,
                   ),
                   Container(
                     decoration: BoxDecoration(

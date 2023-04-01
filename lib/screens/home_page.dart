@@ -252,9 +252,7 @@ class _MyHomePageState extends State<HomePage>
                                       ),
                                     ),
                                     const Spacer(),
-                                    const LanguageIconBar(
-                                      icon: 'game',
-                                    ),
+                                    const LanguageIconBar(),
                                     const SizedBox(width: 20),
                                     const Time(),
                                     const SizedBox(width: 16),

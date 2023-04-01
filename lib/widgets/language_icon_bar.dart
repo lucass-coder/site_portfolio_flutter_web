@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LanguageIconBar extends StatefulWidget {
-  final String icon;
-
-  const LanguageIconBar({Key? key, required this.icon}) : super(key: key);
+  const LanguageIconBar({Key? key}) : super(key: key);
 
   @override
   State<LanguageIconBar> createState() => _LanguageIconBarState();

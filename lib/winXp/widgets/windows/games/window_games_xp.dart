@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
 import 'package:site_portfolio/games/lib/selection_person_page.dart';
 import 'package:site_portfolio/widgets/image_box.dart';
 import 'package:site_portfolio/winXp/widgets/windows/header/window_header.dart';
@@ -36,10 +37,10 @@ class WindowGamesXp extends StatelessWidget {
         child: Column(
           children: [
             Stack(
-              children: const [
+              children: [
                 WindowHeader(
                   focused: true,
-                  title: 'Jogos',
+                  title: 'game'.tr,
                 ),
               ],
             ),

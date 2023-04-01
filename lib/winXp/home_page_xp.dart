@@ -151,9 +151,13 @@ class _MyHomePageState extends State<HomePageXp>
                         ),
                       ],
                     ),
-                    const Align(
+                    Align(
                       alignment: Alignment.bottomCenter,
-                      child: StartupBar(),
+                      child: StartupBar(
+                        isGame: controller.isGame.value,
+                        isImage: controller.isImage.value,
+                        isAbout: controller.isAbout.value,
+                      ),
                     ),
                   ],
                 ),

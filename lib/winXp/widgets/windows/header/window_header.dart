@@ -48,13 +48,13 @@ class WindowHeader extends StatelessWidget {
                 const Spacer(),
                 GestureDetector(
                   onTap: () {
-                    if (title == 'Sobre') {
+                    if (title == 'about'.tr) {
                       Get.find<ControllerHomePage>().closeAboutWindow();
                     }
-                    if (title == 'Imagens') {
+                    if (title == 'images'.tr) {
                       Get.find<ControllerHomePage>().closeImagesWindow();
                     }
-                    if (title == 'Jogos') {
+                    if (title == 'game'.tr) {
                       Get.find<ControllerHomePage>().closeGamesWindow();
                     }
                   },

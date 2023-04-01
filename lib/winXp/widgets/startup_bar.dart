@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/src/extensions/internacionalization.dart';
+import 'package:site_portfolio/winXp/widgets/language_icon_bar_xp.dart';
 
 import 'package:site_portfolio/winXp/widgets/start_button.dart';
+import 'package:site_portfolio/winXp/widgets/startup_menu_dialog/startup_window_icon.dart';
 import 'package:site_portfolio/winXp/widgets/startup_toolbar/startup_toolbar.dart';
 
 class StartupBar extends StatelessWidget {
-  const StartupBar({Key? key}) : super(key: key);
+  final bool isGame;
+  final bool isImage;
+  final bool isAbout;
+  const StartupBar(
+      {Key? key,
+      required this.isGame,
+      required this.isImage,
+      required this.isAbout})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -55,9 +66,35 @@ class StartupBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
-          SizedBox(width: 126, child: StartButton()),
-          StartupToolbar(),
+        children: [
+          Row(
+            children: [
+              const SizedBox(width: 126, child: StartButton()),
+              const SizedBox(width: 10),
+              Visibility(
+                visible: isGame,
+                child: StartupWindowIcon(icon: 'controller_3', name: 'game'.tr),
+              ),
+              const SizedBox(width: 2),
+              Visibility(
+                visible: isImage,
+                child:
+                    StartupWindowIcon(icon: 'folder_images', name: 'images'.tr),
+              ),
+              const SizedBox(width: 2),
+              Visibility(
+                visible: isAbout,
+                child:
+                    StartupWindowIcon(icon: 'folder_about', name: 'about'.tr),
+              ),
+            ],
+          ),
+          const Spacer(),
+          const LanguageIconBarXp(),
+          const SizedBox(
+            width: 8,
+          ),
+          const StartupToolbar(),
         ],
       ),
     );

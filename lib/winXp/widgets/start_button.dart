@@ -76,9 +76,10 @@ class _StartButtonState extends State<StartButton> {
           child: ColorFiltered(
             colorFilter: ColorFilter.mode(filterColor, BlendMode.lighten),
             child: Container(
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/win-xp/images/start_button.png'),
+                  image: AssetImage(
+                      'assets/win-xp/images/${'start_button'.tr}.png'),
                   fit: BoxFit.cover,
                 ),
               ),
