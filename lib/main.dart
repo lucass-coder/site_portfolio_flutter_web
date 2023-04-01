@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:site_portfolio/games/lib/routes.dart';
 import 'package:get/get.dart';
+import 'package:site_portfolio/screens/home_page.dart';
 import 'package:site_portfolio/utils/translation_keys.dart';
-import 'package:site_portfolio/winXp/home_page_xp.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
@@ -37,8 +37,8 @@ class MyApp extends StatelessWidget {
       //   //   page: () => const LogOff(),
       //   // ),
       // ],
-      // home: const HomePage(),
-      home: const HomePageXp(),
+      home: const HomePage(),
+      // home: const HomePageXp(),
     );
   }
 }

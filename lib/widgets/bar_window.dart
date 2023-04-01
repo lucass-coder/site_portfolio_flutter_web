@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
 class BarWindow extends StatefulWidget {
-  final bool isAtivo;
   final String icon;
   final String name;
 
-  const BarWindow(
-      {Key? key, required this.isAtivo, required this.icon, required this.name})
+  const BarWindow({Key? key, required this.icon, required this.name})
       : super(key: key);
 
   @override
@@ -24,12 +22,12 @@ class _BarWindowState extends State<BarWindow> {
             Container(
               height: 32,
               width: 130,
-              decoration: BoxDecoration(color: Colors.grey, boxShadow: [
+              decoration: const BoxDecoration(color: Colors.grey, boxShadow: [
                 BoxShadow(
-                  color: widget.isAtivo ? Colors.white : Colors.black,
+                  color: Colors.black,
                   spreadRadius: 1,
                   blurRadius: 0,
-                  offset: const Offset(1, 1), // changes position of shadow
+                  offset: Offset(1, 1), // changes position of shadow
                 ),
               ]),
             ),
@@ -37,12 +35,12 @@ class _BarWindowState extends State<BarWindow> {
               height: 32,
               width: 130,
               decoration:
-                  BoxDecoration(color: const Color(0xffC0C7C8), boxShadow: [
+                  const BoxDecoration(color: Color(0xffC0C7C8), boxShadow: [
                 BoxShadow(
-                  color: widget.isAtivo ? Colors.black : Colors.white,
+                  color: Colors.white,
                   spreadRadius: 1,
                   blurRadius: 0,
-                  offset: const Offset(-1, -1), // changes position of shadow
+                  offset: Offset(-1, -1), // changes position of shadow
                 ),
               ]),
               child: Center(

@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_web_libraries_in_flutter
+// ignore_for_file: avoid_web_libraries_in_flutter, unrelated_type_equality_checks
 import 'dart:html' as html;
 
 import 'package:flutter/material.dart';

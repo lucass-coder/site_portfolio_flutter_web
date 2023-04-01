@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_web_libraries_in_flutter
+// ignore_for_file: avoid_web_libraries_in_flutter, unrelated_type_equality_checks
 
 import 'dart:html' as html;
 
@@ -126,14 +126,14 @@ class _MyHomePageState extends State<HomePage>
                           children: [
                             Column(
                               children: [
-                                IconsDesktop(
-                                  name: 'game'.tr,
-                                  icon: 'computer',
-                                  iconSystem: DesktopIcon.icon95,
-                                  isAtivo: false,
-                                  onPressed: () => setState(() {
-                                    isAtivo2 ? null : isGame = !isGame;
-                                  }),
+                                GestureDetector(
+                                  onTap: () => controller.openGamesWindow(),
+                                  child: IconsDesktop(
+                                    name: 'game'.tr,
+                                    icon: 'computer',
+                                    iconSystem: DesktopIcon.icon95,
+                                    isAtivo: false,
+                                  ),
                                 ),
                                 GestureDetector(
                                   onTap: () {
@@ -232,26 +232,23 @@ class _MyHomePageState extends State<HomePage>
                                       child: BottomStart(isAtivo: isAtivo),
                                     ),
                                     Visibility(
-                                      visible: isGame,
+                                      visible: controller.isGame == true,
                                       child: Padding(
                                         padding:
                                             const EdgeInsets.only(left: 8.0),
                                         child: BarWindow(
-                                          isAtivo: isGame,
                                           icon: 'game',
                                           name: 'game'.tr,
                                         ),
                                       ),
                                     ),
                                     Visibility(
-                                      visible: isAtivo2,
+                                      visible: controller.isImage == true,
                                       child: Padding(
                                         padding:
                                             const EdgeInsets.only(left: 8.0),
                                         child: BarWindow(
-                                            isAtivo: isAtivo2,
-                                            icon: 'folder',
-                                            name: 'images'.tr),
+                                            icon: 'folder', name: 'images'.tr),
                                       ),
                                     ),
                                     const Spacer(),
