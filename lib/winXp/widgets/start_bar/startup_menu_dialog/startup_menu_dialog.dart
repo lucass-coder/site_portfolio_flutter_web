@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:site_portfolio/winXp/widgets/start_bar/startup_menu_dialog/startup_bottom.dart';
 import 'package:site_portfolio/winXp/widgets/start_bar/startup_menu_dialog/user_header.dart';
 import 'package:site_portfolio/winXp/widgets/start_bar/startup_options/options_start_xp.dart';
+
+import '../../../controllers/controller_home_page.dart';
 
 class StartupMenuDialog extends StatelessWidget {
   const StartupMenuDialog({Key? key}) : super(key: key);
@@ -50,26 +53,44 @@ class StartupMenuDialog extends StatelessWidget {
                 ),
               ),
               child: Column(
-                children: const [
-                  OptionStartXp(
+                children: [
+                  const OptionStartXp(
                     icon: 'folder',
                     name: 'My Documents',
                     isHovered: false,
                   ),
-                  OptionStartXp(
-                    icon: 'folder_images',
-                    name: 'My Pictures',
-                    isHovered: false,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                      Get.find<ControllerHomePage>().openImagesWindow();
+                    },
+                    child: const OptionStartXp(
+                      icon: 'folder_images',
+                      name: 'My Pictures',
+                      isHovered: false,
+                    ),
                   ),
-                  OptionStartXp(
-                    icon: 'controller_3',
-                    name: 'My Games',
-                    isHovered: false,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                      Get.find<ControllerHomePage>().openGamesWindow();
+                    },
+                    child: const OptionStartXp(
+                      icon: 'controller_3',
+                      name: 'My Games',
+                      isHovered: false,
+                    ),
                   ),
-                  OptionStartXp(
-                    icon: 'folder_about',
-                    name: 'Sobre',
-                    isHovered: false,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                      Get.find<ControllerHomePage>().openAboutWindow();
+                    },
+                    child: const OptionStartXp(
+                      icon: 'folder_about',
+                      name: 'Sobre',
+                      isHovered: false,
+                    ),
                   ),
                 ],
               ),
