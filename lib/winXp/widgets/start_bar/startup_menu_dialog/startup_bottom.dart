@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:site_portfolio/winXp/widgets/startup_menu_dialog/startup_button.dart';
+import 'package:site_portfolio/winXp/widgets/start_bar/startup_menu_dialog/startup_button.dart';
 
 class StartupBottom extends StatelessWidget {
   const StartupBottom({Key? key}) : super(key: key);

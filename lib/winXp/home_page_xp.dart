@@ -7,7 +7,7 @@ import 'package:site_portfolio/widgets/icons_desktop.dart';
 import 'package:get/get.dart';
 import 'package:site_portfolio/winXp/controllers/controller_home_page.dart';
 import 'package:site_portfolio/winXp/widgets/desktop/option_click_right_xp.dart';
-import 'package:site_portfolio/winXp/widgets/startup_bar.dart';
+import 'package:site_portfolio/winXp/widgets/start_bar/startup_bar.dart';
 import 'package:site_portfolio/winXp/widgets/windows/games/window_games_xp.dart';
 import 'package:site_portfolio/winXp/widgets/windows/images/window_image_xp.dart';
 import 'package:site_portfolio/winXp/widgets/windows/window_about_xp.dart';

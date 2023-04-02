@@ -7,6 +7,7 @@ import 'package:site_portfolio/winXp/home_page_xp.dart';
 final navigatorKey = GlobalKey<NavigatorState>();
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 

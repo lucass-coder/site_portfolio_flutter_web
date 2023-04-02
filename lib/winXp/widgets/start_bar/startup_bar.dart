@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
-import 'package:site_portfolio/winXp/widgets/language_icon_bar_xp.dart';
+import 'package:site_portfolio/winXp/widgets/start_bar/language_icon_bar_xp.dart';
 
-import 'package:site_portfolio/winXp/widgets/start_button.dart';
-import 'package:site_portfolio/winXp/widgets/startup_menu_dialog/startup_window_icon.dart';
-import 'package:site_portfolio/winXp/widgets/startup_toolbar/startup_toolbar.dart';
+import 'package:site_portfolio/winXp/widgets/start_bar/start_button.dart';
+import 'package:site_portfolio/winXp/widgets/start_bar/startup_menu_dialog/startup_window_icon.dart';
+import 'package:site_portfolio/winXp/widgets/start_bar/startup_toolbar/startup_toolbar.dart';
 
 class StartupBar extends StatelessWidget {
   final bool isGame;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:site_portfolio/winXp/widgets/startup_menu_dialog/startup_bottom.dart';
-import 'package:site_portfolio/winXp/widgets/startup_menu_dialog/user_header.dart';
+import 'package:site_portfolio/winXp/widgets/start_bar/startup_menu_dialog/startup_bottom.dart';
+import 'package:site_portfolio/winXp/widgets/start_bar/startup_menu_dialog/user_header.dart';
+import 'package:site_portfolio/winXp/widgets/start_bar/startup_options/options_start_xp.dart';
 
 class StartupMenuDialog extends StatelessWidget {
   const StartupMenuDialog({Key? key}) : super(key: key);
@@ -47,6 +48,30 @@ class StartupMenuDialog extends StatelessWidget {
                     width: 3,
                   ),
                 ),
+              ),
+              child: Column(
+                children: const [
+                  OptionStartXp(
+                    icon: 'folder',
+                    name: 'My Documents',
+                    isHovered: false,
+                  ),
+                  OptionStartXp(
+                    icon: 'folder_images',
+                    name: 'My Pictures',
+                    isHovered: false,
+                  ),
+                  OptionStartXp(
+                    icon: 'controller_3',
+                    name: 'My Games',
+                    isHovered: false,
+                  ),
+                  OptionStartXp(
+                    icon: 'folder_about',
+                    name: 'Sobre',
+                    isHovered: false,
+                  ),
+                ],
               ),
             ),
           ],

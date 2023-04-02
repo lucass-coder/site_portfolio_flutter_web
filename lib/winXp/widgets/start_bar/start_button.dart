@@ -1,9 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:site_portfolio/winXp/widgets/startup_menu_dialog/startup_menu_dialog.dart';
+import 'package:site_portfolio/winXp/widgets/start_bar/startup_menu_dialog/startup_menu_dialog.dart';
 
-import '../controllers/controller_home_page.dart';
+import '../../controllers/controller_home_page.dart';
 
 class StartButton extends StatefulWidget {
   const StartButton({Key? key}) : super(key: key);
