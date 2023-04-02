@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_utils/src/extensions/internacionalization.dart';
-import 'package:site_portfolio/winXp/widgets/windows/images/image_box_xp.dart';
-import 'package:site_portfolio/winXp/widgets/windows/header/window_header.dart';
 
 class WindowImageXp extends StatelessWidget {
   const WindowImageXp({
