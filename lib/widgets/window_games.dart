@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:site_portfolio/games/domvs_dash/lib/select_person_domvs_dash.dart';
 import 'package:site_portfolio/games/lib/selection_person_page.dart';
 import 'package:site_portfolio/widgets/image_box.dart';
 import 'package:get/get.dart';
@@ -78,9 +79,21 @@ class WindowGames extends StatelessWidget {
                                       'assets/images-desktop/domvs-bros.png',
                                 ),
                               ),
-                              const ImageBox(
-                                imageUrl:
-                                    'assets/images-desktop/jump-game-comming.webp',
+                              GestureDetector(
+                                onTap: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        const SelectPersonDomvsDash(
+                                      title: 'Domvs Dash',
+                                      originXp: false,
+                                    ),
+                                  ),
+                                ),
+                                child: const ImageBox(
+                                  imageUrl:
+                                      'assets/images-desktop/jump-game-comming.webp',
+                                ),
                               ),
                             ],
                           ),

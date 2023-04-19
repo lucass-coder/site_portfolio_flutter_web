@@ -72,16 +72,6 @@ class _SelectionPersonPageState extends State<SelectionPersonPage> {
                   enableAutoSlider: true,
                 ),
               ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-              //   crossAxisAlignment: CrossAxisAlignment.center,
-              //   children: [
-              //     SelectionPersonArea(),
-              //     SelectionPersonArea(),
-              //     SelectionPersonArea(),
-              //     SelectionPersonArea(),
-              //   ],
-              // ),
             ],
           ),
         ),

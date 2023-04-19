@@ -69,202 +69,206 @@ class _MyHomePageState extends State<HomePage>
           isAtivo = false;
           visible = false;
         }),
-        child: Scaffold(
-          body: Obx(
-            () => AnimatedSwitcher(
-              duration: const Duration(milliseconds: 500),
-              child: Container(
-                key: ValueKey(controller.nomeImage.value),
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                        'assets/images-desktop/${controller.nomeImage}.png'),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                child: Stack(
-                  children: [
-                    Positioned(
-                      left: x,
-                      top: y,
-                      child: Visibility(
-                        visible: visible,
-                        child: OptionCLickRight(
-                          name: 'change_wallpalper'.tr,
-                          onPressed: () => setState(() {
-                            isAtivo2 = !isAtivo2;
-                            visible = false;
-                          }),
-                        ),
-                      ),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: Scaffold(
+            body: Obx(
+              () => AnimatedSwitcher(
+                duration: const Duration(milliseconds: 500),
+                child: Container(
+                  key: ValueKey(controller.nomeImage.value),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                          'assets/images-desktop/${controller.nomeImage}.png'),
+                      fit: BoxFit.cover,
                     ),
-                    Obx(() => Visibility(
-                          visible: controller.isImage.value,
-                          child: WindowImage(
+                  ),
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        left: x,
+                        top: y,
+                        child: Visibility(
+                          visible: visible,
+                          child: OptionCLickRight(
+                            name: 'change_wallpalper'.tr,
                             onPressed: () => setState(() {
                               isAtivo2 = !isAtivo2;
+                              visible = false;
                             }),
                           ),
-                        )),
-                    GestureDetector(
-                      onTap: () => controller.openGamesWindow(),
-                      child: Visibility(
-                        visible: controller.isGame.value && isAtivo2 == false,
-                        child: const WindowGames(),
+                        ),
                       ),
-                    ),
-                    Obx(() => Visibility(
-                          visible: controller.isAbout.value == true &&
-                              isAtivo2 == false,
-                          child: const WindowAbout(),
-                        )),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Column(
-                              children: [
-                                GestureDetector(
-                                  onTap: () => controller.openGamesWindow(),
-                                  child: IconsDesktop(
-                                    name: 'game'.tr,
-                                    icon: 'computer',
-                                    iconSystem: DesktopIcon.icon95,
-                                    isAtivo: false,
-                                  ),
-                                ),
-                                GestureDetector(
-                                  onTap: () {
-                                    controller.openImagesWindow();
-                                  },
-                                  child: IconsDesktop(
-                                    name: 'images'.tr,
-                                    icon: 'folder',
-                                    iconSystem: DesktopIcon.icon95,
-                                    isAtivo: false,
-                                  ),
-                                ),
-                                IconsDesktop(
-                                  name: 'WhattsApp',
-                                  icon: 'phone',
-                                  iconSystem: DesktopIcon.icon95,
-                                  isAtivo: false,
-                                  onPressed: () =>
-                                      html.window.open(url, 'new tab'),
-                                ),
-                                GestureDetector(
-                                  onTap: () {
-                                    controller.openAboutWindow();
-                                    // Get.find<ControllerHomePage>().openAboutWindow();
-                                  },
-                                  child: IconsDesktop(
-                                    name: 'about'.tr,
-                                    icon: 'cmd',
-                                    isAtivo: false,
-                                    iconSystem: DesktopIcon.icon95,
-                                  ),
-                                ),
-                              ],
+                      Obx(() => Visibility(
+                            visible: controller.isImage.value,
+                            child: WindowImage(
+                              onPressed: () => setState(() {
+                                isAtivo2 = !isAtivo2;
+                              }),
                             ),
-                            Column(
-                              children: [
-                                IconsDesktop(
-                                  name: 'win-xp',
-                                  icon: 'windows_update',
-                                  iconSystem: DesktopIcon.icon95,
-                                  isAtivo: false,
-                                  onPressed: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const StartScreenXp()));
-                                    Future.delayed(
-                                      const Duration(seconds: 6),
-                                      () => Navigator.of(context).push(
+                          )),
+                      GestureDetector(
+                        onTap: () => controller.openGamesWindow(),
+                        child: Visibility(
+                          visible: controller.isGame.value && isAtivo2 == false,
+                          child: const WindowGames(),
+                        ),
+                      ),
+                      Obx(() => Visibility(
+                            visible: controller.isAbout.value == true &&
+                                isAtivo2 == false,
+                            child: const WindowAbout(),
+                          )),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Column(
+                                children: [
+                                  GestureDetector(
+                                    onTap: () => controller.openGamesWindow(),
+                                    child: IconsDesktop(
+                                      name: 'game'.tr,
+                                      icon: 'computer',
+                                      iconSystem: DesktopIcon.icon95,
+                                      isAtivo: false,
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      controller.openImagesWindow();
+                                    },
+                                    child: IconsDesktop(
+                                      name: 'images'.tr,
+                                      icon: 'folder',
+                                      iconSystem: DesktopIcon.icon95,
+                                      isAtivo: false,
+                                    ),
+                                  ),
+                                  IconsDesktop(
+                                    name: 'WhattsApp',
+                                    icon: 'phone',
+                                    iconSystem: DesktopIcon.icon95,
+                                    isAtivo: false,
+                                    onPressed: () =>
+                                        html.window.open(url, 'new tab'),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      controller.openAboutWindow();
+                                      // Get.find<ControllerHomePage>().openAboutWindow();
+                                    },
+                                    child: IconsDesktop(
+                                      name: 'about'.tr,
+                                      icon: 'cmd',
+                                      isAtivo: false,
+                                      iconSystem: DesktopIcon.icon95,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                children: [
+                                  IconsDesktop(
+                                    name: 'win-xp',
+                                    icon: 'windows_update',
+                                    iconSystem: DesktopIcon.icon95,
+                                    isAtivo: false,
+                                    onPressed: () {
+                                      Navigator.of(context).push(
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  const HomePageXp())),
-                                    );
-                                  },
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            AnimatedOpacity(
-                              opacity: isAtivo ? 1.0 : 0.0,
-                              duration: const Duration(milliseconds: 300),
-                              child: Visibility(
-                                visible: isAtivo,
-                                child: const StartBar(),
+                                                  const StartScreenXp()));
+                                      Future.delayed(
+                                        const Duration(seconds: 6),
+                                        () => Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const HomePageXp())),
+                                      );
+                                    },
+                                  ),
+                                ],
                               ),
-                            ),
-                            Align(
-                              alignment: Alignment.bottomCenter,
-                              child: Container(
-                                color: const Color(0xffC0C7C8),
-                                width: MediaQuery.of(context).size.width,
-                                height: 40,
-                                child: Row(
-                                  children: [
-                                    const SizedBox(width: 20),
-                                    GestureDetector(
-                                      onTap: () => {
-                                        setState(() {
-                                          visible = false;
-                                          if (isAtivo == true) {
-                                            isAtivo = false;
-                                          } else {
-                                            isAtivo = true;
-                                          }
-                                        })
-                                      },
-                                      child: BottomStart(isAtivo: isAtivo),
-                                    ),
-                                    Visibility(
-                                      visible: controller.isGame == true,
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 8.0),
-                                        child: BarWindow(
-                                          icon: 'game',
-                                          name: 'game'.tr,
+                            ],
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              AnimatedOpacity(
+                                opacity: isAtivo ? 1.0 : 0.0,
+                                duration: const Duration(milliseconds: 300),
+                                child: Visibility(
+                                  visible: isAtivo,
+                                  child: const StartBar(),
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment.bottomCenter,
+                                child: Container(
+                                  color: const Color(0xffC0C7C8),
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 40,
+                                  child: Row(
+                                    children: [
+                                      const SizedBox(width: 20),
+                                      GestureDetector(
+                                        onTap: () => {
+                                          setState(() {
+                                            visible = false;
+                                            if (isAtivo == true) {
+                                              isAtivo = false;
+                                            } else {
+                                              isAtivo = true;
+                                            }
+                                          })
+                                        },
+                                        child: BottomStart(isAtivo: isAtivo),
+                                      ),
+                                      Visibility(
+                                        visible: controller.isGame == true,
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 8.0),
+                                          child: BarWindow(
+                                            icon: 'game',
+                                            name: 'game'.tr,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    Visibility(
-                                      visible: controller.isImage == true,
-                                      child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 8.0),
-                                        child: BarWindow(
-                                            icon: 'folder', name: 'images'.tr),
+                                      Visibility(
+                                        visible: controller.isImage == true,
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 8.0),
+                                          child: BarWindow(
+                                              icon: 'folder',
+                                              name: 'images'.tr),
+                                        ),
                                       ),
-                                    ),
-                                    const Spacer(),
-                                    const LanguageIconBar(),
-                                    const SizedBox(width: 20),
-                                    const Time(),
-                                    const SizedBox(width: 16),
-                                  ],
+                                      const Spacer(),
+                                      const LanguageIconBar(),
+                                      const SizedBox(width: 20),
+                                      const Time(),
+                                      const SizedBox(width: 16),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
