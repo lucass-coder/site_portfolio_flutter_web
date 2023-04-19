@@ -23,7 +23,9 @@ class Routes {
 
     switch (settings.name) {
       case menu:
-        return _buildRoute(const SelectionPersonPage());
+        return _buildRoute(const SelectionPersonPage(
+          originXp: false,
+        ));
 
       case ninja:
         return _buildRoute(

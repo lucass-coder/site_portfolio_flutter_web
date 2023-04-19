@@ -5,7 +5,6 @@ import 'package:flame/components.dart';
 import 'package:flutter/services.dart';
 
 import '../doodle_dash.dart';
-import '../world.dart';
 import 'sprites.dart';
 
 enum PlayerState {
@@ -84,7 +83,7 @@ class Player extends SpriteGroupComponent<PlayerState>
     }
 
     // During development, its useful to "cheat"
-    if (keysPressed.contains(LogicalKeyboardKey.arrowUp)) {
+    if (keysPressed.contains(LogicalKeyboardKey.keyM)) {
       jump();
     }
 

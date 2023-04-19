@@ -97,7 +97,7 @@ Sua maior fraqueza é sua durabilidade, aguentando apenas um Hit.
           'guidance':
               'Use  A / D  para se mover. \n Barra de Espaço para Pular. \n E NÃO SEJA ATINGIDO! \n\nBom divertimento!',
           'guidance_lucas':
-              'Use  <- ->  para se mover. \n Barra de Espaço para Pular.  '
+              'Use  A / D  para se mover. \n Barra de Espaço para Pular.  '
                   '\n \n Atinga o apice do corpo e deixe o monstro sair da jaula!'
                   '\n Bom divertimento!',
           'play': 'Jogar',

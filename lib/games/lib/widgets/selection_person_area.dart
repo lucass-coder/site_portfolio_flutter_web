@@ -3,15 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:site_portfolio/games/lib/routes.dart';
+import 'package:site_portfolio/screens/home_page.dart';
+import 'package:site_portfolio/winXp/home_page_xp.dart';
 
 enum Person { lucas, ninja }
 
 // ignore: must_be_immutable
 class SelectionPersonArea extends StatelessWidget {
   final Person person;
+  final bool originXp;
   SelectionPersonArea({
     Key? key,
     required this.person,
+    required this.originXp,
   }) : super(key: key);
 
   late String urlPerson;
@@ -21,12 +25,23 @@ class SelectionPersonArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void _onClick() {
+      if (originXp == true) {
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const HomePageXp()));
+      } else {
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => const HomePage()));
+      }
+    }
+
     switch (person) {
       case Person.lucas:
         urlPerson = 'assets/images/lucas.png';
         description = 'lucas_description'.tr;
         name = 'Lucão - FlutterMan';
         route = Routes.lucas;
+
         break;
       case Person.ninja:
         urlPerson = 'assets/images/persons/ninja/Idle__000.png';

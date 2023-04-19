@@ -59,111 +59,107 @@ class _MyHomePageState extends State<HomePageXp>
           isAtivo = false;
           controller.setClickRight(false);
         }),
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          home: Scaffold(
-            body: Obx(
-              () => AnimatedSwitcher(
-                duration: const Duration(milliseconds: 500),
-                child: Container(
-                  key: ValueKey(controller.nomeImage.value),
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                          'assets/win-xp/images/wallpapers/${controller.nomeImage}.webp'),
-                      fit: BoxFit.cover,
-                    ),
+        child: Scaffold(
+          body: Obx(
+            () => AnimatedSwitcher(
+              duration: const Duration(milliseconds: 500),
+              child: Container(
+                key: ValueKey(controller.nomeImage.value),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                        'assets/win-xp/images/wallpapers/${controller.nomeImage}.webp'),
+                    fit: BoxFit.cover,
                   ),
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        left: x,
-                        top: y,
-                        child: Visibility(
-                          visible: controller.clickRight == true,
-                          child: OptionCLickRightXp(
-                            name: 'change_wallpalper'.tr,
-                          ),
+                ),
+                child: Stack(
+                  children: [
+                    Positioned(
+                      left: x,
+                      top: y,
+                      child: Visibility(
+                        visible: controller.clickRight == true,
+                        child: OptionCLickRightXp(
+                          name: 'change_wallpalper'.tr,
                         ),
                       ),
-                      Obx(
-                        () => Visibility(
-                          visible: controller.isImage.value,
-                          child: const WindowImageXp(),
-                        ),
+                    ),
+                    Obx(
+                      () => Visibility(
+                        visible: controller.isImage.value,
+                        child: const WindowImageXp(),
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          controller.openGamesWindow();
-                        },
-                        child: Visibility(
-                          visible: controller.isGame.value && isAtivo2 == false,
-                          child: const WindowGamesXp(),
-                        ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        controller.openGamesWindow();
+                      },
+                      child: Visibility(
+                        visible: controller.isGame.value && isAtivo2 == false,
+                        child: const WindowGamesXp(),
                       ),
-                      Obx(() => Visibility(
-                            visible: controller.isAbout.value == true &&
-                                isAtivo2 == false,
-                            child: const WindowAboutXp(),
-                          )),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Column(
-                            children: [
-                              GestureDetector(
-                                onTap: () => controller.openGamesWindow(),
-                                child: IconsDesktop(
-                                  name: 'game'.tr,
-                                  icon: 'controller_3',
-                                  iconSystem: DesktopIcon.iconxp,
-                                  isAtivo: false,
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  controller.openImagesWindow();
-                                },
-                                child: IconsDesktop(
-                                  name: 'images'.tr,
-                                  icon: 'folder_images',
-                                  iconSystem: DesktopIcon.iconxp,
-                                  isAtivo: false,
-                                ),
-                              ),
-                              IconsDesktop(
-                                name: 'WhattsApp',
-                                icon: 'whatsapp',
+                    ),
+                    Obx(() => Visibility(
+                          visible: controller.isAbout.value == true &&
+                              isAtivo2 == false,
+                          child: const WindowAboutXp(),
+                        )),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Column(
+                          children: [
+                            GestureDetector(
+                              onTap: () => controller.openGamesWindow(),
+                              child: IconsDesktop(
+                                name: 'game'.tr,
+                                icon: 'controller_3',
                                 iconSystem: DesktopIcon.iconxp,
                                 isAtivo: false,
-                                onPressed: () =>
-                                    html.window.open(url, 'new tab'),
                               ),
-                              GestureDetector(
-                                onTap: () {
-                                  controller.openAboutWindow();
-                                },
-                                child: IconsDesktop(
-                                  name: 'about'.tr,
-                                  icon: 'my_profile_folder',
-                                  iconSystem: DesktopIcon.iconxp,
-                                  isAtivo: false,
-                                ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                controller.openImagesWindow();
+                              },
+                              child: IconsDesktop(
+                                name: 'images'.tr,
+                                icon: 'folder_images',
+                                iconSystem: DesktopIcon.iconxp,
+                                isAtivo: false,
                               ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: StartupBar(
-                          isGame: controller.isGame.value,
-                          isImage: controller.isImage.value,
-                          isAbout: controller.isAbout.value,
+                            ),
+                            IconsDesktop(
+                              name: 'WhattsApp',
+                              icon: 'whatsapp',
+                              iconSystem: DesktopIcon.iconxp,
+                              isAtivo: false,
+                              onPressed: () => html.window.open(url, 'new tab'),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                controller.openAboutWindow();
+                              },
+                              child: IconsDesktop(
+                                name: 'about'.tr,
+                                icon: 'my_profile_folder',
+                                iconSystem: DesktopIcon.iconxp,
+                                isAtivo: false,
+                              ),
+                            ),
+                          ],
                         ),
+                      ],
+                    ),
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: StartupBar(
+                        isGame: controller.isGame.value,
+                        isImage: controller.isImage.value,
+                        isAbout: controller.isAbout.value,
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),

@@ -20,36 +20,23 @@ class _SelectPersonDomvsDashState extends State<SelectPersonDomvsDash> {
   final Game game = DoodleDash();
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Domvs Dash',
-      themeMode: ThemeMode.dark,
-      theme: ThemeData(
-        colorScheme: lightColorScheme,
-        useMaterial3: true,
-      ),
-      darkTheme: ThemeData(
+    return Theme(
+      data: ThemeData(
         colorScheme: darkColorScheme,
         textTheme: GoogleFonts.audiowideTextTheme(ThemeData.dark().textTheme),
         useMaterial3: true,
       ),
-      home: Scaffold(
+      child: Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
-        body: Container(
-          // constraints: const BoxConstraints(
-          //   maxWidth: 800,
-          //   minWidth: 550,
-          // ),
-          child: GameWidget(
-            game: game,
-            overlayBuilderMap: <String, Widget Function(BuildContext, Game)>{
-              'gameOverlay': (context, game) => GameOverlay(game),
-              'mainMenuOverlay': (context, game) =>
-                  MainMenuOverlay(game, originXp: widget.originXp),
-              'gameOverOverlay': (context, game) =>
-                  GameOverOverlay(game, originXp: widget.originXp),
-            },
-          ),
+        body: GameWidget(
+          game: game,
+          overlayBuilderMap: <String, Widget Function(BuildContext, Game)>{
+            'gameOverlay': (context, game) => GameOverlay(game),
+            'mainMenuOverlay': (context, game) =>
+                MainMenuOverlay(game, originXp: widget.originXp),
+            'gameOverOverlay': (context, game) =>
+                GameOverOverlay(game, originXp: widget.originXp),
+          },
         ),
       ),
     );

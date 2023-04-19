@@ -74,8 +74,11 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/assets/game/
+    - assets/assets/game/background/
     - assets/assets/images/
     - assets/assets/images/game/
+    - assets/assets/images/game/background/
     - assets/assets/images/persons/ninja/
     - assets/assets/images/persons/lucas/
     - assets/assets/images/persons/dino/

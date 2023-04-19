@@ -72,7 +72,9 @@ class WindowGames extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          const SelectionPersonPage()),
+                                          const SelectionPersonPage(
+                                            originXp: false,
+                                          )),
                                 ),
                                 child: const ImageBox(
                                   imageUrl:
@@ -92,7 +94,7 @@ class WindowGames extends StatelessWidget {
                                 ),
                                 child: const ImageBox(
                                   imageUrl:
-                                      'assets/images-desktop/jump-game-comming.webp',
+                                      'assets/images-desktop/jump-game.png',
                                 ),
                               ),
                             ],

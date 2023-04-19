@@ -51,6 +51,7 @@ class GameOver extends StatelessWidget {
                   ),
                   child: Text(
                     'play_again'.tr,
+                    textAlign: TextAlign.center,
                     style: const TextStyle(
                       fontSize: 28.0,
                       color: blackTextColor,

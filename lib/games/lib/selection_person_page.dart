@@ -5,20 +5,20 @@ import 'package:get/get.dart';
 import 'package:site_portfolio/games/lib/widgets/selection_person_area.dart';
 
 class SelectionPersonPage extends StatefulWidget {
-  const SelectionPersonPage({super.key});
+  final bool originXp;
+  const SelectionPersonPage({super.key, required this.originXp});
 
   @override
   State<SelectionPersonPage> createState() => _SelectionPersonPageState();
 }
 
 class _SelectionPersonPageState extends State<SelectionPersonPage> {
-  List<SelectionPersonArea> personagens = [
-    SelectionPersonArea(person: Person.lucas),
-    SelectionPersonArea(person: Person.ninja),
-  ];
-
   @override
   Widget build(BuildContext context) {
+    List<SelectionPersonArea> personagens = [
+      SelectionPersonArea(person: Person.lucas, originXp: widget.originXp),
+      SelectionPersonArea(person: Person.ninja, originXp: widget.originXp),
+    ];
     return WillPopScope(
       onWillPop: () async {
         FlameAudio.bgm.stop();

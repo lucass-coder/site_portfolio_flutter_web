@@ -28,11 +28,14 @@ class LucasGameOver extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                'Game Over',
-                style: TextStyle(
-                  color: whiteTextColor,
-                  fontSize: 24,
+              const Center(
+                child: Text(
+                  'Game Over',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: whiteTextColor,
+                    fontSize: 24,
+                  ),
                 ),
               ),
               const SizedBox(height: 40),
@@ -51,6 +54,7 @@ class LucasGameOver extends StatelessWidget {
                   ),
                   child: Text(
                     'play_again'.tr,
+                    textAlign: TextAlign.center,
                     style: const TextStyle(
                       fontSize: 28.0,
                       color: blackTextColor,
