@@ -54,11 +54,11 @@ class StartupMenuDialog extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  const OptionStartXp(
-                    icon: 'folder',
-                    name: 'My Documents',
-                    isHovered: false,
-                  ),
+                  // const OptionStartXp(
+                  //   icon: 'folder',
+                  //   name: 'My Documents',
+                  //   isHovered: false,
+                  // ),
                   GestureDetector(
                     onTap: () {
                       Navigator.pop(context);

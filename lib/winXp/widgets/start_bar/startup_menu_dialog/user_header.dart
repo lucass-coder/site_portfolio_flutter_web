@@ -72,7 +72,7 @@ class UserHeader extends StatelessWidget {
                 width: 5,
               ),
               const Text(
-                'Usuário',
+                'Lucas Santana',
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w700,
