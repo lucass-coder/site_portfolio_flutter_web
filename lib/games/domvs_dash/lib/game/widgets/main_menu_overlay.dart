@@ -43,7 +43,7 @@ class _MainMenuOverlayState extends State<MainMenuOverlay> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'Escalada Domvs',
+                    'Escalada do Sucesso!',
                     style: titleStyle.copyWith(
                       height: .8,
                     ),
@@ -62,7 +62,7 @@ class _MainMenuOverlayState extends State<MainMenuOverlay> {
                       CharacterButton(
                         character: Character.dash,
                         selected: character == Character.dash,
-                        name: 'Alessandro',
+                        name: 'Dash',
                         onSelectChar: () {
                           setState(() {
                             character = Character.dash;
