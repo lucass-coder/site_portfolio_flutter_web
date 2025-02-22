@@ -125,26 +125,26 @@ packages:
     dependency: "direct main"
     description:
       name: cached_network_image
-      sha256: fd3d0dc1d451f9a252b32d95d3f0c3c487bc41a75eba2e6097cb0b9c71491b15
+      sha256: "28ea9690a8207179c319965c13cd8df184d5ee721ae2ce60f398ced1219cea1f"
       url: "https://pub.dev"
     source: hosted
-    version: "3.2.3"
+    version: "3.3.1"
   cached_network_image_platform_interface:
     dependency: transitive
     description:
       name: cached_network_image_platform_interface
-      sha256: bb2b8403b4ccdc60ef5f25c70dead1f3d32d24b9d6117cfc087f496b178594a7
+      sha256: "9e90e78ae72caa874a323d78fa6301b3fb8fa7ea76a8f96dc5b5bf79f283bf2f"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.0"
+    version: "4.0.0"
   cached_network_image_web:
     dependency: transitive
     description:
       name: cached_network_image_web
-      sha256: b8eb814ebfcb4dea049680f8c1ffb2df399e4d03bf7a352c775e26fa06e02fa0
+      sha256: "205d6a9f1862de34b93184f22b9d2d94586b2f05c581d546695e3d8f6a805cd7"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.2"
+    version: "1.2.0"
   characters:
     dependency: transitive
     description:
@@ -189,10 +189,10 @@ packages:
     dependency: "direct main"
     description:
       name: cupertino_icons
-      sha256: e35129dc44c9118cee2a5603506d823bab99c68393879edb440e0090d07586be
+      sha256: ba631d1c7f7bef6b729a622b7b752645a2d076dba9976925b8f25725a30e1ee6
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.5"
+    version: "1.0.8"
   equatable:
     dependency: transitive
     description:
@@ -237,26 +237,26 @@ packages:
     dependency: "direct main"
     description:
       name: flame_audio
-      sha256: "11805e414473a15111be9a08439bb6ab3923546233c4edeb3b886f70868adc8a"
+      sha256: "85d00dc83d93aa55a5d0b9d26a16d6ad9a5a3afada0aff22d923638f02d80948"
       url: "https://pub.dev"
     source: hosted
-    version: "1.4.1"
+    version: "1.4.0"
   flame_forge2d:
     dependency: "direct main"
     description:
       name: flame_forge2d
-      sha256: "2bcfc01287f7eeaf62362bd2d85ddf2e1cfd9b6fc221e7f09659fbe713cbd860"
+      sha256: cd189a4b50451df6bae96443c28aa1aaf4ef64e49592c5ccc09450567ee0b92a
       url: "https://pub.dev"
     source: hosted
-    version: "0.12.5"
+    version: "0.12.2"
   flame_tiled:
     dependency: "direct main"
     description:
       name: flame_tiled
-      sha256: "47ec58a4fe668ba5ed97a33ffa0b0038277d6f638d9285276446dc7a048b5e0e"
+      sha256: f210661b3d284050b9b11631959b9a37ace19c691b6c566e4055e8f5deb7ca4a
       url: "https://pub.dev"
     source: hosted
-    version: "1.10.1"
+    version: "1.4.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -270,22 +270,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "8.1.2"
-  flutter_blurhash:
-    dependency: transitive
-    description:
-      name: flutter_blurhash
-      sha256: "05001537bd3fac7644fa6558b09ec8c0a3f2eba78c0765f88912882b1331a5c6"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.7.0"
   flutter_cache_manager:
     dependency: transitive
     description:
       name: flutter_cache_manager
-      sha256: "32cd900555219333326a2d0653aaaf8671264c29befa65bbd9856d204a4c9fb3"
+      sha256: "8207f27539deb83732fdda03e259349046a39a4c767269285f449ade355d54ba"
       url: "https://pub.dev"
     source: hosted
-    version: "3.3.0"
+    version: "3.3.1"
   flutter_carousel_slider:
     dependency: "direct main"
     description:
@@ -320,6 +312,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.11.0"
+  game_portfolio_lucas:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: master
+      resolved-ref: "92556875c97dce0d275a5ca303bbdc573a84da61"
+      url: "https://github.com/lucass-coder/game_portfolio_lucas.git"
+    source: git
+    version: "1.0.0+1"
   get:
     dependency: "direct main"
     description:
@@ -348,10 +349,10 @@ packages:
     dependency: "direct main"
     description:
       name: google_fonts
-      sha256: "6b6f10f0ce3c42f6552d1c70d2c28d764cf22bb487f50f66cca31dcd5194f4d6"
+      sha256: "148c716f5929371d335d29c2952119b34842b1a8e5607e37bb9f68f96e88068a"
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.4"
+    version: "4.0.1"
   http:
     dependency: transitive
     description:
@@ -460,10 +461,10 @@ packages:
     dependency: transitive
     description:
       name: octo_image
-      sha256: "107f3ed1330006a3bea63615e81cf637433f5135a52466c7caa0e7152bca9143"
+      sha256: "34faa6639a78c7e3cbe79be6f9f96535867e879748ade7d17c9b1ae7536293bd"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.2"
+    version: "2.1.0"
   ordered_set:
     dependency: transitive
     description:
@@ -536,14 +537,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.5"
-  pedantic:
-    dependency: transitive
-    description:
-      name: pedantic
-      sha256: "67fc27ed9639506c856c840ccce7594d0bdcd91bc8d53d6e52359449a1d50602"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.11.1"
   petitparser:
     dependency: transitive
     description:
@@ -697,10 +690,10 @@ packages:
     dependency: transitive
     description:
       name: tiled
-      sha256: "1e277695ea25f387f66fb09104a4ce0f4f25e9b15239d541ffbdc3288ae1e087"
+      sha256: "93082e107dcad16cc2864101db37eeb48aeaedfe4a430cdebb77430b1f022031"
       url: "https://pub.dev"
     source: hosted
-    version: "0.10.1"
+    version: "0.8.4"
   typed_data:
     dependency: transitive
     description:
@@ -761,10 +754,10 @@ packages:
     dependency: transitive
     description:
       name: xml
-      sha256: ac0e3f4bf00ba2708c33fbabbbe766300e509f8c82dbd4ab6525039813f7e2fb
+      sha256: "80d494c09849dc3f899d227a78c30c5b949b985ededf884cb3f3bcd39f4b447a"
       url: "https://pub.dev"
     source: hosted
-    version: "6.1.0"
+    version: "5.4.1"
   yaml:
     dependency: transitive
     description:
@@ -775,4 +768,4 @@ packages:
     version: "3.1.1"
 sdks:
   dart: ">=3.2.0-0 <4.0.0"
-  flutter: ">=3.3.0"
+  flutter: ">=3.10.0"
