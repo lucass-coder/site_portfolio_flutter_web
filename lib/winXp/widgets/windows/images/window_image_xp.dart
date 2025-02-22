@@ -46,36 +46,31 @@ class WindowImageXp extends StatelessWidget {
             LayoutBuilder(
               builder: (context, constraints) {
                 return ConstrainedBox(
-                  constraints:
-                      const BoxConstraints(minHeight: 100, maxHeight: 340),
-                  child: IntrinsicHeight(
+                  constraints: const BoxConstraints(minHeight: 100, maxHeight: 340),
+                  child: const IntrinsicHeight(
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
                           Row(
-                            children: const [
+                            children: [
                               ImageBoxXp(
-                                imageUrl:
-                                    'assets/win-xp/images/wallpapers/windows.webp',
+                                imageUrl: 'assets/win-xp/images/wallpapers/windows.webp',
                                 imageName: 'windows',
                               ),
                               ImageBoxXp(
-                                imageUrl:
-                                    'assets/win-xp/images/wallpapers/image-1.webp',
+                                imageUrl: 'assets/win-xp/images/wallpapers/image-1.webp',
                                 imageName: 'image-1',
                               ),
                             ],
                           ),
                           Row(
-                            children: const [
+                            children: [
                               ImageBoxXp(
-                                imageUrl:
-                                    'assets/win-xp/images/wallpapers/image-2.webp',
+                                imageUrl: 'assets/win-xp/images/wallpapers/image-2.webp',
                                 imageName: 'image-2',
                               ),
                               ImageBoxXp(
-                                imageUrl:
-                                    'assets/win-xp/images/wallpapers/image-3.webp',
+                                imageUrl: 'assets/win-xp/images/wallpapers/image-3.webp',
                                 imageName: 'image-3',
                               ),
                             ],

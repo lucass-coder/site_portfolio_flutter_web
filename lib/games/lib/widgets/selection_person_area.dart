@@ -27,11 +27,9 @@ class SelectionPersonArea extends StatelessWidget {
   Widget build(BuildContext context) {
     void _onClick() {
       if (originXp == true) {
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const HomePageXp()));
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomePageXp()));
       } else {
-        Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => const HomePage()));
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomePage()));
       }
     }
 
@@ -54,9 +52,7 @@ class SelectionPersonArea extends StatelessWidget {
       height: 450,
       width: 240,
       decoration: BoxDecoration(
-          image: const DecorationImage(
-              image: ExactAssetImage('assets/images/fundo-domvs.png'),
-              fit: BoxFit.fill),
+          image: const DecorationImage(image: ExactAssetImage('assets/images/fundo-domvs.png'), fit: BoxFit.fill),
           border: Border.all(width: 3),
           color: Colors.black),
       child: GestureDetector(
