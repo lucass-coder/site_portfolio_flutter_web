@@ -52,11 +52,7 @@ class _StartBarState extends State<StartBar> {
                   child: Text(
                     '  LUCAS 95',
                     textAlign: TextAlign.start,
-                    style: TextStyle(
-                        fontSize: 24,
-                        letterSpacing: 10,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 24, letterSpacing: 10, color: Colors.white, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
@@ -132,9 +128,9 @@ class _StartBarState extends State<StartBar> {
           visible: optionState == IsOptionStart.programas,
           child: Container(
             color: const Color(0xffC0C7C8),
-            child: Column(
+            child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 OptionShutdown(icon: 'flutter', name: 'Flutter            '),
                 OptionShutdown(icon: 'dart', name: 'Dart               '),
                 OptionShutdown(icon: 'angular', name: 'Angular          '),
@@ -150,22 +146,18 @@ class _StartBarState extends State<StartBar> {
           visible: optionState == IsOptionStart.projetos,
           child: Container(
             color: const Color(0xffC0C7C8),
-            child: Column(
+            child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 OptionProject(
                   icon: 'vakinha',
                   name: 'Vakinha Burger ',
                   url: "https://github.com/lucass-coder/vakinha-burguer",
                 ),
                 OptionProject(
-                    icon: 'play_game',
-                    name: 'Video Game UI ',
-                    url: "https://github.com/lucass-coder/domvs_games"),
+                    icon: 'play_game', name: 'Video Game UI ', url: "https://github.com/lucass-coder/domvs_games"),
                 OptionProject(
-                    icon: 'copa_logo',
-                    name: 'Album da Copa ',
-                    url: "https://github.com/lucass-coder/album_copa"),
+                    icon: 'copa_logo', name: 'Album da Copa ', url: "https://github.com/lucass-coder/album_copa"),
               ],
             ),
           ),

@@ -31,6 +31,10 @@ dependencies:
     sdk: flutter
   bloc:
   flutter_bloc:
+  game_portfolio_lucas:
+    git:
+      url: https://github.com/lucass-coder/game_portfolio_lucas.git
+      ref: master 
   flame: ^1.5.0
   flame_audio: ^1.4.0
   flame_tiled: ^1.4.0
@@ -38,7 +42,7 @@ dependencies:
   flutter_carousel_slider: 1.1.0
   animated_text_kit: ^4.2.2
   get: ^4.6.5
-  cached_network_image: ^3.2.3
+  cached_network_image: ^3.3.1
 
   google_fonts: ^4.0.1
   # flutter_webview_plugin: ^0.4.0
@@ -49,6 +53,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   i18n_extension: ^6.0.0
+  
 
 dev_dependencies:
   flutter_test:

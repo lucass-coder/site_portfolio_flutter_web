@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:game_portfolio_lucas/games/domvs_dash/lib/select_person_domvs_dash.dart';
+import 'package:game_portfolio_lucas/selection_person_page.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
-import 'package:site_portfolio/games/domvs_dash/lib/select_person_domvs_dash.dart';
-import 'package:site_portfolio/games/lib/selection_person_page.dart';
+
 import 'package:site_portfolio/widgets/image_box.dart';
 import 'package:site_portfolio/winXp/widgets/windows/header/window_header.dart';
 
@@ -48,8 +49,7 @@ class WindowGamesXp extends StatelessWidget {
             LayoutBuilder(
               builder: (context, constraints) {
                 return ConstrainedBox(
-                  constraints:
-                      const BoxConstraints(minHeight: 100, maxHeight: 340),
+                  constraints: const BoxConstraints(minHeight: 100, maxHeight: 340),
                   child: IntrinsicHeight(
                     child: SingleChildScrollView(
                       child: Column(
@@ -60,30 +60,26 @@ class WindowGamesXp extends StatelessWidget {
                                 onTap: () => Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          const SelectionPersonPage(
+                                      builder: (context) => const SelectionPersonPage(
                                             originXp: true,
                                           )),
                                 ),
                                 child: const ImageBox(
-                                  imageUrl:
-                                      'assets/images-desktop/domvs-bros.png',
+                                  imageUrl: 'assets/images-desktop/domvs-bros.png',
                                 ),
                               ),
                               GestureDetector(
                                 onTap: () => Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) =>
-                                        const SelectPersonDomvsDash(
+                                    builder: (context) => const SelectPersonDomvsDash(
                                       title: 'Domvs Dash',
                                       originXp: true,
                                     ),
                                   ),
                                 ),
                                 child: const ImageBox(
-                                  imageUrl:
-                                      'assets/images-desktop/jump-game.png',
+                                  imageUrl: 'assets/images-desktop/jump-game.png',
                                 ),
                               ),
                             ],

@@ -63,9 +63,9 @@ class StartupBottom extends StatelessWidget {
               ],
             ),
           ),
-          child: Row(
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.end,
-            children: const [
+            children: [
               StartUpButton(),
             ],
           ),
