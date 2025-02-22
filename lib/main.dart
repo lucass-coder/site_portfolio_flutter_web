@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:site_portfolio/games/lib/routes.dart';
+import 'package:game_portfolio_lucas/routes.dart';
 import 'package:get/get.dart';
 import 'package:site_portfolio/screens/home_page.dart';
 import 'package:site_portfolio/utils/translation_keys.dart';
