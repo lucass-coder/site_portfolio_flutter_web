@@ -189,10 +189,10 @@ packages:
     dependency: "direct main"
     description:
       name: cupertino_icons
-      sha256: e35129dc44c9118cee2a5603506d823bab99c68393879edb440e0090d07586be
+      sha256: ba631d1c7f7bef6b729a622b7b752645a2d076dba9976925b8f25725a30e1ee6
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.5"
+    version: "1.0.8"
   equatable:
     dependency: transitive
     description:
@@ -237,26 +237,26 @@ packages:
     dependency: "direct main"
     description:
       name: flame_audio
-      sha256: "11805e414473a15111be9a08439bb6ab3923546233c4edeb3b886f70868adc8a"
+      sha256: "85d00dc83d93aa55a5d0b9d26a16d6ad9a5a3afada0aff22d923638f02d80948"
       url: "https://pub.dev"
     source: hosted
-    version: "1.4.1"
+    version: "1.4.0"
   flame_forge2d:
     dependency: "direct main"
     description:
       name: flame_forge2d
-      sha256: "2bcfc01287f7eeaf62362bd2d85ddf2e1cfd9b6fc221e7f09659fbe713cbd860"
+      sha256: cd189a4b50451df6bae96443c28aa1aaf4ef64e49592c5ccc09450567ee0b92a
       url: "https://pub.dev"
     source: hosted
-    version: "0.12.5"
+    version: "0.12.2"
   flame_tiled:
     dependency: "direct main"
     description:
       name: flame_tiled
-      sha256: "47ec58a4fe668ba5ed97a33ffa0b0038277d6f638d9285276446dc7a048b5e0e"
+      sha256: f210661b3d284050b9b11631959b9a37ace19c691b6c566e4055e8f5deb7ca4a
       url: "https://pub.dev"
     source: hosted
-    version: "1.10.1"
+    version: "1.4.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -312,6 +312,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.11.0"
+  game_portfolio_lucas:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: master
+      resolved-ref: "92556875c97dce0d275a5ca303bbdc573a84da61"
+      url: "https://github.com/lucass-coder/game_portfolio_lucas.git"
+    source: git
+    version: "1.0.0+1"
   get:
     dependency: "direct main"
     description:
@@ -340,10 +349,10 @@ packages:
     dependency: "direct main"
     description:
       name: google_fonts
-      sha256: "6b6f10f0ce3c42f6552d1c70d2c28d764cf22bb487f50f66cca31dcd5194f4d6"
+      sha256: "148c716f5929371d335d29c2952119b34842b1a8e5607e37bb9f68f96e88068a"
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.4"
+    version: "4.0.1"
   http:
     dependency: transitive
     description:
@@ -681,10 +690,10 @@ packages:
     dependency: transitive
     description:
       name: tiled
-      sha256: "1e277695ea25f387f66fb09104a4ce0f4f25e9b15239d541ffbdc3288ae1e087"
+      sha256: "93082e107dcad16cc2864101db37eeb48aeaedfe4a430cdebb77430b1f022031"
       url: "https://pub.dev"
     source: hosted
-    version: "0.10.1"
+    version: "0.8.4"
   typed_data:
     dependency: transitive
     description:
@@ -745,10 +754,10 @@ packages:
     dependency: transitive
     description:
       name: xml
-      sha256: ac0e3f4bf00ba2708c33fbabbbe766300e509f8c82dbd4ab6525039813f7e2fb
+      sha256: "80d494c09849dc3f899d227a78c30c5b949b985ededf884cb3f3bcd39f4b447a"
       url: "https://pub.dev"
     source: hosted
-    version: "6.1.0"
+    version: "5.4.1"
   yaml:
     dependency: transitive
     description:
