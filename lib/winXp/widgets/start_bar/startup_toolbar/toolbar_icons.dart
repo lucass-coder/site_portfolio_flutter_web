@@ -22,7 +22,7 @@ class ToolbarIcons extends StatelessWidget {
         ),
         SizedBox(width: spaceIcons),
         const IconMenuBarXp(
-          url: 'https://www.instagram.com/lucaso.santana/',
+          url: 'https://www.instagram.com/lucaosantana54/',
           socialNetwork: 'instagram',
         ),
         const SizedBox(

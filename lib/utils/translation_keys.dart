@@ -20,7 +20,7 @@ class TranslationKeys extends Translations {
           'turnOf': 'Turn Off',
           'change_wallpalper': ' Change Wallpalper',
           'change_person': 'Choose your character',
-          'about_description': '''My name is Lucas and I am a developer at DOMVS IT. 
+          'about_description': '''My name is Lucas and I am a developer at RaroLabs. 
   
     Currently, I provide services for the Dia group, working as a Flutter developer. 
     This portfolio was entirely created with Flutter, including the games. Feel free to contact me with suggestions and check out my projects.''',
@@ -74,7 +74,7 @@ His greatest weakness is his durability, only able to withstand one hit.
           'change_person': 'Escolha seu personagem',
           'about_description': '''Meu nome é Lucas e sou desenvolvedor na RaroLabs. 
   
-    Atualmente, estou trabalhando como desenvolvedor Flutter no aplicativo da Tele Sena. 
+    I am currently working as a Flutter developer on the Tele Sena app. 
     Este portfólio foi inteiramente criado com Flutter, incluindo os jogos. Sinta-se à vontade para entrar em contato com sugestões e conheça meus projetos.''',
           'lucas_name': 'Lucão - FlutterMan',
           'lucas_description': '''

@@ -20,10 +20,9 @@ class _BottomStartState extends State<Time> {
   void initState() {
     super.initState();
     StreamSubscription periodicSub =
-        Stream.periodic(Duration(milliseconds: 500), (v) => v)
-            .listen((count) => setState(() {
-                  now = DateTime.now();
-                }));
+        Stream.periodic(Duration(milliseconds: 500), (v) => v).listen((count) => setState(() {
+              now = DateTime.now();
+            }));
   }
 
   @override
@@ -50,7 +49,8 @@ class _BottomStartState extends State<Time> {
             Container(
               height: 32,
               width: 180,
-              decoration: BoxDecoration(color: Color(0xffC0C7C8),
+              decoration: BoxDecoration(
+                  color: Color(0xffC0C7C8),
                   //color: cor1,
                   // ignore: prefer_const_literals_to_create_immutables
                   boxShadow: [
@@ -74,7 +74,7 @@ class _BottomStartState extends State<Time> {
                     socialNetwork: 'linkedin',
                   ),
                   IconsMenuBar(
-                    url: 'https://www.instagram.com/lucaso.santana/',
+                    url: 'https://www.instagram.com/lucaosantana54/',
                     socialNetwork: 'instagram',
                   ),
                   Padding(
