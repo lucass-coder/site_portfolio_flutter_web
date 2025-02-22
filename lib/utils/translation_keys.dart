@@ -20,8 +20,7 @@ class TranslationKeys extends Translations {
           'turnOf': 'Turn Off',
           'change_wallpalper': ' Change Wallpalper',
           'change_person': 'Choose your character',
-          'about_description':
-              '''My name is Lucas and I am a developer at DOMVS IT. 
+          'about_description': '''My name is Lucas and I am a developer at DOMVS IT. 
   
     Currently, I provide services for the Dia group, working as a Flutter developer. 
     This portfolio was entirely created with Flutter, including the games. Feel free to contact me with suggestions and check out my projects.''',
@@ -39,16 +38,14 @@ The ninja is extremely fast, versatile and skillful,
 His greatest weakness is his durability, only able to withstand one hit.
           ''',
           'tip': 'Follow the tip!',
-          'guidance':
-              'Use A / D to move. \n Spacebar to jump. \n And don\u{0027}t get hit! \n\nHave fun!',
+          'guidance': 'Use A / D to move. \n Spacebar to jump. \n And don\u{0027}t get hit! \n\nHave fun!',
           'guidance_lucas': 'Use A / D to move. \n Spacebar to jump.'
               '\n \n Reach the apex of the body and let the monster out of the cage!'
               '\nHave fun!',
           'play': 'Play',
           'play_again': 'Play Again',
           'welcome_lucas': 'Welcome, chicken',
-          'instructions_lucas':
-              '\n \n Reach the apex of the body and let the monster out of the cage!',
+          'instructions_lucas': '\n \n Reach the apex of the body and let the monster out of the cage!',
           'chicken': 'Chicken',
           'strong': 'Stong',
           'gym_buff': 'Gym Buff',
@@ -75,10 +72,9 @@ His greatest weakness is his durability, only able to withstand one hit.
           'turnOf': 'Desligar',
           'change_wallpalper': ' Trocar Plano de Fundo',
           'change_person': 'Escolha seu personagem',
-          'about_description':
-              '''Meu nome é Lucas e sou desenvolvedor na DOMVS IT. 
+          'about_description': '''Meu nome é Lucas e sou desenvolvedor na RaroLabs. 
   
-    Atualmente, presto serviços para o grupo Dia, atuando como desenvolvedor Flutter. 
+    Atualmente, estou trabalhando como desenvolvedor Flutter no aplicativo da Tele Sena. 
     Este portfólio foi inteiramente criado com Flutter, incluindo os jogos. Sinta-se à vontade para entrar em contato com sugestões e conheça meus projetos.''',
           'lucas_name': 'Lucão - FlutterMan',
           'lucas_description': '''
@@ -96,15 +92,13 @@ Sua maior fraqueza é sua durabilidade, aguentando apenas um Hit.
           'tip': 'Segue a Dica!',
           'guidance':
               'Use  A / D  para se mover. \n Barra de Espaço para Pular. \n E NÃO SEJA ATINGIDO! \n\nBom divertimento!',
-          'guidance_lucas':
-              'Use  A / D  para se mover. \n Barra de Espaço para Pular.  '
-                  '\n \n Atinga o apice do corpo e deixe o monstro sair da jaula!'
-                  '\n Bom divertimento!',
+          'guidance_lucas': 'Use  A / D  para se mover. \n Barra de Espaço para Pular.  '
+              '\n \n Atinga o apice do corpo e deixe o monstro sair da jaula!'
+              '\n Bom divertimento!',
           'play': 'Jogar',
           'play_again': 'Jogar Novamente',
           'welcome_lucas': 'Seja Bem Vindo Frango!',
-          'instructions_lucas':
-              '\n \n Atinga o apice do corpo e deixe o monstro sair da jaula!',
+          'instructions_lucas': '\n \n Atinga o apice do corpo e deixe o monstro sair da jaula!',
           'chicken': 'Frango',
           'strong': 'Fortinho',
           'gym_buff': 'Maromba',

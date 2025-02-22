@@ -12,8 +12,7 @@ import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/objects/plataf
 import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/objects/whey.dart';
 import 'package:site_portfolio/games/lib/pages/persons_maps/lucas/overlays/lucas_hud.dart';
 
-class GameLucas extends FlameGame
-    with HasCollisionDetection, HasKeyboardHandlerComponents {
+class GameLucas extends FlameGame with HasCollisionDetection, HasKeyboardHandlerComponents {
   GameLucas();
 
   Lucas _lucas = Lucas();
@@ -154,8 +153,7 @@ class GameLucas extends FlameGame
   }
 
   @override
-  KeyEventResult onKeyEvent(
-      RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
+  KeyEventResult onKeyEvent(RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
     super.onKeyEvent(event, keysPressed);
 
     if (!overlays.isActive('LucasMainMenu')) {
