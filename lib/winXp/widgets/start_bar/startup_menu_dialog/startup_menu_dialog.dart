@@ -86,9 +86,9 @@ class StartupMenuDialog extends StatelessWidget {
                       Navigator.pop(context);
                       Get.find<ControllerHomePage>().openAboutWindow();
                     },
-                    child: const OptionStartXp(
+                    child: OptionStartXp(
                       icon: 'folder_about',
-                      name: 'Sobre',
+                      name: 'about'.tr,
                       isHovered: false,
                     ),
                   ),
