@@ -64,9 +64,9 @@ class StartupMenuDialog extends StatelessWidget {
                       Navigator.pop(context);
                       Get.find<ControllerHomePage>().openImagesWindow();
                     },
-                    child: const OptionStartXp(
+                    child: OptionStartXp(
                       icon: 'folder_images',
-                      name: 'My Pictures',
+                      name: 'images'.tr,
                       isHovered: false,
                     ),
                   ),
@@ -75,9 +75,9 @@ class StartupMenuDialog extends StatelessWidget {
                       Navigator.pop(context);
                       Get.find<ControllerHomePage>().openGamesWindow();
                     },
-                    child: const OptionStartXp(
+                    child: OptionStartXp(
                       icon: 'controller_3',
-                      name: 'My Games',
+                      name: 'game'.tr,
                       isHovered: false,
                     ),
                   ),
