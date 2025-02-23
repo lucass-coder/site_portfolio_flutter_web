@@ -74,7 +74,7 @@ class WindowGames extends StatelessWidget {
                                           )),
                                 ),
                                 child: const ImageBox(
-                                  imageUrl: 'assets/images-desktop/domvs-bros.png',
+                                  imageUrl: 'assets/images-desktop/lucas-bros.png',
                                 ),
                               ),
                               GestureDetector(

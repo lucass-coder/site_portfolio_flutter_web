@@ -26,8 +26,7 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<HomePage>
-    with SingleTickerProviderStateMixin {
+class _MyHomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
   bool isAtivo = false;
   bool isAtivo2 = false;
   bool isGame = false;
@@ -51,17 +50,22 @@ class _MyHomePageState extends State<HomePage>
 
   @override
   void initState() {
-    html.document.body!
-        .addEventListener('contextmenu', (event) => event.preventDefault());
+    html.document.body!.addEventListener('contextmenu', (event) => event.preventDefault());
     super.initState();
   }
 
   final controller = Get.put(ControllerHomePage());
 
+  void openPlaylist() {
+    html.window.open(
+      "https://www.youtube.com/playlist?list=PL9EC4x2LBzP2p9aRoT3TvuyPYtXx2LbQH",
+      "_blank",
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    String url =
-        'https://api.whatsapp.com/send/?phone=5516992438472&text=${'whatsapp_message'.tr}';
+    String url = 'https://api.whatsapp.com/send/?phone=5516992438472&text=${'whatsapp_message'.tr}';
     return Listener(
       onPointerDown: _updateLocation,
       child: GestureDetector(
@@ -77,8 +81,7 @@ class _MyHomePageState extends State<HomePage>
                 key: ValueKey(controller.nomeImage.value),
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(
-                        'assets/images-desktop/${controller.nomeImage}.png'),
+                    image: AssetImage('assets/images-desktop/${controller.nomeImage}.png'),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -114,8 +117,7 @@ class _MyHomePageState extends State<HomePage>
                       ),
                     ),
                     Obx(() => Visibility(
-                          visible: controller.isAbout.value == true &&
-                              isAtivo2 == false,
+                          visible: controller.isAbout.value == true && isAtivo2 == false,
                           child: const WindowAbout(),
                         )),
                     Column(
@@ -151,8 +153,7 @@ class _MyHomePageState extends State<HomePage>
                                   icon: 'phone',
                                   iconSystem: DesktopIcon.icon95,
                                   isAtivo: false,
-                                  onPressed: () =>
-                                      html.window.open(url, 'new tab'),
+                                  onPressed: () => html.window.open(url, 'new tab'),
                                 ),
                                 GestureDetector(
                                   onTap: () {
@@ -162,6 +163,17 @@ class _MyHomePageState extends State<HomePage>
                                   child: IconsDesktop(
                                     name: 'about'.tr,
                                     icon: 'cmd',
+                                    isAtivo: false,
+                                    iconSystem: DesktopIcon.icon95,
+                                  ),
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    openPlaylist();
+                                  },
+                                  child: IconsDesktop(
+                                    name: 'Lucas Academy',
+                                    icon: 'academy',
                                     isAtivo: false,
                                     iconSystem: DesktopIcon.icon95,
                                   ),
@@ -176,16 +188,12 @@ class _MyHomePageState extends State<HomePage>
                                   iconSystem: DesktopIcon.icon95,
                                   isAtivo: false,
                                   onPressed: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const StartScreenXp()));
+                                    Navigator.of(context)
+                                        .push(MaterialPageRoute(builder: (context) => const StartScreenXp()));
                                     Future.delayed(
                                       const Duration(seconds: 6),
-                                      () => Navigator.of(context).push(
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const HomePageXp())),
+                                      () => Navigator.of(context)
+                                          .push(MaterialPageRoute(builder: (context) => const HomePageXp())),
                                     );
                                   },
                                 ),
@@ -234,8 +242,7 @@ class _MyHomePageState extends State<HomePage>
                                     Visibility(
                                       visible: controller.isGame == true,
                                       child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 8.0),
+                                        padding: const EdgeInsets.only(left: 8.0),
                                         child: BarWindow(
                                           icon: 'game',
                                           name: 'game'.tr,
@@ -245,10 +252,8 @@ class _MyHomePageState extends State<HomePage>
                                     Visibility(
                                       visible: controller.isImage == true,
                                       child: Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 8.0),
-                                        child: BarWindow(
-                                            icon: 'folder', name: 'images'.tr),
+                                        padding: const EdgeInsets.only(left: 8.0),
+                                        child: BarWindow(icon: 'folder', name: 'images'.tr),
                                       ),
                                     ),
                                     const Spacer(),

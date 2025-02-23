@@ -317,7 +317,7 @@ packages:
     description:
       path: "."
       ref: master
-      resolved-ref: "0454aea113a365feb994f0d381cbb6a5df4bae0b"
+      resolved-ref: a0882ef1d6bd2fee660d31feb4fcbe5e1195449e
       url: "https://github.com/lucass-coder/game_portfolio_lucas.git"
     source: git
     version: "1.0.0+1"
