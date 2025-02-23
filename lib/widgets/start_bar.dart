@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:site_portfolio/widgets/option_language.dart';
 import 'package:site_portfolio/widgets/option_project.dart';
 import 'package:site_portfolio/widgets/option_shutdown.dart';
 import 'package:site_portfolio/widgets/options_start.dart';
-import 'package:get/get.dart';
 
 enum IsOptionStart {
   programas,
@@ -52,7 +52,11 @@ class _StartBarState extends State<StartBar> {
                   child: Text(
                     '  LUCAS 95',
                     textAlign: TextAlign.start,
-                    style: TextStyle(fontSize: 24, letterSpacing: 10, color: Colors.white, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 24,
+                        letterSpacing: 10,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
@@ -131,13 +135,37 @@ class _StartBarState extends State<StartBar> {
             child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                OptionShutdown(icon: 'flutter', name: 'Flutter            '),
-                OptionShutdown(icon: 'android', name: 'Android            '),
-                OptionShutdown(icon: 'ios', name: 'iOS               '),
-                OptionShutdown(icon: 'dart', name: 'Dart               '),
-                OptionShutdown(icon: 'java', name: 'Java               '),
-                OptionShutdown(icon: 'kotlin', name: 'Kotlin               '),
-                OptionShutdown(icon: 'swift', name: 'Swift               '),
+                OptionShutdown(
+                    icon: 'flutter',
+                    name: 'Flutter            ',
+                    isAction: false),
+                OptionShutdown(
+                    icon: 'android',
+                    name: 'Android            ',
+                    isAction: false),
+                OptionShutdown(
+                  icon: 'ios',
+                  name: 'iOS               ',
+                  isAction: false,
+                ),
+                OptionShutdown(
+                  icon: 'dart',
+                  name: 'Dart               ',
+                  isAction: false,
+                ),
+                OptionShutdown(
+                  icon: 'java',
+                  name: 'Java               ',
+                  isAction: false,
+                ),
+                OptionShutdown(
+                    icon: 'kotlin',
+                    name: 'Kotlin               ',
+                    isAction: false),
+                OptionShutdown(
+                    icon: 'swift',
+                    name: 'Swift               ',
+                    isAction: false),
                 // OptionShutdown(icon: 'angular', name: 'Angular          '),
                 // OptionShutdown(icon: 'react1', name: 'React             '),
                 // OptionShutdown(icon: 'html', name: 'HTML             '),
@@ -160,9 +188,13 @@ class _StartBarState extends State<StartBar> {
                   url: "https://github.com/lucass-coder/vakinha-burguer",
                 ),
                 OptionProject(
-                    icon: 'play_game', name: 'Video Game UI ', url: "https://github.com/lucass-coder/domvs_games"),
+                    icon: 'play_game',
+                    name: 'Video Game UI ',
+                    url: "https://github.com/lucass-coder/domvs_games"),
                 OptionProject(
-                    icon: 'copa_logo', name: 'Album da Copa ', url: "https://github.com/lucass-coder/album_copa"),
+                    icon: 'copa_logo',
+                    name: 'Album da Copa ',
+                    url: "https://github.com/lucass-coder/album_copa"),
               ],
             ),
           ),

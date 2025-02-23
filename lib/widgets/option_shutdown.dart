@@ -1,18 +1,20 @@
 // ignore_for_file: avoid_web_libraries_in_flutter
 
-import 'package:flutter/material.dart';
 import 'dart:html' as html;
 
+import 'package:flutter/material.dart';
 import 'package:site_portfolio/screens/log_off.dart';
 
 class OptionShutdown extends StatefulWidget {
   final String icon;
   final String name;
+  final bool isAction;
 
   const OptionShutdown({
     Key? key,
     required this.icon,
     required this.name,
+    this.isAction = true,
   }) : super(key: key);
 
   @override
@@ -37,12 +39,14 @@ class _OptionShutdowntState extends State<OptionShutdown> {
       }),
       child: GestureDetector(
         onTap: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => const LogOff()));
-          Future.delayed(
-            const Duration(seconds: 3),
-            () => html.window.location.href = "https://www.google.com",
-          );
+          if (widget.isAction) {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => const LogOff()));
+            Future.delayed(
+              const Duration(seconds: 3),
+              () => html.window.location.href = "https://www.google.com",
+            );
+          } else {}
         },
         child: Container(
           color: colorSelected,
