@@ -133,7 +133,7 @@ class _StartBarState extends State<StartBar> {
               children: [
                 OptionShutdown(icon: 'flutter', name: 'Flutter            '),
                 OptionShutdown(icon: 'android', name: 'Android            '),
-                OptionShutdown(icon: 'iOS', name: 'iOS               '),
+                OptionShutdown(icon: 'ios', name: 'iOS               '),
                 OptionShutdown(icon: 'dart', name: 'Dart               '),
                 OptionShutdown(icon: 'java', name: 'Java               '),
                 OptionShutdown(icon: 'kotlin', name: 'Kotlin               '),
